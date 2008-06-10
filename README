@@ -1,7 +1,8 @@
 hyggelig.org is a simple event planning website for you and your friends,
 similar to Mobaganda [http://www.mobaganda.com]
 
-This is the software it runs, written in Ruby on Rails.
+This is the free software it runs -- written in Ruby on Rails,
+released under the GNU Affero General Public License (AGPL).
 
 After cloning the repository, don't forget:
 
