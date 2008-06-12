@@ -1,0 +1,22 @@
+<%= error_messages_for 'event' %>
+<% form_tag :action => 'new' do -%>
+<p>
+<%= label :event, :name, "Name your event" %>
+<%= text_field :event, :name %>
+</p>
+
+<p>
+<%= label :event, :date, "Date and time" %>
+<%= text_field :event, :date %>
+</p>
+
+<p>
+<%= label :event, :location, "Location" %>
+<%= text_field :event, :location %>
+</p>
+
+<p>
+<%= submit_tag 'Create event page' %>
+</p>
+
+<% end -%>
