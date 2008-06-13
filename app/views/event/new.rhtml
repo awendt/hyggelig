@@ -1,5 +1,9 @@
-<%= error_messages_for 'event' %>
+<h1>Add your event</h1>
+
 <% form_tag :action => 'new' do -%>
+
+<%= error_messages_for 'event' %>
+
 <p>
 <%= label :event, :name, "Name your event" %>
 <%= text_field :event, :name %>
