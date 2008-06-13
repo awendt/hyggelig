@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<% if flash %><p style="color: green"><%= flash[:notice] %></p><% end %>
+<% if flash[:notice] %><p style="color: green"><%= flash[:notice] %></p><% end %>
 
 <%= yield  %>
 
