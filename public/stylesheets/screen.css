@@ -54,4 +54,17 @@ a:hover { color: #fff; background-color:#000; }
 
 label {
   display:block;
+  font-size:1.3em;
+}
+
+input {
+  font: 1.3em 'Trebuchet MS', Verdana, sans-serif;
+}
+
+dt {
+  margin-top:15px;
+}
+
+form dd {
+  margin:0;
 }

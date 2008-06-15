@@ -12,7 +12,7 @@ class EventController < ApplicationController
   def show
     @event = Event.find_by_permalink(params[:id])
     if @event
-      flash[:notice] = "You can now mail your guests the URL for this page: <a href=\"#{url_for event_url}\">#{url_for event_url}</a>"
+      flash[:notice] = "Give this URL to your guests: <a href=\"#{url_for event_url}\">#{url_for event_url}</a>"
     else
       flash[:notice] = "Could not find an event at the location \"#{params[:id]}\""
       redirect_to :action => 'new'

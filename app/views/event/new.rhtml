@@ -4,23 +4,17 @@
 
 <%= error_messages_for 'event' %>
 
-<p>
-<%= label :event, :name, "Name your event" %>
-<%= text_field :event, :name %>
-</p>
+<dl>
+<dt><%= label :event, :name, "Name your event" %></dt>
+<dd><%= text_field :event, :name %></dd>
 
-<p>
-<%= label :event, :date, "Date and time" %>
-<%= text_field :event, :date %>
-</p>
+<dt><%= label :event, :date, "Date and time" %></dt>
+<dd><%= text_field :event, :date %></dd>
 
-<p>
-<%= label :event, :location, "Location" %>
-<%= text_field :event, :location %>
-</p>
+<dt><%= label :event, :location, "Location" %></dt>
+<dd><%= text_field :event, :location %></dd>
 
-<p>
-<%= submit_tag 'Create event page' %>
-</p>
+<dt><%= submit_tag 'Create event page' %></dt>
+</dl>
 
 <% end -%>
