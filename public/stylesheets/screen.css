@@ -68,3 +68,11 @@ dt {
 form dd {
   margin:0;
 }
+
+.hevent {
+  font-size:1.3em;
+}
+
+.location, .date {
+  background-color:#ff5;
+}
