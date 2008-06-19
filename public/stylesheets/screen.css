@@ -1,9 +1,13 @@
 body { background-color: #fff; color: #333; }
 
 body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family:Georgia, 'Times New Roman', serif;
   font-size:   1.0em;
   line-height: 1.5em;
+}
+
+h1, h2, h3 {
+  font-family: helvetica, verdana, arial, sans-serif;
 }
 
 body {
