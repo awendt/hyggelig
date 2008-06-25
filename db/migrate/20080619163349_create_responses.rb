@@ -1,4 +1,4 @@
-class AddResponses < ActiveRecord::Migration
+class CreateResponses < ActiveRecord::Migration
   def self.up
     create_table(:responses, :id => false) do |t|
       t.references :event, :null => false

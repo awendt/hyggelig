@@ -4,5 +4,6 @@ class Event < ActiveRecord::Base
   validates_uniqueness_of :name, :permalink
 
   has_permalink :name, :permalink
+  has_many :responses
 
 end
