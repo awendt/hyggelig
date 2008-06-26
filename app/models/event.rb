@@ -6,4 +6,9 @@ class Event < ActiveRecord::Base
   has_permalink :name, :permalink
   has_many :responses
 
+  def has_responses?
+    !self.responses.blank?
+  end
+
+
 end

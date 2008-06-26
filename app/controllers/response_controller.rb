@@ -12,7 +12,7 @@ class ResponseController < ApplicationController
 
     return unless request.post?
 
-    if @response.save
+    unless @response.save
       flash[:notice] = "Your response could not be saved"
     end
   end

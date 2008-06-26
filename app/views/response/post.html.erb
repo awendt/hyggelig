@@ -6,6 +6,14 @@
 
 <h2>Guest list</h2>
 
+<% if @event.has_responses? -%>
+<ul>
+  <% @event.responses.each do |rsvp| -%>
+  <li><%= rsvp.name %></li>
+  <% end -%>
+</ul>
+<% end -%>
+
 <% form_tag :action => 'post', :id => params[:id] do %>
 
 <%= error_messages_for 'response' %>
