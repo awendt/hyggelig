@@ -21,7 +21,7 @@ class ResponseController < ApplicationController
 
   def feed
     @event = Event.find_by_permalink(params[:id])
-    @guests = @event.guests.sort_by(&:created_at)
+    @guests = @event.guests.sort_by(&:created_at).reverse
   end
 
 end
