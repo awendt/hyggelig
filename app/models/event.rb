@@ -10,5 +10,8 @@ class Event < ActiveRecord::Base
     !self.responses.blank?
   end
 
+  def guests
+    responses
+  end
 
 end

@@ -30,6 +30,7 @@ ActionController::Routing::Routes.draw do |map|
   # See how all your routes lay out with "rake routes"
   map.home '/', :controller => 'event', :action => 'new'
   map.event '/:id', :controller => 'response', :action => 'post'
+  map.feed '/feed/:id', :controller => 'response', :action => 'feed'
 
   # Install the default routes as the lowest priority.
   map.connect ':controller/:action/:id'

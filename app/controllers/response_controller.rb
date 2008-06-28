@@ -1,5 +1,7 @@
 class ResponseController < ApplicationController
 
+  layout "application", :except => :feed
+
   def post
     @event = Event.find_by_permalink(params[:id])
     @response = Response.new(params[:response])
@@ -15,6 +17,11 @@ class ResponseController < ApplicationController
     unless @response.save
       flash[:notice] = "Your response could not be saved"
     end
+  end
+
+  def feed
+    @event = Event.find_by_permalink(params[:id])
+    @guests = @event.guests.sort_by(&:created_at)
   end
 
 end

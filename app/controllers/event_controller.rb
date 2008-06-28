@@ -5,7 +5,7 @@ class EventController < ApplicationController
 
     return unless request.post?
     if @event.save
-      flash[:notice] = "Give this URL to your guests: <a href=\"#{url_for event_url}\">#{url_for event_url}</a>"
+      flash[:notice] = "Give this URL to your guests: <a href=\"#{url_for event_url(@event.permalink)}\">#{url_for event_url(@event.permalink)}</a>"
       redirect_to :controller => 'response', :action => 'post', :id => @event.permalink
     end
   end

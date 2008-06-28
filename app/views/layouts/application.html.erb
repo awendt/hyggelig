@@ -6,6 +6,7 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title><%= event_title %></title>
   <%= stylesheet_link_tag 'screen' %>
+  <%= auto_discovery_link_tag :rss, :controller => 'response', :action => 'feed', :id => @event.permalink if @event && @event.valid? %>
 </head>
 <body>
 
