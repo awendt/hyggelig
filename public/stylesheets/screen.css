@@ -86,3 +86,23 @@ form dd {
 .location, .date {
   background-color:#ff5;
 }
+
+li.confirmed {
+  background-color: rgb(204, 255, 153);
+  border-top:1px solid rgb(102, 153, 0);
+}
+
+li.cancelled {
+  background-color: rgb(255, 158, 158);
+  border-top:1px solid rgb(170,0,0);
+}
+
+ul#guest_list {
+  list-style-type:none;
+  padding:0;
+}
+
+#guest_list li {
+  padding:5px 20px;
+  width:50%;
+}
