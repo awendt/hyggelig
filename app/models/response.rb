@@ -7,4 +7,8 @@ class Response < ActiveRecord::Base
 
   belongs_to :event
 
+  def attending?
+    rsvp == true
+  end
+
 end

@@ -12,8 +12,8 @@
 
 <% if @event.has_responses? -%>
 <ul id="guest_list">
-  <% @event.responses.each do |resp| -%>
-    <li class="<%= resp.rsvp ? 'confirmed' : 'cancelled' %>"><%= resp.name %></li>
+  <% @event.guests.each do |guest| -%>
+    <li class="<%= guest.attending? ? 'confirmed' : 'cancelled' %>"><%= guest.name %></li>
   <% end -%>
 </ul>
 <% end -%>

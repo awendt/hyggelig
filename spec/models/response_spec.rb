@@ -22,5 +22,18 @@ describe Response do
     pending
     Response.new(@options.merge(:rsvp => "yo")).should have(1).error_on(:rsvp)
   end
+end
+
+describe Response, "attending?" do
+
+  it "should return TRUE if guest has confirmed" do
+    @response = Response.new(:rsvp => true)
+    @response.attending?.should be_true
+  end
+
+  it "should return FALSE if guest has cancelled" do
+    @response = Response.new(:rsvp => false)
+    @response.attending?.should be_false
+  end
 
 end
