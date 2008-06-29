@@ -106,3 +106,8 @@ ul#guest_list {
   padding:5px 20px;
   width:50%;
 }
+
+a img {
+  border:none;
+  margin-bottom:0.05em;
+}
