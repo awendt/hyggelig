@@ -31,6 +31,14 @@ describe ResponseController, "processing POST requests" do
 
   before do
     @event = mock_model(Event)
+    @options = { :name => "bob", :rsvp => false}
+  end
+
+  it "should pass the params to Response when creating an instance" do
+    Response.should_receive(:new).with(@options.stringify_keys).and_return(@response)
+    @response.stub!(:save)
+    @response.stub!(:event=)
+    post :post, :response => @options
   end
 
   describe "if event is not found" do
@@ -40,11 +48,11 @@ describe ResponseController, "processing POST requests" do
     end
 
     it "should not save the response" do
-      lambda { post :post, :id => "foo", :response => { :name => "bob", :rsvp => false} }.should_not change(Response, :count)
+      lambda { post :post, :id => "foo", :response => @options }.should_not change(Response, :count)
     end
 
     it "should flash and redirect" do
-      post :post, :id => "foo", :response => { :name => "bob", :rsvp => false}
+      post :post, :id => "foo", :response => @options
       flash[:notice].should_not be_nil
       response.should redirect_to(home_path)
     end
@@ -59,11 +67,11 @@ describe ResponseController, "processing POST requests" do
     end
 
     it "should save the response" do
-      lambda { post :post, :id => "bar", :response => { :name => "alice", :rsvp => true } }.should change(Response, :count).from(0).to(1)
+      lambda { post :post, :id => "bar", :response => @options }.should change(Response, :count).from(0).to(1)
     end
 
     it "should not flash and render anew" do
-      post :post, :id => "bar", :response => { :name => "alice", :rsvp => true }
+      post :post, :id => "bar", :response => @options
       flash[:notice].should be_nil
       response.should render_template('post')
     end
@@ -78,11 +86,11 @@ describe ResponseController, "processing POST requests" do
     end
 
     it "should not save the response" do
-      lambda { post :post, :id => "bar", :response => { :name => "alice" } }.should_not change(Response, :count)
+      lambda { post :post, :id => "bar", :response => @options.merge(:rsvp => nil) }.should_not change(Response, :count)
     end
 
     it "should flash and render anew" do
-      post :post, :id => "bar", :response => { :name => "alice" }
+      post :post, :id => "bar", :response => @options.merge(:rsvp => nil)
       flash[:notice].should_not be_nil
       response.should render_template('post')
     end

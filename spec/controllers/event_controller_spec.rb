@@ -35,7 +35,7 @@ describe EventController, "creating a new event" do
     response.should render_template('new')
   end
 
-  it "should pass the params to event" do
+  it "should pass the params to Event when creating an instance" do
     Event.should_receive(:new).with(@options.stringify_keys).and_return(@event)
     @event.stub!(:save)
     post :new, :event => @options
