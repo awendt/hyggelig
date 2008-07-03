@@ -3,11 +3,11 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Event do
 
   before do
-    @options = { :name => "Party", :date => "some time next week", :location => "my place"}
+    @attributes = { :name => "Party", :date => "some time next week", :location => "my place"}
   end
 
   it "should be valid" do
-    Event.new(@options).should be_valid
+    Event.new(@attributes).should be_valid
   end
 
   it "should force presence of name" do
@@ -23,18 +23,16 @@ describe Event do
   end
 
   it "should force uniqueness of name" do
-    pending
-    e1 = Event.new(@options)
-    e2 = Event.new(@options)
-    e1.should be_valid
-    e2.should have(1).error_on(:name)
+    Event.create!(@attributes)
+    new_event = Event.new(@attributes)
+    new_event.should have(1).error_on(:name)
   end
 
   it "should reject events with reserved names" do
     e1 = Event.new(:name => "new", :date => "date", :location => "loc")
-    e2 = Event.new(:name => "new", :date => "date", :location => "loc")
-    e3 = Event.new(:name => "new", :date => "date", :location => "loc")
-    e4 = Event.new(:name => "new", :date => "date", :location => "loc")
+    e2 = Event.new(:name => "event", :date => "date", :location => "loc")
+    e3 = Event.new(:name => "feed", :date => "date", :location => "loc")
+    e4 = Event.new(:name => "response", :date => "date", :location => "loc")
     e1.should have(1).error_on(:name)
     e2.should have(1).error_on(:name)
     e3.should have(1).error_on(:name)
