@@ -39,6 +39,11 @@ describe Event do
     e4.should have(1).error_on(:name)
   end
 
+  it "should create a permalink along with the event" do
+    Event.create!(@attributes)
+    Event.find_by_permalink("party").should_not be_nil
+  end
+
 end
 
 describe Event, "has_responses?" do
