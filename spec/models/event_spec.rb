@@ -40,6 +40,7 @@ describe Event do
   end
 
   it "should create a permalink along with the event" do
+    Event.find_by_permalink("party").should be_nil
     Event.create!(@attributes)
     Event.find_by_permalink("party").should_not be_nil
   end
