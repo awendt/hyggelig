@@ -1,0 +1,12 @@
+event:
+  name: Your event
+  attributes:
+    name: Name
+    date: Date and time
+    location: Location
+
+response:
+  name: Your resply
+  attributes:
+    name: Name
+    rsvp: Response
