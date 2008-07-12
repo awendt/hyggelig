@@ -1,1 +1,1 @@
-simple_localization :language => :de
+simple_localization :language => [:de, :en]

@@ -7,6 +7,7 @@ about:
   date: 2007-01-29
 
 app:
+  slogan: hyggelig.org | Simple event planning for you and your friends
   add_event: Add your event
   instructions:
     fill_in: Fill in the details

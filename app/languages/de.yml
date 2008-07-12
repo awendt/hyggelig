@@ -7,6 +7,7 @@ about:
   date: 2007-01-20
   
 app:
+  slogan: hyggelig.org | Treffen mit Freunden einfach planen
   add_event: Neues Ereignis anlegen
   instructions:
     fill_in: Trag die Daten ins Formular ein
