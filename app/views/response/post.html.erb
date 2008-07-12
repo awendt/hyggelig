@@ -1,8 +1,9 @@
 <h1><%= @event.name %></h1>
 
-<p class="hevent">
-<span class="location"><%= @event.location %></span> <%= l(:event, :starts) %> <span class="date"><%= @event.date %></span>
-</p>
+<div id="details">
+<p><%= l(:event, :when) %> <span class="date"><%= @event.date %></span></p>
+<p><%= l(:event, :where) %> <span class="location"><%= @event.location %></span></p>
+</div>
 
 <div class="rsvp">
 

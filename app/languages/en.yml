@@ -18,8 +18,9 @@ app:
     time_label: When does it start?
     location_label: Where does it happen?
     submit_label: Create event page
-    starts: starts
     guest_list: Guest list
+    when: When?
+    where: Where?
   response:
     name: Your name
     reply: Your reply

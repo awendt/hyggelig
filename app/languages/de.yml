@@ -18,8 +18,9 @@ app:
     time_label: Wann geht's los?
     location_label: Wo findet's statt?
     submit_label: Seite anlegen
-    starts: beginnt
     guest_list: Gästeliste
+    when: Wann?
+    where: Wo?
   response:
     name: Dein Name
     reply: Deine Antwort

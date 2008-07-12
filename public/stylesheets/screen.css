@@ -102,6 +102,7 @@ li.cancelled {
 ul#guest_list {
   list-style-type:none;
   padding:0;
+  line-height:1.3em;
 }
 
 #guest_list li {
@@ -121,4 +122,9 @@ a img {
 .rsvp {
   border:3px solid #cc9;
   padding: 0px 10px;
+}
+
+#details {
+  font-size:1.2em;
+  line-height:1.0em
 }
