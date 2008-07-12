@@ -1,6 +1,6 @@
 body { background-color: #fff; color: #333; }
 
-body, p, ol, ul, td {
+body {
   font-family:Georgia, 'Times New Roman', serif;
   font-size:   1.0em;
   line-height: 1.5em;
@@ -15,6 +15,7 @@ body {
   min-width:500px;
   margin:auto;
   padding-top:20px;
+  background-color: #eed;
 }
 
 pre {
@@ -68,7 +69,8 @@ label {
 }
 
 input {
-  font: 1.0em 'Trebuchet MS', Verdana, sans-serif;
+  padding: 5px;
+  font-size:1.1em;
 }
 
 dt {
