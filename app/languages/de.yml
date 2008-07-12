@@ -7,10 +7,29 @@ about:
   date: 2007-01-20
   
 app:
+  add_event: Neues Ereignis anlegen
   instructions:
-    fill_in: Füll das Formular aus
-    click_create: Klicke auf <q>Seite anlegen</q>
-    mail_url: Schicke deinen Gästen die individuelle URL
+    fill_in: Trag die Daten ins Formular ein
+    click: 'Klicke auf :label'
+    mail_url: Schicke deinen Gästen die Adresse der Seite
+  event:
+    name_label: Was ist der Anlass?
+    time_label: Wann geht's los?
+    location_label: Wo findet's statt?
+    submit_label: Seite anlegen
+
+models:
+  event:
+    name: Dein Ereignis
+    attributes:
+      name: Name
+      date: Datum und Uhrzeit
+      location: Ort
+  response:
+    name: Deine Antwort
+    attributes:
+      name: Name
+      rsvp: Antwort
 
 active_record_messages:
   inclusion: ist nicht in Liste gültiger Optionen enthalten.
@@ -340,23 +359,3 @@ countries:
   'Yemen': Jemen
   'Zambia': Sambia
   'Zimbabwe': Simbabwe
-
-models:
-  event:
-    name: Dein Ereignis
-    attributes:
-      name: Name
-      date: Datum und Uhrzeit
-      location: Ort
-  response:
-    name: Deine Antwort
-    attributes:
-      name: Name
-      rsvp: Antwort
-
-# You can use the app section freely to localize you application with the
-# localized_application feature. The entries defined here are accesable by the
-# global method "l". See the RDoc for details.
-
-app:
-

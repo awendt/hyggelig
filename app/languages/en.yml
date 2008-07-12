@@ -7,10 +7,29 @@ about:
   date: 2007-01-29
 
 app:
+  add_event: Add your event
   instructions:
     fill_in: Fill in the details
-    click_create: Click <q>Create event page</q>
+    click_create: Click %s
     mail_url: Mail the custom URL to your guests
+  event:
+    name_label: What's the occasion?
+    time_label: When does it start?
+    location_label: Where does it happen?
+    submit_label: Create event page
+
+models:
+  event:
+    name: Your event
+    attributes:
+      name: Name
+      date: Date and time
+      location: Location
+  response:
+    name: Your response
+    attributes:
+      name: Name
+      rsvp: RSVP
 
 active_record_messages:
   inclusion: is not included in the list
@@ -97,27 +116,3 @@ helpers:
     n months: %i months
     about 1 year: about 1 year
     over n years: over %i years
-
-# Add your the model translations as descriped in the
-# localized_models_by_lang_file feature to the model section.
-# 
-# Example:
-# 
-# models:
-#   my_model:
-#     name: Localized model name
-#     attributes:
-#       name: Localized name
-#       description: Localized description
-models:
-  event:
-    name: Your event
-    attributes:
-      name:
-      date:
-      location:
-
-# You can use the app section freely to localize you application with the
-# localized_application feature. The entries defined here are accesable by the
-# global method "l". See the RDoc for details.
-app:

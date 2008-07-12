@@ -1,26 +1,28 @@
-<h1>Add your event</h1>
+<h1><%= l(:add_event) %></h1>
 
 <ol id="instructions">
-  <li>Fill in the details</li>
-  <li>Click <q>Create event page</q></li>
-  <li>Mail the custom URL to your guests</li>
+  <li><%= l(:instructions, :fill_in) %></li>
+  <li><%= l(:instructions, :click, :label => content_tag(:q, l(:event, :submit_label))) %></li>
+  <li><%= l(:instructions, :mail_url) %></li>
 </ol>
 
 <% form_tag :action => 'new' do -%>
 
 <%= error_messages_for 'event' %>
 
+<% l_scope :event do -%>
 <dl>
-<dt><%= label :event, :name, "Name your event" %></dt>
+<dt><%= label :event, :name, l(:name_label) %></dt>
 <dd><%= text_field :event, :name %></dd>
 
-<dt><%= label :event, :date, "Date and time" %></dt>
+<dt><%= label :event, :date, l(:time_label) %></dt>
 <dd><%= text_field :event, :date %></dd>
 
-<dt><%= label :event, :location, "Location" %></dt>
+<dt><%= label :event, :location, l(:location_label) %></dt>
 <dd><%= text_field :event, :location %></dd>
 
-<dt><%= submit_tag 'Create event page' %></dt>
+<dt><%= submit_tag l(:submit_label) %></dt>
 </dl>
+<% end -%>
 
 <% end -%>

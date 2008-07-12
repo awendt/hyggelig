@@ -3,7 +3,6 @@ Dir[File.dirname(__FILE__) + '/lib/*.rb'].each do |lib_file|
   require File.expand_path(lib_file)
 end
 
-unless File.exists? "#{RAILS_ROOT}/config/initializers/simple_localization.rb"
   # If no initializer is pressent (automatically included by rails) preload any
   # features which have to be ready immediately so they can be used by models
   # which have observers attected to them (which causes them to be loaded before
@@ -21,4 +20,3 @@ unless File.exists? "#{RAILS_ROOT}/config/initializers/simple_localization.rb"
     end
     
   end
-end
