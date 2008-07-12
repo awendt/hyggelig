@@ -28,6 +28,7 @@ app:
     submit_label: Antwort abschicken
     coming: ':name kommt'
     not_coming: ':name kommt nicht'
+    rsvp: Bitte zu- oder absagen
 
 models:
   event:

@@ -113,3 +113,12 @@ a img {
   border:none;
   margin-bottom:0.05em;
 }
+
+.rsvp label {
+  display:inline;
+}
+
+.rsvp {
+  border:3px solid #cc9;
+  padding: 0px 10px;
+}

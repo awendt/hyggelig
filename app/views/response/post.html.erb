@@ -4,9 +4,28 @@
 <span class="location"><%= @event.location %></span> <%= l(:event, :starts) %> <span class="date"><%= @event.date %></span>
 </p>
 
+<div class="rsvp">
+
+<h2><%= l(:response, :rsvp) %></h2>
+
 <% form_tag :action => 'post', :id => params[:id] do %>
 
 <%= error_messages_for 'response' %>
+
+<p>
+<%= label :response, :name, l(:response, :name) %>
+<%= text_field :response, :name %>
+</p>
+
+<p>
+<%= label :response, :rsvp, l(:response, :reply) %>
+<%= select :response, :rsvp, {l(:response, :confirm) => 1, l(:response, :cancel) => 0} %>
+<%= submit_tag l(:response, :submit_label) %>
+</p>
+
+<% end -%>
+
+</div>
 
 <h2><%= l(:event, :guest_list) %> <%= link_to(image_tag('feed.png'), feed_url) %></h2>
 
@@ -16,16 +35,4 @@
     <li class="<%= guest.attending? ? 'confirmed' : 'cancelled' %>"><%= guest.name %></li>
   <% end -%>
 </ul>
-<% end -%>
-
-<dl>
-<dt><%= label :response, :name, l(:response, :name) %></dt>
-<dd><%= text_field :response, :name %></dd>
-
-<dt><%= label :response, :rsvp, l(:response, :reply) %></dt>
-<dd><%= select :response, :rsvp, {l(:response, :confirm) => 1, l(:response, :cancel) => 0} %></dd>
-
-<dt><%= submit_tag l(:response, :submit_label) %></dt>
-</dl>
-
 <% end -%>

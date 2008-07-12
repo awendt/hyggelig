@@ -28,7 +28,7 @@ app:
     submit_label: Post response
     coming: ':name is coming'
     not_coming: ':name is not coming'
-
+    rsvp: RSVP
 
 models:
   event:
