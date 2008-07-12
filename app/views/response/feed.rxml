@@ -6,7 +6,8 @@ xml.rss(:version=>"2.0"){
     xml.language('en-us')
       for guest in @guests
         xml.item do
-          xml.title(guest.name << " " << (guest.rsvp ? "is coming" : "is not coming" ))
+          xml.title(l(:response, guest.rsvp ? :coming : :not_coming, :name => guest.name))
+#          xml.title(guest.rsvp ? l(:response, :coming, :name => guest.name) : l(:response, :not_coming, :name => guest.name) )
           xml.pubDate(guest.created_at.strftime("%a, %d %b %Y %H:%M:%S %z"))
           xml.link(url_for event_url(@event.permalink))
         end

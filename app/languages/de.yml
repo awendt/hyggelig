@@ -25,6 +25,8 @@ app:
     confirm: Ich bin dabei
     cancel: Ich kann leider nicht
     submit_label: Antwort abschicken
+    coming: ':name kommt'
+    not_coming: ':name kommt nicht'
 
 models:
   event:

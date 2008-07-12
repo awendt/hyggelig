@@ -25,6 +25,8 @@ app:
     confirm: I will attend
     cancel: I will NOT attend
     submit_label: Post response
+    coming: ':name is coming'
+    not_coming: ':name is not coming'
 
 
 models:
