@@ -17,6 +17,15 @@ app:
     time_label: When does it start?
     location_label: Where does it happen?
     submit_label: Create event page
+    starts: starts
+    guest_list: Guest list
+  response:
+    name: Your name
+    reply: Your reply
+    confirm: I will attend
+    cancel: I will NOT attend
+    submit_label: Post response
+
 
 models:
   event:

@@ -1,14 +1,14 @@
 <h1><%= @event.name %></h1>
 
 <p class="hevent">
-<span class="location"><%= @event.location %></span> starts <span class="date"><%= @event.date %></span>
+<span class="location"><%= @event.location %></span> <%= l(:event, :starts) %> <span class="date"><%= @event.date %></span>
 </p>
 
 <% form_tag :action => 'post', :id => params[:id] do %>
 
 <%= error_messages_for 'response' %>
 
-<h2>Guest list <%= link_to(image_tag('feed.png'), feed_url) %></h2>
+<h2><%= l(:event, :guest_list) %> <%= link_to(image_tag('feed.png'), feed_url) %></h2>
 
 <% if @event.has_responses? -%>
 <ul id="guest_list">
@@ -19,13 +19,13 @@
 <% end -%>
 
 <dl>
-<dt><%= label :response, :name, 'Your name' %></dt>
+<dt><%= label :response, :name, l(:response, :name) %></dt>
 <dd><%= text_field :response, :name %></dd>
 
-<dt><%= label :response, :rsvp, 'Your reply' %></dt>
-<dd><%= select :response, :rsvp, {"I will attend" => 1, "I will NOT attend" => 0} %></dd>
+<dt><%= label :response, :rsvp, l(:response, :reply) %></dt>
+<dd><%= select :response, :rsvp, {l(:response, :confirm) => 1, l(:response, :cancel) => 0} %></dd>
 
-<dt><%= submit_tag 'Post response' %></dt>
+<dt><%= submit_tag l(:response, :submit_label) %></dt>
 </dl>
 
 <% end -%>
