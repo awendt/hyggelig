@@ -10,7 +10,7 @@ app:
   add_event: Add your event
   instructions:
     fill_in: Fill in the details
-    click_create: Click %s
+    click: 'Click :label'
     mail_url: Mail the custom URL to your guests
   event:
     name_label: What's the occasion?
