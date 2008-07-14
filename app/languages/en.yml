@@ -30,6 +30,9 @@ app:
     coming: ':name is coming'
     not_coming: ':name is not coming'
     rsvp: RSVP
+  flash:
+    give_url: 'Give this address to your guests: <a href=":url">:url</a>'
+    event_not_found: 'Could not find an event at the location <q>:location</q>'
 
 models:
   event:

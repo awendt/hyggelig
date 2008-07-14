@@ -8,7 +8,7 @@ class ResponseController < ApplicationController
     @response.event = @event
 
     if !@event
-      flash[:notice] = "Could not find an event at the location \"#{params[:id]}\""
+      flash[:notice] = l(:flash, :event_not_found, :location => params[:id])
       redirect_to :controller => 'event', :action => 'new'
     end
 
