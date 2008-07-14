@@ -10,9 +10,9 @@ app:
   slogan: hyggelig.org | Treffen mit Freunden einfach planen
   add_event: Neues Ereignis anlegen
   instructions:
-    fill_in: Trag die Daten ins Formular ein
-    click: 'Klicke auf :label'
-    mail_url: Schicke deinen Gästen die Adresse der Seite
+    fill_in: Du füllst das Formular aus und bekommst eine Seite für dein Ereignis angelegt
+    mail_url: Du schickst deinen Gästen die Adresse der angelegten Seite
+    guests_rsvp: Deine Gäste sagen auf der Seite zu oder ab
   event:
     name_label: Was ist der Anlass?
     time_label: Wann geht's los?

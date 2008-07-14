@@ -10,9 +10,9 @@ app:
   slogan: hyggelig.org | Simple event planning for you and your friends
   add_event: Add your event
   instructions:
-    fill_in: Fill in the details
-    click: 'Click :label'
-    mail_url: Mail the custom URL to your guests
+    fill_in: You fill in the form and get a page created for your event
+    mail_url: Mail that page's custom address to your guests
+    guests_rsvp: Your guests can confirm or cancel
   event:
     name_label: What's the occasion?
     time_label: When does it start?
