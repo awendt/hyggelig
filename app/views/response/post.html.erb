@@ -1,8 +1,8 @@
-<h1><%= @event.name %></h1>
+<h1><%= h(@event.name) %></h1>
 
 <div id="details">
-<p><%= l(:event, :when) %> <span class="date"><%= @event.date %></span></p>
-<p><%= l(:event, :where) %> <span class="location"><%= @event.location %></span></p>
+<p><%= l(:event, :when) %> <span class="date"><%= h(@event.date) %></span></p>
+<p><%= l(:event, :where) %> <span class="location"><%= h(@event.location) %></span></p>
 </div>
 
 <div class="rsvp">
@@ -19,8 +19,8 @@
 </p>
 
 <p>
-<%= label :response, :rsvp, l(:response, :reply) %>
-<%= select :response, :rsvp, {l(:response, :confirm) => 1, l(:response, :cancel) => 0} %>
+<%= radio_button :response, :rsvp, 1 %><%= label :response, :rsvp_1, l(:response, :confirm) %>
+<%= radio_button :response, :rsvp, 0 %><%= label :response, :rsvp_0, l(:response, :cancel) %>
 <%= submit_tag l(:response, :submit_label) %>
 </p>
 
