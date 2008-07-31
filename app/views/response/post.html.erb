@@ -33,7 +33,7 @@
 <% if @event.has_responses? -%>
 <ul id="guest_list">
   <% @event.guests_by_reverse_chron.each do |guest| -%>
-    <li class="<%= guest.attending? ? 'confirmed' : 'cancelled' %>"><%= guest.name %></li>
+    <li class="<%= guest.attending? ? 'confirmed' : 'cancelled' %>"><%= h(guest.name) %></li>
   <% end -%>
 </ul>
 <% end -%>
