@@ -14,8 +14,8 @@ class ResponseController < ApplicationController
 
     return unless request.post?
 
-    unless @response.save
-      flash[:notice] = "Your response could not be saved"
+    if @response.save
+      flash[:notice] = l(:flash, :response_saved)
     end
   end
 
