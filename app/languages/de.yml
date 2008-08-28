@@ -30,6 +30,7 @@ app:
     coming: ':name kommt'
     not_coming: ':name kommt nicht'
     rsvp: Hier antworten
+    confirm_or_decline: Bitte wähle deine Antwort aus
   flash:
     give_url: 'Schick deinen Gästen diese Adresse: <a href=":url">:url</a>'
     event_not_found: 'Konnte keine Seite unter <q>:location</q> finden'
