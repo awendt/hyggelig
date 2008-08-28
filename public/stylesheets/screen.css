@@ -67,6 +67,12 @@ a:hover { color: #fff; }
   list-style: square;
 }
 
+#errors {
+  border: 2px solid red;
+  background-color:#fff;
+  margin-bottom:20px;
+}
+
 label {
   display:block;
   font-size:1.0em;

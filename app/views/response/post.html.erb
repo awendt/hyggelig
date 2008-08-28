@@ -11,7 +11,9 @@
 
 <% form_tag :action => 'post', :id => params[:id] do %>
 
-<%= error_messages_for 'response', :header_message => nil %>
+<%= error_messages_for :response do |objects, header_message, description, error_messages, localized_object_name, count|
+      content_tag(:div, content_tag(:ul, error_messages.collect{|msg| content_tag :li, msg}.join("\n")), :id => 'errors')
+    end %>
 
 <div class="tip">
 <%= label :response, :name, l(:response, :name) %>
