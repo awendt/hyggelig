@@ -39,7 +39,7 @@ a:hover { color: #fff; }
 }
 
 #errorExplanation {
-  width: 400px;
+  width: 25em;
   margin:10px auto 20px auto;
   border: 2px solid red;
   padding: 7px;
