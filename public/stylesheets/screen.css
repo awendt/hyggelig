@@ -10,12 +10,16 @@ h1, h2, h3 {
   font-family: helvetica, verdana, arial, sans-serif;
 }
 
+h1 {
+  text-align:center;
+}
+
 body {
-  width:50%;
+  width:60%;
   min-width:500px;
   margin:auto;
   padding-top:20px;
-  background-color: #eed;
+  background-color: #FFF9D8;
 }
 
 pre {
@@ -68,9 +72,21 @@ label {
   font-size:1.0em;
 }
 
-input {
+input[type=text], input[type=radio] {
   padding: 5px;
-  font-size:1.1em;
+}
+
+input {
+  font-size:1.0em;
+}
+
+dl input[type=text] {
+  width:100%;
+}
+
+dl, #instructions {
+  width:25em;
+  margin:auto;
 }
 
 dt {
@@ -94,20 +110,19 @@ li.confirmed {
   border-top:1px solid rgb(102, 153, 0);
 }
 
-li.cancelled {
+li.declined {
   background-color: rgb(255, 158, 158);
   border-top:1px solid rgb(170,0,0);
 }
 
 ul#guest_list {
   list-style-type:none;
-  padding:0;
+  padding:0 0 0 10px;
   line-height:1.3em;
 }
 
 #guest_list li {
   padding:5px 20px;
-  width:50%;
 }
 
 a img {
@@ -119,12 +134,44 @@ a img {
   display:inline;
 }
 
+.rsvp, .guestlist {
+  padding:0 10px;
+}
+
+.guestlist {
+  float:left;
+}
+
 .rsvp {
-  border:3px solid #cc9;
-  padding: 0px 10px;
+  width:18em; float:left; 
+  background-color:#E3F1F6;
+  border:1px solid #ccc;
+  margin-right:10px;
+  padding-bottom:10px;
 }
 
 #details {
   font-size:1.2em;
   line-height:1.3em
+}
+
+.bubble {
+  background:white; 
+  padding:10px 10px;
+  margin:0 0 10px 0;
+  border:1px solid #ccc;
+  z-index:0;
+}
+
+.bubble p {
+  margin:0;
+  padding:0;
+}
+
+.tip {
+  margin:0 0 -2px 0; 
+  position:relative;
+  z-index:999;
+  padding: 0 0 10px 0;
+  background:url(/images/tip.gif) no-repeat 20px bottom;
 }

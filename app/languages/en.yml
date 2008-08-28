@@ -12,7 +12,7 @@ app:
   instructions:
     fill_in: You fill in the form and get a page created for your event
     mail_url: Mail that page's custom address to your guests
-    guests_rsvp: Your guests can confirm or cancel
+    guests_rsvp: Your guests can confirm or decline
   event:
     name_label: What's the occasion?
     time_label: When does it start?
@@ -25,11 +25,11 @@ app:
     name: Your name
     reply: Your reply
     confirm: I will attend
-    cancel: I will NOT attend
+    decline: I will NOT attend
     submit_label: Post response
     coming: ':name is coming'
     not_coming: ':name is not coming'
-    rsvp: RSVP
+    rsvp: RSVP here
   flash:
     give_url: 'Give this address to your guests: <a href=":url">:url</a>'
     event_not_found: 'Could not find an event at the location <q>:location</q>'

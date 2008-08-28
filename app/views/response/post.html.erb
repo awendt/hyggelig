@@ -1,4 +1,4 @@
-<h1><%= h(@event.name) %></h1>
+<h1 class="event_name"><%= h(@event.name) %></h1>
 
 <div id="details">
 <p><%= l(:event, :when) %> <span class="date"><%= h(@event.date) %></span></p>
@@ -11,29 +11,36 @@
 
 <% form_tag :action => 'post', :id => params[:id] do %>
 
-<%= error_messages_for 'response' %>
+<%= error_messages_for 'response', :header_message => nil %>
 
-<p>
+<div class="tip">
 <%= label :response, :name, l(:response, :name) %>
-<%= text_field :response, :name %>
-</p>
+<%= text_field :response, :name, :size => 20 %>
+</div>
 
-<p>
-<%= radio_button :response, :rsvp, 1 %><%= label :response, :rsvp_1, l(:response, :confirm) %>
-<%= radio_button :response, :rsvp, 0 %><%= label :response, :rsvp_0, l(:response, :cancel) %>
+<div class="bubble">
+<p><%= radio_button :response, :rsvp, 1 %><%= label :response, :rsvp_1, l(:response, :confirm) %></p>
+<p><%= radio_button :response, :rsvp, 0 %><%= label :response, :rsvp_0, l(:response, :decline) %></p>
+</div>
+
 <%= submit_tag l(:response, :submit_label) %>
-</p>
 
 <% end -%>
 
 </div>
+
+</div>
+
+<div class="guestlist">
 
 <h2><%= l(:event, :guest_list) %> <%= link_to(image_tag('feed.png'), feed_url) %></h2>
 
 <% if @event.has_responses? -%>
 <ul id="guest_list">
   <% @event.guests_by_reverse_chron.each do |guest| -%>
-    <li class="<%= guest.attending? ? 'confirmed' : 'cancelled' %>"><%= h(guest.name) %></li>
+    <li class="<%= guest.attending? ? 'confirmed' : 'declined' %>"><%= h(guest.name) %></li>
   <% end -%>
 </ul>
 <% end -%>
+
+</div>

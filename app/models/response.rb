@@ -6,9 +6,9 @@ class Response < ActiveRecord::Base
   validates_uniqueness_of :name, :scope => [:event_id]
 
   belongs_to :event
-
+  
   def attending?
     rsvp == true
   end
-
+  
 end
