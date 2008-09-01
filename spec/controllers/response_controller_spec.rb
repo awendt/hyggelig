@@ -72,7 +72,7 @@ describe ResponseController, "processing POST requests" do
 
     it "should not flash and render anew" do
       post :post, :id => "bar", :response => @options
-      flash[:notice].should be_nil
+      flash[:notice].should_not be_nil
       response.should render_template('post')
     end
 
@@ -91,7 +91,7 @@ describe ResponseController, "processing POST requests" do
 
     it "should flash and render anew" do
       post :post, :id => "bar", :response => @options.merge(:rsvp => nil)
-      flash[:notice].should_not be_nil
+      flash[:notice].should be_nil
       response.should render_template('post')
     end
 
