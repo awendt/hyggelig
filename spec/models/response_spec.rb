@@ -46,3 +46,27 @@ describe Response, "attending?" do
   end
 
 end
+
+describe Response, "number_of_guests" do
+  
+  it "should return 1 if no additional guests specified" do
+    @response = Response.new(:name => "Me")
+    @response.number_of_guests.should == 1
+  end
+
+  it "should return 2 if an additional guest specified" do
+    @response = Response.new(:name => "Me +1")
+    @response.number_of_guests.should == 2
+  end
+
+  it "should ignore spaces" do
+    @response = Response.new(:name => "Me + 1")
+    @response.number_of_guests.should == 2
+  end
+
+  it "should return 20 if an additional guest specified" do
+    @response = Response.new(:name => "Me +19")
+    @response.number_of_guests.should == 20
+  end
+
+end

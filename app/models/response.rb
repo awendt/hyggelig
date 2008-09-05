@@ -11,4 +11,10 @@ class Response < ActiveRecord::Base
     rsvp == true
   end
   
+  def number_of_guests
+    guests = 1
+    guests += $1.to_i if name =~ /\+\s?(\d+)/
+    guests
+  end
+  
 end
