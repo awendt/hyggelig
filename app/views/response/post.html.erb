@@ -1,5 +1,7 @@
 <h1 class="event_name"><%= h(@event.name) %></h1>
 
+<div class="container">
+
 <div id="details">
 <p><%= l(:event, :when) %> <span class="date"><%= h(@event.date) %></span></p>
 <p><%= l(:event, :where) %> <span class="location"><%= h(@event.location) %></span></p>
@@ -31,8 +33,6 @@
 
 </div>
 
-</div>
-
 <div class="guestlist">
 
 <h2><%= l(:event, :guest_list) %> <%= link_to(image_tag('feed.png'), feed_url) %></h2>
@@ -44,5 +44,7 @@
   <% end -%>
 </ul>
 <% end -%>
+
+</div>
 
 </div>
