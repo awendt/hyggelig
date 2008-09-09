@@ -1,5 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -15,11 +16,9 @@
 <%= yield  %>
 
 <div class="footer band">
-hyggelig.org is a <em>free and open-source</em>
-<a href="http://www.rubyonrails.org" title="Ruby on Rails, an MVC framework written in Ruby">Rails</a> application licensed 
-under the <a href="http://www.gnu.org/licenses/agpl-3.0.txt" title="Full text of the GNU Affero General Public License Version 3">GNU AGPL</a>.<br />
-The <a href="http://github.com/awendt/hyggelig/">official repository</a> is hosted on <a href="http://github.com/">GitHub</a>.<br />
-If you have questions or found any bugs, please post to the mailing list.
+<%= l(:about, :what_is_hyggelig, :license => '<a href="http://www.gnu.org/licenses/agpl-3.0.txt" title="GNU Affero Public License" lang=\"en\">GNU AGPL</a>') %><br />
+<%= l(:about, :code_hosted_on, :host => '<a href="http://github.com/awendt/hyggelig" lang=\"en\">GitHub</a>') %><br />
+<%= l(:about, :questions_or_bugs, :mlist => "<a href=\"http://mail.hyggelig.org/mailman/listinfo/hyggelig-discuss_hyggelig.org\" lang=\"en\">#{l(:about, :mlist)}</a>") %><br />
 </div>
 
 </body>
