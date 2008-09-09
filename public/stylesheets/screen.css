@@ -16,14 +16,18 @@ h1 {
   text-align:center;
 }
 
-.container, .flash {
+.container, #flash {
   width:60%;
   min-width:500px;
   margin:auto;
 }
 
-.flash {
+#flash {
+  border:1px solid #f00;
+  background-color:#fff;
   color:green;
+  text-align:center;
+  padding:5px;
 }
 
 pre {
@@ -93,6 +97,11 @@ dl, #instructions {
 
 dt {
   margin-top:15px;
+}
+
+dt.note {
+  border-left:3px solid #f00;
+  padding-left:10px;
 }
 
 form dd {
@@ -185,7 +194,7 @@ a img {
   clear:both;
   background-color:#fff;
   text-align:center;
-  padding:10px 0;
+  padding:10px 100px;
   margin-top:50px; 
   border-bottom:1px solid #FFE8CD; 
   border-top:1px solid #FFE8CD;
