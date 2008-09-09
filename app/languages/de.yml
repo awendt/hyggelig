@@ -24,7 +24,7 @@ app:
     time_label: Wann geht's los?
     location_label: Wo findet's statt?
     submit_label: Seite anlegen
-    will_expire: Bitte denk dran, dass Ereignisse nach :expire_after Tagen verfallen.
+    will_expire: 'Bitte denk dran: Ereignisse verfallen nach :expire_after Tagen.'
     guest_list: Gästeliste
     when: Wann?
     where: Wo?

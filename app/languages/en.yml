@@ -25,7 +25,7 @@ app:
     time_label: When does it start?
     location_label: Where does it happen?
     submit_label: Create event page
-    will_expire: Please keep in mind that events will expire after :expire_after days.
+    will_expire: 'Please keep in mind: Events will expire after :expire_after days.'
     guest_list: Guest list
     when: When?
     where: Where?
