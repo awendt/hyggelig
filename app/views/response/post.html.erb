@@ -43,6 +43,8 @@
     <li class="<%= guest.attending? ? 'confirmed' : 'declined' %>"><%= h(guest.name) %></li>
   <% end -%>
 </ul>
+<% else -%>
+<p><%= l(:response, :no_responses_yet) %></p>
 <% end -%>
 
 </div>
