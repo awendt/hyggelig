@@ -9,15 +9,23 @@ about:
 app:
   slogan: hyggelig.org | Simple event planning for you and your friends
   add_event: Add your event
+  about:
+    what_is_hyggelig: hyggelig.org is a free and open-source Rails application licensed under the :license.
+    license_name: GNU AGPL
+    official_repos: The official repository
+    code_hosted_on: 'The project is hosted on :host.'
+    questions_or_bugs: If you have questions or found any bugs, please post them to the :mlist.
+    mlist: mailing list
   instructions:
     fill_in: You fill in the form and get a page created for your event
     mail_url: Mail that page's custom address to your guests
-    guests_rsvp: Your guests can confirm or decline
+    guests_rsvp: Your guests can confirm or decline on that page
   event:
     name_label: What's the occasion?
     time_label: When does it start?
     location_label: Where does it happen?
     submit_label: Create event page
+    will_expire: Please keep in mind that events will expire after :expire_after days.
     guest_list: Guest list
     when: When?
     where: Where?
@@ -31,9 +39,10 @@ app:
     not_coming: ':name is not coming'
     rsvp: RSVP here
     confirm_or_decline: Please select your response
+    no_responses_yet: Nobody responded yet.
   flash:
     give_url: 'Give this address to your guests: <a href=":url">:url</a>'
-    event_not_found: 'Could not find an event at the location <q>:location</q>'
+    event_not_found: 'Could not find an event page at the location :location.'
     response_saved: 'Your response was saved successfully'
 
 models:

@@ -9,6 +9,12 @@ about:
 app:
   slogan: hyggelig.org | Treffen mit Freunden einfach planen
   add_event: Neues Ereignis anlegen
+  about:
+    what_is_hyggelig: hyggelig.org ist eine freie Rails-Anwendung, die unter der :license lizensiert ist.
+    official_repos: Der offizielle Code
+    code_hosted_on: 'Das Projekt wird auf :host gehostet.'
+    questions_or_bugs: Falls du Fehler gefunden oder Fragen hast, wende dich damit bitte an die :mlist.
+    mlist: Mailingliste
   instructions:
     fill_in: Du füllst das Formular aus und bekommst eine Seite für dein Ereignis angelegt
     mail_url: Du schickst deinen Gästen die Adresse der angelegten Seite
@@ -18,6 +24,7 @@ app:
     time_label: Wann geht's los?
     location_label: Wo findet's statt?
     submit_label: Seite anlegen
+    will_expire: Bitte denk dran, dass Ereignisse nach :expire_after Tagen verfallen.
     guest_list: Gästeliste
     when: Wann?
     where: Wo?
@@ -31,9 +38,10 @@ app:
     not_coming: ':name kommt nicht'
     rsvp: Hier antworten
     confirm_or_decline: Bitte wähle deine Antwort aus
+    no_responses_yet: Noch hat niemand geantwortet.
   flash:
     give_url: 'Schick deinen Gästen diese Adresse: <a href=":url">:url</a>'
-    event_not_found: 'Konnte keine Seite unter <q>:location</q> finden'
+    event_not_found: 'Konnte keine Seite unter :location finden.'
     response_saved: 'Deine Antwort wurde erfolgreich gespeichert'
 
 models:
