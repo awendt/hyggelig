@@ -15,13 +15,13 @@
 <% l_scope :event do -%>
 <dl>
 <dt><%= label :event, :name, l(:name_label) %></dt>
-<dd><%= text_field :event, :name %></dd>
+<dd><%= text_field :event, :name %><%= error_message_on :event, :name %></dd>
 
 <dt><%= label :event, :date, l(:time_label) %></dt>
-<dd><%= text_field :event, :date %></dd>
+<dd><%= text_field :event, :date %><%= error_message_on :event, :date %></dd>
 
 <dt><%= label :event, :location, l(:location_label) %></dt>
-<dd><%= text_field :event, :location %></dd>
+<dd><%= text_field :event, :location %><%= error_message_on :event, :location %></dd>
 
 <dt class="note"><%= l(:will_expire, :expire_after => 60) %></dt>
 

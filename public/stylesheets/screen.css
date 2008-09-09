@@ -38,17 +38,24 @@ pre {
 
 .fieldWithErrors {
   padding: 2px;
-  background-color: red;
+  background-color: #c00;
   display: table;
+  color:#FFF9D8;
+}
+
+.formError {
+  color:#c00;
+  font-style:italic;
+  padding-left:10px;
 }
 
 #errorExplanation {
-  width: 25em;
-  margin:10px auto 20px auto;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 12px;
-  background-color: #f0f0f0;
+  background-color:#F0F0F0;
+  border:2px solid red;
+  float:right;
+  margin:0 -170px 20px auto;
+  padding:7px 7px 12px;
+  width:40%;
 }
 
 #errorExplanation h2 {
@@ -100,8 +107,9 @@ dt {
 }
 
 dt.note {
-  border-left:3px solid #f00;
-  padding-left:10px;
+  background-color:#E3F1F6;
+  border:1px solid #ccc;
+  padding:5px;
 }
 
 form dd {
@@ -198,4 +206,5 @@ a img {
   margin-top:50px; 
   border-bottom:1px solid #FFE8CD; 
   border-top:1px solid #FFE8CD;
+  margin-bottom:10px;
 }
