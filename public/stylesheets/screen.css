@@ -50,38 +50,26 @@ pre {
 }
 
 #errorExplanation {
-  background-color:#F0F0F0;
-  border:2px solid red;
-  float:right;
-  margin:0 -170px 20px auto;
-  padding:7px 7px 12px;
-  width:40%;
-}
-
-#errorExplanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  background-color: #c00;
-  color: #fff;
-}
-
-#errorExplanation p {
-  color: #333;
-  margin-bottom: 0;
-  padding: 5px;
-}
-
-#errorExplanation ul li {
-  list-style: square;
+  border:1px solid #c00;
+  background-color:#fff;
+  text-align:center;
+  padding:5px;
+  color:#c00;
+  font-size:1.0em;
+  margin-top:10px;
 }
 
 #errors {
-  border: 2px solid red;
+  border: 2px solid #c00;
   background-color:#fff;
   margin-bottom:20px;
+  text-align:center;
+  padding:2px;
+}
+
+#errors ul {
+  text-align:left;
+  margin:0;
 }
 
 label {
@@ -98,7 +86,7 @@ input {
 }
 
 dl, #instructions {
-  width:25em;
+  width:27em;
   margin:auto;
 }
 
@@ -155,6 +143,7 @@ a img {
 
 .rsvp, .guestlist {
   padding:0 10px;
+  margin-bottom:20px;
 }
 
 .guestlist {

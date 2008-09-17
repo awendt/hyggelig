@@ -113,8 +113,8 @@ countries:
 helpers:
   error_messages_for:
     heading:
-      1: '1 error prohibited this %2$s from being saved'
-      n: '%d errors prohibited this %s from being saved'
+      1: '1 error prohibited this %2$s from being saved:'
+      n: '%d errors prohibited this %s from being saved:'
     description: 'There were problems with the following fields:'
   number_to_currency:
     precision: 2

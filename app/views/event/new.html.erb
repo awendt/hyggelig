@@ -10,7 +10,9 @@
 
 <% form_tag :action => 'new' do -%>
 
-<%= error_messages_for 'event' %>
+<%= error_messages_for 'event' do |objects, header_message, description, error_messages, localized_object_name, count|
+      content_tag(:div, header_message, :id => 'errors')
+    end %>
 
 <% l_scope :event do -%>
 <dl>
