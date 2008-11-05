@@ -7,4 +7,5 @@ doc/app
 doc/plugins
 vendor/plugins/**/test/*.log
 config/deploy.rb
+config/database.yml
 .DS_Store
