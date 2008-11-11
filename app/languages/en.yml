@@ -25,7 +25,7 @@ app:
     time_label: When does it start?
     location_label: Where does it happen?
     submit_label: Create event page
-    will_expire: 'Please keep in mind: Events will expire after :expire_after days.'
+    will_expire: 'Please keep in mind: This event will last until :date.'
     guest_list: Guest list
     when: When?
     where: Where?
@@ -88,10 +88,12 @@ dates:
     attributes: '%m/%d/%y'
     short: '%e %b'
     long: '%B %e, %Y'
+    expiration: '%B %e'
   time_formats:
     attributes: '%m/%d/%y %H:%M'
     short: '%d %b %H:%M'
     long: '%B %d, %Y %H:%M'
+    expiration: '%B %e'
   strftime_overwrites:
     c: '%a %b %e %H:%M:%S %Y'
     x: '%m/%d/%y'

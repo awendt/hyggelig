@@ -25,7 +25,7 @@
 <dt><%= label :event, :location, l(:location_label) %></dt>
 <dd><%= text_field :event, :location %><%= error_message_on :event, :location %></dd>
 
-<dt class="note"><%= l(:will_expire, :expire_after => 60) %></dt>
+<dt class="note"><%= l(:will_expire, :date => content_tag(:strong, "#{60.days.from_now.to_formatted_s :expiration}")) %></dt>
 
 <dt><%= submit_tag l(:submit_label) %></dt>
 </dl>

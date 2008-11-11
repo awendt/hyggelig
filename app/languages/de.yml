@@ -24,7 +24,7 @@ app:
     time_label: Wann geht's los?
     location_label: Wo findet's statt?
     submit_label: Seite anlegen
-    will_expire: 'Bitte denk dran: Ereignisse verfallen nach :expire_after Tagen.'
+    will_expire: 'Bitte denk dran: Dieses Ereignis verfällt am :date.'
     guest_list: Gästeliste
     when: Wann?
     where: Wo?
@@ -87,10 +87,12 @@ dates:
     attributes: '%d.%m.%Y'
     short: '%e. %b'
     long: '%e. %B %Y'
+    expiration: '%e. %B'
   time_formats:
     attributes: '%d.%m.%Y %H:%M'
     short: '%d %b %H:%M'
     long: '%d %B %Y %H:%M'
+    expiration: '%e. %B'
   strftime_overwrites:
     c: '%A %e. %B %Y %H:%M:%S'
     x: '%d.%m.%y'
