@@ -5,7 +5,7 @@ class Event < ActiveRecord::Base
   validates_exclusion_of :name, :in => %w(new feed response event)
 
   has_permalink :name, :permalink
-  has_many :responses
+  has_many :responses, :dependent => :delete_all
 
   def has_responses?
     !self.responses.blank?
