@@ -22,9 +22,9 @@ describe Event do
     Event.new.should have(1).error_on(:location)
   end
 
-  it "should force uniqueness of name" do
+  it "should force uniqueness of name, regardless of case" do
     Event.create!(@attributes)
-    new_event = Event.new(@attributes)
+    new_event = Event.new(@attributes.merge(:name => "party"))
     new_event.should have(1).error_on(:name)
   end
 
