@@ -40,7 +40,7 @@ app:
     confirm_or_decline: Bitte wähle deine Antwort aus
     no_responses_yet: Noch hat niemand geantwortet.
   flash:
-    give_url: 'Schick deinen Gästen diese Adresse: <a href=":url">:url</a>'
+    give_url: 'Schick deinen Gästen diese Adresse:<br /><a href=":url">:url</a>'
     event_not_found: 'Konnte keine Seite unter :location finden.'
     response_saved: 'Deine Antwort wurde erfolgreich gespeichert'
 
