@@ -41,7 +41,7 @@ app:
     confirm_or_decline: Please select your response
     no_responses_yet: Nobody responded yet.
   flash:
-    give_url: 'Give this address to your guests:<br /><a href=":url">:url</a>'
+    give_url: 'Give this address to your guests: %s'
     event_not_found: 'Could not find an event page at the location :location.'
     response_saved: 'Your response was saved successfully'
 

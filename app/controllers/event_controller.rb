@@ -5,7 +5,12 @@ class EventController < ApplicationController
 
     return unless request.post?
     if @event.save
-      flash[:notice] = l(:flash, :give_url, :url => url_for(event_url(@event.permalink)))
+      # put in a linebreak
+      flash[:notice] = "#{l(:flash, :give_url)}".gsub(/\%s/, "<br />%s")
+      # build a URL for current event (redirect below prevents using url_for)
+      url = url_for(event_url(@event.permalink))
+      # use that URL to link to the current page
+      flash[:notice_item] = ["#{url}", "#{url}"]
       redirect_to event_url(@event.permalink)
     end
   end

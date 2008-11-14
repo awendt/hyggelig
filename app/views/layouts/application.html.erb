@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<% if flash[:notice] %><p id="flash"><%= flash[:notice] %></p><% end %>
+<%= flash_messages %>
 
 <%= yield  %>
 

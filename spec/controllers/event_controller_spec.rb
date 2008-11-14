@@ -21,7 +21,7 @@ describe EventController, "creating a new event" do
 
   it "should redirect to response/post with a notice on successful save" do
     post :new, :event => @options
-    flash[:notice].should =~ /my-party/
+    flash[:notice_item].first.should =~ /my-party/
     response.should redirect_to(event_path("my-party"))
   end
 
