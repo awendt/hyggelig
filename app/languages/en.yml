@@ -40,6 +40,8 @@ app:
     rsvp: RSVP here
     confirm_or_decline: Please select your response
     no_responses_yet: Nobody responded yet.
+    wanna_host: Hosting an event for your friends?
+    create_your_own: Create your own event page!
   flash:
     give_url: 'Give this address to your guests: %s'
     event_not_found: 'Could not find an event page at the location :location.'
