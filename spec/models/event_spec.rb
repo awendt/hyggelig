@@ -28,15 +28,21 @@ describe Event do
     new_event.should have(1).error_on(:name)
   end
 
-  it "should reject events with reserved names" do
-    e1 = Event.new(:name => "new", :date => "date", :location => "loc")
-    e2 = Event.new(:name => "event", :date => "date", :location => "loc")
-    e3 = Event.new(:name => "feed", :date => "date", :location => "loc")
-    e4 = Event.new(:name => "response", :date => "date", :location => "loc")
+  it "should reject events with reserved names, regardless of case" do
+    e1 = Event.new(:name => "neW", :date => "date", :location => "loc")
+    e2 = Event.new(:name => "Event", :date => "date", :location => "loc")
+    e3 = Event.new(:name => "Feed", :date => "date", :location => "loc")
+    e4 = Event.new(:name => "resPonse", :date => "date", :location => "loc")
+    e5 = Event.new(:name => "FAQ", :date => "date", :location => "loc")
+    e6 = Event.new(:name => "Demo", :date => "date", :location => "loc")
+    e7 = Event.new(:name => "HELP", :date => "date", :location => "loc")
     e1.should have(1).error_on(:name)
     e2.should have(1).error_on(:name)
     e3.should have(1).error_on(:name)
     e4.should have(1).error_on(:name)
+    e5.should have(1).error_on(:name)
+    e6.should have(1).error_on(:name)
+    e7.should have(1).error_on(:name)
   end
 
   it "should create a permalink along with the event" do
