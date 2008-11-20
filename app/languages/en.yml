@@ -23,6 +23,7 @@ app:
   event:
     name_label: What's the occasion?
     time_label: When does it start?
+    time_label_hint: ':other_service may help you find a date together'
     location_label: Where does it happen?
     submit_label: Create event page
     will_expire: 'Please keep in mind: This event will last until :date.'

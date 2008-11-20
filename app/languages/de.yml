@@ -22,6 +22,7 @@ app:
   event:
     name_label: Was ist der Anlass?
     time_label: Wann geht's los?
+    time_label_hint: ':other_service kann dir helfen, einen Termin gemeinsam zu finden'
     location_label: Wo findet's statt?
     submit_label: Seite anlegen
     will_expire: 'Bitte denk dran: Dieses Ereignis verfällt am :date.'

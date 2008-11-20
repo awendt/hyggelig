@@ -77,6 +77,13 @@ label {
   font-size:1.0em;
 }
 
+label span.hint {
+  color:#666;
+  font-size:0.8em;
+  display:block;
+  margin-top:-3px;
+}
+
 input[type=text], input[type=radio] {
   padding: 5px;
 }
