@@ -39,7 +39,7 @@ namespace :stats do
 
   desc "Show event stats"
   task :events, :roles => :app do
-    run "cd #{deploy_to}/#{current_dir}; rake db:stats RAILS_ENV=production"
+    run "cd #{deploy_to}/#{current_dir}; rake stats:events RAILS_ENV=production"
   end
 
 end
