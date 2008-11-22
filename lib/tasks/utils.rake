@@ -6,3 +6,12 @@ namespace :db do
   end
 
 end
+
+namespace :stats do
+
+  desc "Show event stats"
+  task :events => :environment do
+    puts "Found #{Event.count} events with #{Response.count} responses"
+  end
+
+end

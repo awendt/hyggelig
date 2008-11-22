@@ -34,3 +34,12 @@ namespace :deploy do
 
   after 'deploy:update_code', 'deploy:symlink_database_yml'
 end
+
+namespace :stats do
+
+  desc "Show event stats"
+  task :events, :roles => :app do
+    run "cd #{deploy_to}/#{current_dir}; rake db:stats RAILS_ENV=production"
+  end
+
+end
