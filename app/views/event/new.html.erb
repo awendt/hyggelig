@@ -19,8 +19,8 @@
 <dt><%= label :event, :name, l(:name_label) %></dt>
 <dd><%= text_field :event, :name %><%= error_message_on :event, :name %></dd>
 
-<dt><%= label :event, :date, l(:time_label) << "<br />" << content_tag(:span, l(:time_label_hint,
-  :other_service => link_to("Snapdecide", "http://www.snapdecide.com")), :class => 'hint') %></dt>
+<dt><%= label :event, :date, "#{l(:time_label)}#{tag(:br)}#{content_tag(:span, l(:time_label_hint,
+  :other_service => link_to("Snapdecide", "http://www.snapdecide.com")), :class => 'hint')}" %></dt>
 <dd><%= text_field :event, :date %><%= error_message_on :event, :date %></dd>
 
 <dt><%= label :event, :location, l(:location_label) %></dt>
