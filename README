@@ -1,10 +1,19 @@
 hyggelig.org is a simple event planning website for you and your friends,
-similar to Mobaganda [http://www.mobaganda.com]
+similar to Mobaganda [http://www.mobaganda.com].
 
 This is the free software it runs -- written in Ruby on Rails,
 released under the GNU Affero General Public License (AGPL).
 
-After cloning the repository, don't forget:
+hyggelig.org is an attempt to provide the core functionality
+of Evite [http://www.evite.com] -- without the bloat and spam, 
+but in several languages.
 
-$ git submodule init
-$ git submodule update
+With hyggelig.org, you remain in control:
+
+* no need to register or login
+* send out invitations any way you like, using your favorite mailer app
+* watch your guests respond through the RSS feed,
+  instead of having to visit the event page over and over again
+* feel free to contribute -- the project is accepting patches
+
+The source code can be found on http://www.github.com/awendt/hyggelig
