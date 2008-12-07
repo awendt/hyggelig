@@ -204,3 +204,14 @@ a img {
   border-top:1px solid #FFE8CD;
   margin-bottom:10px;
 }
+
+#create_your_own {
+  background-color:#E3F1F6;
+  border-bottom:1px solid #ccc;
+  font-size:0.8em;
+  margin-top:-20px;
+  padding:5px;
+  text-align:center;
+  text-decoration:none;
+  display:block;
+}

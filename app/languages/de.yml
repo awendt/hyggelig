@@ -40,7 +40,7 @@ app:
     rsvp: Hier antworten
     confirm_or_decline: Bitte wähle deine Antwort aus
     no_responses_yet: Noch hat niemand geantwortet.
-    wanna_host: Auch Freunde eingeladen?
+    hosting_an_event: Auch Leute eingeladen?
     create_your_own: Leg deine eigene Seite an!
   flash:
     give_url: 'Schick deinen Gästen diese Adresse: %s'

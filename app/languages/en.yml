@@ -41,7 +41,7 @@ app:
     rsvp: RSVP here
     confirm_or_decline: Please select your response
     no_responses_yet: Nobody responded yet.
-    wanna_host: Hosting an event for your friends?
+    hosting_an_event: Hosting an event, too?
     create_your_own: Create your own event page!
   flash:
     give_url: 'Give this address to your guests: %s'
