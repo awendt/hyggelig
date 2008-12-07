@@ -16,18 +16,10 @@ h1 {
   text-align:center;
 }
 
-.container, #flash {
+.container {
   width:60%;
   min-width:500px;
   margin:auto;
-}
-
-#flash {
-  border:1px solid #f00;
-  background-color:#fff;
-  color:green;
-  text-align:center;
-  padding:5px;
 }
 
 pre {
@@ -205,13 +197,19 @@ a img {
   margin-bottom:10px;
 }
 
-#create_your_own {
-  background-color:#E3F1F6;
-  border-bottom:1px solid #ccc;
+#create_your_own, #flash {
   font-size:0.8em;
   margin-top:-20px;
   padding:5px;
   text-align:center;
-  text-decoration:none;
-  display:block;
+}
+
+#create_your_own {
+  background-color:#E3F1F6;
+  border-bottom:1px solid #ccc;
+}
+
+#flash {
+  background-color: rgb(204, 255, 153);
+  border-bottom:1px solid rgb(102, 153, 0);
 }
