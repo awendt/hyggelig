@@ -6,7 +6,7 @@ module ApplicationHelper
   def flash_messages # see http://rubypond.com/articles/2008/07/11/useful-flash-messages-in-rails/
     return unless messages = flash.keys.select{|k| FLASH_NOTICE_KEYS.include?(k)}
     formatted_messages = messages.map do |type|
-      content_tag :p, :id => "flash" do
+      content_tag :p, :id => "flash_#{type}", :class => 'flash' do
         message_for_item(flash[type], flash["#{type}_item".to_sym])
       end
     end

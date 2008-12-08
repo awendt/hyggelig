@@ -197,7 +197,7 @@ a img {
   margin-bottom:10px;
 }
 
-#create_your_own, #flash {
+#create_your_own, .flash {
   font-size:0.8em;
   margin-top:-20px;
   padding:5px;
@@ -209,7 +209,12 @@ a img {
   border-bottom:1px solid #ccc;
 }
 
-#flash {
+#flash_notice {
   background-color: rgb(204, 255, 153);
   border-bottom:1px solid rgb(102, 153, 0);
+}
+
+#flash_error {
+  background-color: rgb(255, 158, 158);
+  border-bottom:1px solid rgb(170,0,0);
 }
