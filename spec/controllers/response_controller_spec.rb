@@ -5,7 +5,7 @@ describe ResponseController, "processing GET requests" do
   it "should flash and redirect to event/new if no event is found by permalink" do
     Event.should_receive(:find_by_permalink).with("foo").and_return(nil)
     get :post, :id => "foo"
-    flash[:notice].should_not be_nil
+    flash[:error].should_not be_nil
     response.should redirect_to(:controller => "event", :action => "new")
   end
 
@@ -53,7 +53,7 @@ describe ResponseController, "processing POST requests" do
 
     it "should flash and redirect" do
       post :post, :id => "foo", :response => @options
-      flash[:notice].should_not be_nil
+      flash[:error].should_not be_nil
       response.should redirect_to(home_path)
     end
 
