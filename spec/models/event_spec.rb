@@ -22,10 +22,10 @@ describe Event do
     Event.new.should have(1).error_on(:location)
   end
 
-  it "should force uniqueness of name, regardless of case" do
+  it "should not force uniqueness of name (permalink changes accordingly)" do
     Event.create!(@attributes)
-    new_event = Event.new(@attributes.merge(:name => "party"))
-    new_event.should have(1).error_on(:name)
+    new_event = Event.new(@attributes)
+    new_event.should be_valid
   end
 
   it "should reject events with reserved names, regardless of case" do

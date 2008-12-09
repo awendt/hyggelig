@@ -2,7 +2,6 @@ class Event < ActiveRecord::Base
 
   RESERVED_NAMES = %w(new event feed response faq faqs demo help).freeze
   validates_presence_of :name, :date, :location
-  validates_uniqueness_of :name, :case_sensitive => false
   validates_each :name do |record, attr, value|
     record.errors.add attr, Localization.entry(:active_record_messages, :exclusion) \
       if value && RESERVED_NAMES.include?(value.downcase)
