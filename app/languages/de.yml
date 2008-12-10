@@ -10,7 +10,7 @@ app:
   slogan: Treffen mit Freunden einfach planen
   add_event: Neues Ereignis anlegen
   about:
-    what_is_hyggelig: hyggelig.org ist freie Software, die von %s betreut wird.
+    what_is_hyggelig: ':site_name ist freie Software, die von %s betreut wird.'
     questions_or_bugs: Falls du Fehler gefunden oder Fragen hast, wende dich damit bitte an die :mlist.
     mlist: Mailingliste
   instructions:

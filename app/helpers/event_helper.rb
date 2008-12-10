@@ -2,9 +2,9 @@ module EventHelper
 
   def event_title
     if controller.action_name == "new"
-      "#{l(:site_name)} | #{l(:slogan)}"
+      "#{SITE_NAME} | #{l(:slogan)}"
     else
-      "#{@event.name}, #{@event.date} | #{l(:site_name)}"
+      "#{@event.name}, #{@event.date} | #{SITE_NAME}"
     end
   end
 

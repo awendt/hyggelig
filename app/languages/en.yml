@@ -10,7 +10,7 @@ app:
   slogan: Simple event planning for you and your friends
   add_event: Add your event
   about:
-    what_is_hyggelig: hyggelig.org is free software maintained by %s.
+    what_is_hyggelig: ':site_name is free software maintained by %s.'
     questions_or_bugs: If you have questions or found any bugs, please post them to the :mlist.
     mlist: mailing list
   instructions:

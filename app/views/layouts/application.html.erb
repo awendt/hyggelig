@@ -16,7 +16,7 @@
 <%= yield  %>
 
 <div class="footer band">
-<%= l(:about, :what_is_hyggelig) % link_to('André', 'http://github.com/awendt/hyggelig') %><br />
+<%= l(:about, :what_is_hyggelig, :site_name => SITE_NAME) % link_to('André', 'http://github.com/awendt/hyggelig') %><br />
 <%= l(:about, :questions_or_bugs, :mlist => "<a href=\"http://mail.hyggelig.org/mailman/listinfo/hyggelig-friends_hyggelig.org\" lang=\"en\">#{l(:about, :mlist)}</a>") %><br />
 </div>
 
