@@ -8,14 +8,14 @@ class ResponseController < ApplicationController
     @response.event = @event
 
     if !@event
-      flash[:error] = l(:flash, :event_not_found, :location => "<q>#{params[:id]}</q>")
+      flash[:error] = I18n.t(:'flash.event_not_found', :location => "<q>#{params[:id]}</q>")
       redirect_to :controller => 'event', :action => 'new'
     end
 
     return unless request.post?
 
     if @response.save
-      flash[:notice] = l(:flash, :response_saved)
+      flash[:notice] = I18n.t(:'flash.response_saved')
     end
   end
 

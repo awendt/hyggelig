@@ -1,11 +1,11 @@
-<h1><%= l(:add_event) %></h1>
+<h1><%= I18n.t(:add_event) %></h1>
 
 <div class="container">
 
 <ol id="instructions">
-  <li><%= l(:instructions, :fill_in) %></li>
-  <li><%= l(:instructions, :mail_url) %></li>
-  <li><%= l(:instructions, :guests_rsvp) %></li>
+  <li><%= I18n.t(:'instructions.fill_in') %></li>
+  <li><%= I18n.t(:'instructions.mail_url') %></li>
+  <li><%= I18n.t(:'instructions.guests_rsvp') %></li>
 </ol>
 
 <% form_tag :action => 'new' do -%>
@@ -14,23 +14,21 @@
       content_tag(:div, header_message, :id => 'errors')
     end %>
 
-<% l_scope :event do -%>
 <dl>
-<dt><%= label :event, :name, l(:name_label) %></dt>
+<dt><%= label :event, :name, I18n.t(:'event.name_label') %></dt>
 <dd><%= text_field :event, :name %><%= error_message_on :event, :name %></dd>
 
-<dt><%= label :event, :date, "#{l(:time_label)}#{tag(:br)}#{content_tag(:span, l(:time_label_hint,
+<dt><%= label :event, :date, "#{I18n.t(:'event.time_label')}#{tag(:br)}#{content_tag(:span, I18n.t(:'event.time_label_hint',
   :other_service => link_to("Snapdecide", "http://www.snapdecide.com")), :class => 'hint')}" %></dt>
 <dd><%= text_field :event, :date %><%= error_message_on :event, :date %></dd>
 
-<dt><%= label :event, :location, l(:location_label) %></dt>
+<dt><%= label :event, :location, I18n.t(:'event.location_label') %></dt>
 <dd><%= text_field :event, :location %><%= error_message_on :event, :location %></dd>
 
-<dt class="note"><%= l(:will_expire, :date => content_tag(:strong, "#{60.days.from_now.to_formatted_s :expiration}")) %></dt>
+<dt class="note"><%= I18n.t(:'event.will_expire', :date => content_tag(:strong, "#{60.days.from_now.to_formatted_s :expiration}")) %></dt>
 
-<dt><%= submit_tag l(:submit_label) %></dt>
+<dt><%= submit_tag I18n.t(:'event.submit_label') %></dt>
 </dl>
-<% end -%>
 
 <% end -%>
 

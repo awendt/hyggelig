@@ -1,5 +1,5 @@
 <% if flash.empty? -%>
-<p id="create_your_own"><%= l(:response, :hosting_an_event) %> &#8212; <%= link_to(l(:response, :create_your_own), home_url) %></p>
+<p id="create_your_own"><%= I18n.t(:'response.hosting_an_event') %> &#8212; <%= link_to(I18n.t(:'response.create_your_own'), home_url) %></p>
 <% end -%>
 
 <h1 class="event_name"><%= h(@event.name) %></h1>
@@ -7,13 +7,13 @@
 <div class="container">
 
 <div id="details">
-<p><%= l(:event, :when) %> <span class="date"><%= h(@event.date) %></span></p>
-<p><%= l(:event, :where) %> <span class="location"><%= h(@event.location) %></span></p>
+<p><%= I18n.t(:'event.when') %> <span class="date"><%= h(@event.date) %></span></p>
+<p><%= I18n.t(:'event.where') %> <span class="location"><%= h(@event.location) %></span></p>
 </div>
 
 <div class="rsvp">
 
-<h2><%= l(:response, :rsvp) %></h2>
+<h2><%= I18n.t(:'response.rsvp') %></h2>
 
 <% form_tag :action => 'post', :id => params[:id] do %>
 
@@ -22,16 +22,16 @@
     end %>
 
 <div class="tip">
-<%= label :response, :name, l(:response, :name) %>
+<%= label :response, :name, I18n.t(:'response.name') %>
 <%= text_field :response, :name, :size => 20 %>
 </div>
 
 <div class="bubble">
-<p><%= radio_button :response, :rsvp, 1 %><%= label :response, :rsvp_1, l(:response, :confirm) %></p>
-<p><%= radio_button :response, :rsvp, 0 %><%= label :response, :rsvp_0, l(:response, :decline) %></p>
+<p><%= radio_button :response, :rsvp, 1 %><%= label :response, :rsvp_1, I18n.t(:'response.confirm') %></p>
+<p><%= radio_button :response, :rsvp, 0 %><%= label :response, :rsvp_0, I18n.t(:'response.decline') %></p>
 </div>
 
-<%= submit_tag l(:response, :submit_label) %>
+<%= submit_tag I18n.t(:'response.submit_label') %>
 
 <% end -%>
 
@@ -39,7 +39,7 @@
 
 <div class="guestlist">
 
-<h2><%= l(:event, :guest_list) %> <%= link_to(image_tag('feed.png'), feed_url) %></h2>
+<h2><%= I18n.t(:'event.guest_list') %> <%= link_to(image_tag('feed.png'), feed_url) %></h2>
 
 <% if @event.has_responses? -%>
 <ul id="guest_list">
@@ -48,7 +48,7 @@
   <% end -%>
 </ul>
 <% else -%>
-<p><%= l(:response, :no_responses_yet) %></p>
+<p><%= I18n.t(:'response.no_responses_yet') %></p>
 <% end -%>
 
 </div>
