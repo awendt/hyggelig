@@ -16,11 +16,11 @@ class ApplicationController < ActionController::Base
 private
 
   def set_locale
-    lang_intersection = get_prefered_lang(request.env["HTTP_ACCEPT_LANGUAGE"]) & Localization.loaded_languages
+    lang_intersection = get_prefered_lang(request.env["HTTP_ACCEPT_LANGUAGE"]) & available_locales
     if lang_intersection.empty?
-      Localization.use(:en)
+      I18n.locale = :en
     else
-      Localization.use(lang_intersection.first)
+      I18n.locale = lang_intersection.first
     end
     true
   end
@@ -36,5 +36,9 @@ private
     
     http_accept_langs.uniq.map(&:to_sym)
   end
-  
+
+  def available_locales
+    @available_locales ||= Dir["config/locales/*.yml"].map { |file| File.basename(file, ".yml") }.map(&:to_sym)
+  end
+
 end
