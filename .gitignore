@@ -9,3 +9,6 @@ vendor/plugins/**/test/*.log
 config/deploy.rb
 config/database.yml
 .DS_Store
+script/spec
+script/autospec
+lib/tasks/rspec.rake
