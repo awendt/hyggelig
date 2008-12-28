@@ -1,17 +1,9 @@
-about:
-  language: Deutsch
-  author: Stephan Soller
-  comment:  Deutsche Sprachdatei. Kann als Basis für neue Sprachdatein dienen.
-  website: http://www.arkanis-development.de/
-  email: stephan.soller@helionweb.de
-  date: 2007-01-20
-  
-app:
+de:
   slogan: Treffen mit Freunden einfach planen
   add_event: Neues Ereignis anlegen
   about:
-    what_is_hyggelig: ':site_name ist freie Software, die von %s betreut wird.'
-    questions_or_bugs: Falls du Fehler gefunden oder Fragen hast, wende dich damit bitte an die :mlist.
+    what_is_hyggelig: '{{site_name}} ist freie Software, die von {{name}} betreut wird.'
+    questions_or_bugs: Falls du Fehler gefunden oder Fragen hast, wende dich damit bitte an die {{mlist}}.
     mlist: Mailingliste
   instructions:
     fill_in: Du füllst das Formular aus und bekommst eine Seite für dein Ereignis angelegt
@@ -20,10 +12,10 @@ app:
   event:
     name_label: Was ist der Anlass?
     time_label: Wann geht's los?
-    time_label_hint: ':other_service kann dir helfen, einen Termin gemeinsam zu finden'
+    time_label_hint: '{{other_service}} kann dir helfen, einen Termin gemeinsam zu finden'
     location_label: Wo findet's statt?
     submit_label: Seite anlegen
-    will_expire: 'Achtung: Dieses Ereignis verfällt am :date.'
+    will_expire: 'Achtung: Dieses Ereignis verfällt am {{date}}.'
     guest_list: Gästeliste
     when: Wann?
     where: Wo?
@@ -33,8 +25,8 @@ app:
     confirm: Ich bin dabei
     decline: Ich kann leider nicht
     submit_label: Antwort abschicken
-    coming: ':name kommt'
-    not_coming: ':name kommt nicht'
+    coming: '{{name}} kommt'
+    not_coming: '{{name}} kommt nicht'
     rsvp: Hier antworten
     confirm_or_decline: Bitte wähle deine Antwort aus
     no_responses_yet: Noch hat niemand geantwortet.
@@ -42,349 +34,113 @@ app:
     create_your_own: Leg deine eigene Seite an!
   flash:
     give_url: 'Schick deinen Gästen diese Adresse: %s'
-    event_not_found: 'Konnte keine Seite unter der Adresse :location finden.'
+    event_not_found: 'Konnte keine Seite unter der Adresse {{location}} finden.'
     response_saved: 'Deine Antwort wurde erfolgreich gespeichert'
 
-models:
-  event:
-    name: Dein Ereignis
-    attributes:
-      name: Name
-      date: Datum und Uhrzeit
-      location: Ort
-  response:
-    name: Deine Antwort
-    attributes:
-      name: Name
-      rsvp: Antwort
+  models:
+    event:
+      name: Dein Ereignis
+      attributes:
+        name: Name
+        date: Datum und Uhrzeit
+        location: Ort
+    response:
+      name: Deine Antwort
+      attributes:
+        name: Name
+        rsvp: Antwort
 
-active_record_messages:
-  inclusion: ist nicht in Liste gültiger Optionen enthalten.
-  exclusion: ist reserviert.
-  invalid: ist ungültig.
-  confirmation: simmt mit der Bestätigung nicht überein.
-  accepted: muss akzeptiert werden.
-  empty: darf nicht leer sein.
-  blank: darf nicht leer sein.
-  too_long: ist zu lang (maximal %d Zeichen).
-  too_short: ist zu kurz (mindestens %d Zeichen).
-  wrong_length: hat die falsche Länge (es sollten %d Zeichen sein).
-  taken: ist bereits vergeben.
-  not_a_number: ist keine Zahl.
-  greater_than: muss größer als %d sein.
-  greater_than_or_equal_to: muss größer oder gleich %d sein.
-  equal_to: muss gleich %d sein.
-  less_than: muss kleiner als %d sein.
-  less_than_or_equal_to: muss kleiner oder gleich %d sein.
-  odd: muss ungerade sein.
-  even: muss gerade sein.
+  date:
+    formats:
+      default: "%d.%m.%Y"
+      short: "%e. %b"
+      long: "%e. %B %Y"
+      only_day: "%e"
 
-dates:
-  monthnames: [Januar, Februar, März, April, Mai, Juni, Juli, August, September, Oktober, November, Dezember]
-  daynames: [Sonntag, Montag, Dienstag, Mittwoch, Donnerstag, Freitag, Samstag]
-  abbr_monthnames: [Jan, Feb, Mär, Apr, Mai, Jun, Jul, Aug, Sep, Oct, Nov, Dez]
-  abbr_daynames: [Son, Mon, Din, Mit, Don, Fri, Sam]
-  date_formats:
-    attributes: '%d.%m.%Y'
-    short: '%e. %b'
-    long: '%e. %B %Y'
-    expiration: '%e. %B'
-  time_formats:
-    attributes: '%d.%m.%Y %H:%M'
-    short: '%d %b %H:%M'
-    long: '%d %B %Y %H:%M'
-    expiration: '%e. %B'
-  strftime_overwrites:
-    c: '%A %e. %B %Y %H:%M:%S'
-    x: '%d.%m.%y'
-    X: '%H:%M:%S'
+    day_names: [Sonntag, Montag, Dienstag, Mittwoch, Donnerstag, Freitag, Samstag]
+    abbr_day_names: [So, Mo, Di, Mi, Do, Fr, Sa]
+    month_names: [~, Januar, Februar, März, April, Mai, Juni, Juli, August, September, Oktober, November, Dezember]
+    abbr_month_names: [~, Jan, Feb, Mär, Apr, Mai, Jun, Jul, Aug, Sep, Okt, Nov, Dez]
+    order: [ {{day}}, {{month}}, {{year}} ]
 
-numbers:
-  separator: ','
-  delimiter: '.'
-  precision: 2
+  time:
+    formats:
+      default: "%A, %e. %B %Y, %H:%M Uhr"
+      time: "%H:%M"
+      short: "%e. %B, %H:%M Uhr"
+      long: "%A, %e. %B %Y, %H:%M Uhr"
+      only_second: "%S"
 
-arrays:
-  to_sentence:
-    connector: und
-    skip_last_comma: true
+    am: ""
+    pm: ""
 
-helpers:
-  error_messages_for:
-    heading:
-      1: '%2$s konnte wegen eines Fehlers nicht gespeichert werden:'
-      n: '%2$s konnte wegen %1$d Fehlern nicht gespeichert werden:'
-    description: 'Folgende Probleme sind aufgetreten:'
-  number_to_currency:
-    precision: 2
-    unit: ' €'
-    order: [main, separator, fraction, unit]
-  number_to_phone:
-    area_code: false
-    delimiter: ' '
-    extension: 
-    country_code: 
-  date_select:
-    order: [:year, :month, :day]
-  distance_of_time_in_words:
-    less than 5 seconds: weniger als 5 Sekunden
-    less than 10 seconds: weniger als 10 Sekunden
-    less than 20 seconds: weniger als 20 Sekunden
-    less than a minute: weniger als eine Minute
-    1 minute: 1 Minute
-    half a minute: eine halbe Minute
-    n minutes: %i Minuten
-    about 1 hour: ungefähr 1 Stunde
-    about n hours: ungefähr %i Stunden
-    1 day: ein Tag
-    n days: %i Tage
-    about 1 month: ungefähr ein Monat
-    n months: %i Monate
-    about 1 year: ungefähr 1 Jahr
-    over n years: über %i Jahre
+  datetime:
+    distance_in_words:
+      half_a_minute: 'eine halbe Minute'
+      less_than_x_seconds:
+        zero: 'weniger als 1 Sekunde'
+        one: '1 Sekunde'
+        other: '{{count}} Sekunden'
+      x_seconds:
+        one: '1 Sekunde'
+        other: '{{count}} Sekunden'
+      less_than_x_minutes:
+        zero: 'weniger als 1 Minute'
+        one: 'eine Minute'
+        other: '{{count}} Minuten'
+      x_minutes:
+        one: '1 Minute'
+        other: '{{count}} Minuten'
+      about_x_hours:
+        one: 'etwa 1 Stunde'
+        other: '{{count}} Stunden'
+      x_days:
+        one: '1 Tag'
+        other: '{{count}} Tage'
+      about_x_months:
+        one: 'etwa 1 Monat'
+        other: '{{count}} Monate'
+      x_months:
+        one: '1 Monat'
+        other: '{{count}} Monate'
+      about_x_years:
+        one: 'etwa 1 Jahr'
+        other: '{{count}} Jahre'
+      over_x_years:
+        one: 'mehr als 1 Jahr'
+        other: '{{count}} Jahre'
 
-countries:
-  'Afghanistan': Afghanistan
-  'Albania': Albanien
-  'Algeria': Algerien
-  'American Samoa': Amerikanisch-Samoa
-  'Andorra': Andorra
-  'Angola': Angola
-  'Anguilla': Anguilla
-  'Antarctica': Antarktis
-  'Antigua And Barbuda': Antigua und Barbuda
-  'Argentina': Argentinien
-  'Armenia': Armenien
-  'Aruba': Aruba
-  'Australia': Australien
-  'Austria': Österreich
-  'Azerbaijan': Aserbaidschan
-  'Bahamas': Bahamas
-  'Bahrain': Bahrain
-  'Bangladesh': Bangladesch
-  'Barbados': Barbados
-  'Belarus': Belarus
-  'Belgium': Belgien
-  'Belize': Belize
-  'Benin': Benin
-  'Bermuda': Bermuda
-  'Bhutan': Bhutan
-  'Bolivia': Bolivien
-  'Bosnia and Herzegowina': Bosnien und Herzegowina
-  'Botswana': Botsuana
-  'Bouvet Island': Bouvetinsel
-  'Brazil': Brasilien
-  'British Indian Ocean Territory': Britisches Territorium im Indischen Ozean
-  'Brunei Darussalam': Brunei
-  'Bulgaria': Bulgarien
-  'Burkina Faso': Burkina Faso
-  'Burma': Myanmar
-  'Burundi': Burundi
-  'Cambodia': Kambodscha
-  'Cameroon': Kamerun
-  'Canada': Kanada
-  'Cape Verde': Kap Verde
-  'Cayman Islands': Kaimaninseln
-  'Central African Republic': Zentralafrikanische Republik
-  'Chad': Tschad
-  'Chile': Chile
-  'China': China
-  'Christmas Island': Weihnachtsinsel
-  'Cocos (Keeling) Islands': Kokosinseln
-  'Colombia': Kolumbien
-  'Comoros': Komoren
-  'Congo': Kongo
-  'Congo, the Democratic Republic of the': Demokratische Republik Kongo
-  'Cook Islands': Cookinseln
-  'Costa Rica': Costa Rica
-  'Cote d''Ivoire': Elfenbeinküste
-  'Croatia': Kroatien
-  'Cuba': Kuba
-  'Cyprus': Zypern
-  'Czech Republic': Tschechische Republik
-  'Denmark': Dänemark
-  'Djibouti': Dschibuti
-  'Dominica': Dominica
-  'Dominican Republic': Dominikanische Republik
-  'East Timor': Osttimor
-  'Ecuador': Ecuador
-  'Egypt': Ägypten
-  'El Salvador': El Salvador
-  'England': England
-  'Equatorial Guinea': Äquatorialguinea
-  'Eritrea': Eritrea
-  'Espana': Spanien
-  'Estonia': Estland
-  'Ethiopia': Äthiopien
-  'Falkland Islands': Falklandinseln
-  'Faroe Islands': Färöer
-  'Fiji': Fidschi
-  'Finland': Finnland
-  'France': Frankreich
-  'French Guiana': Französisch-Guayana
-  'French Polynesia': Französisch-Polynesien
-  'French Southern Territories': Französische Gebiete im südlichen Indischen Ozean
-  'Gabon': Gabun
-  'Gambia': Gambia
-  'Georgia': Georgien
-  'Germany': Deutschland
-  'Ghana': Ghana
-  'Gibraltar': Gibraltar
-  'Great Britain': Großbritannien
-  'Greece': Griechenland
-  'Greenland': Grönland
-  'Grenada': Grenada
-  'Guadeloupe': Guadeloupe
-  'Guam': Guam
-  'Guatemala': Guatemala
-  'Guinea': Guinea
-  'Guinea-Bissau': Guinea-Bissau
-  'Guyana': Guyana
-  'Haiti': Haiti
-  'Heard and Mc Donald Islands': Heard und McDonaldinseln
-  'Honduras': Honduras
-  'Hong Kong': Hongkong
-  'Hungary': Ungarn
-  'Iceland': Island
-  'India': Indien
-  'Indonesia': Indonesien
-  'Ireland': Irland
-  'Israel': Israel
-  'Italy': Italien
-  'Iran': Iran
-  'Iraq': Irak
-  'Jamaica': Jamaika
-  'Japan': Japan
-  'Jordan': Jordanien
-  'Kazakhstan': Kasachstan
-  'Kenya': Kenia
-  'Kiribati': Kiribati
-  'Korea, Republic of': Nordkorea
-  'Korea (South)': Südkorea
-  'Kuwait': Kuwait
-  'Kyrgyzstan': Kirgisistan
-  'Lao People''s Democratic Republic': Laos
-  'Latvia': Lettland
-  'Lebanon': Libanon
-  'Lesotho': Lesotho
-  'Liberia': Liberia
-  'Liechtenstein': Liechtenstein
-  'Lithuania': Litauen
-  'Luxembourg': Luxemburg
-  'Macau': Macau
-  'Macedonia': Mazedonien
-  'Madagascar': Madagaskar
-  'Malawi': Malawi
-  'Malaysia': Malaysia
-  'Maldives': Malediven
-  'Mali': Mali
-  'Malta': Malta
-  'Marshall Islands': Marshallinseln
-  'Martinique': Martinique
-  'Mauritania': Mauretanien
-  'Mauritius': Mauritius
-  'Mayotte': Mayotte
-  'Mexico': Mexiko
-  'Micronesia, Federated States of': Mikronesien
-  'Moldova, Republic of': Moldawien
-  'Monaco': Monaco
-  'Mongolia': Mongolei
-  'Montserrat': Montserrat
-  'Morocco': Marokko
-  'Mozambique': Mosambik
-  'Myanmar': Myanmar
-  'Namibia': Namibia
-  'Nauru': Nauru
-  'Nepal': Nepal
-  'Netherlands': Niederlande
-  'Netherlands Antilles': Niederländische Antillen
-  'New Caledonia': Neukaledonien
-  'New Zealand': Neuseeland
-  'Nicaragua': Nicaragua
-  'Niger': Niger
-  'Nigeria': Nigeria
-  'Niue': Niue
-  'Norfolk Island': Norfolkinsel
-  'Northern Ireland': Nordirland
-  'Northern Mariana Islands': Nördliche Marianen
-  'Norway': Norwegen
-  'Oman': Oman
-  'Pakistan': Pakistan
-  'Palau': Palau
-  'Panama': Panama
-  'Papua New Guinea': Papua-Neuguinea
-  'Paraguay': Paraguay
-  'Peru': Peru
-  'Philippines': Philippinen
-  'Pitcairn': Pitcairninseln
-  'Poland': Polen
-  'Portugal': Portugal
-  'Puerto Rico': Puerto Rico
-  'Qatar': Katar
-  'Reunion': Réunion
-  'Romania': Rumänien
-  'Russia': Russische Föderation
-  'Rwanda': Ruanda
-  'Saint Kitts and Nevis': St. Kitts und Nevis
-  'Saint Lucia': St. Lucia
-  'Saint Vincent and the Grenadines': St. Vincent und die Grenadinen
-  'Samoa (Independent)': Samoa
-  'San Marino': San Marino
-  'Sao Tome and Principe': São Tomé und Príncipe
-  'Saudi Arabia': Saudi-Arabien
-  'Scotland': Schottland
-  'Senegal': Senegal
-  'Serbia and Montenegro': Serbien und Montenegro
-  'Seychelles': Seychellen
-  'Sierra Leone': Sierra Leone
-  'Singapore': Singapur
-  'Slovakia': Slowakei
-  'Slovenia': Slowenien
-  'Solomon Islands': Salomonen
-  'Somalia': Somalia
-  'South Africa': Südafrika
-  'South Georgia and the South Sandwich Islands': Südgeorgien und Südliche Sandwichinseln
-  'South Korea': Republik Korea
-  'Spain': Spanien
-  'Sri Lanka': Sri Lanka
-  'St. Helena': St. Helena
-  'St. Pierre and Miquelon': St.-Pierre und Miquelon
-  'Suriname': Suriname
-  'Svalbard and Jan Mayen Islands': Svalbard und Jan Mayen
-  'Swaziland': Swasiland
-  'Sweden': Schweden
-  'Switzerland': Schweiz
-  'Taiwan': Taiwan
-  'Tajikistan': Tadschikistan
-  'Tanzania': Tansania
-  'Thailand': Thailand
-  'Togo': Togo
-  'Tokelau': Tokelau
-  'Tonga': Tonga
-  'Trinidad': Trinidad
-  'Trinidad and Tobago': Trinidad und Tobago
-  'Tunisia': Tunesien
-  'Turkey': Türkei
-  'Turkmenistan': Turkmenistan
-  'Turks and Caicos Islands': Turks- und Caicosinseln
-  'Tuvalu': Tuvalu
-  'Uganda': Uganda
-  'Ukraine': Ukraine
-  'United Arab Emirates': Vereinigte Arabische Emirate
-  'United Kingdom': Vereinigtes Königreich
-  'United States': Vereinigte Staaten
-  'United States Minor Outlying Islands': Kleinere amerikanische Überseeinseln
-  'Uruguay': Uruguay
-  'Uzbekistan': Usbekistan
-  'Vanuatu': Vanuatu
-  'Vatican City State (Holy See)': Vatikanstadt
-  'Venezuela': Venezuela
-  'Viet Nam': Vietnam
-  'Virgin Islands (British)': Britische Jungferninseln
-  'Virgin Islands (U.S.)': Amerikanische Jungferninseln
-  'Wales': Wales
-  'Wallis and Futuna Islands': Wallis und Futuna
-  'Western Sahara': Westsahara
-  'Yemen': Jemen
-  'Zambia': Sambia
-  'Zimbabwe': Simbabwe
+  number:
+    format:
+      precision: 2
+      separator: ','
+      delimiter: '.'
+    currency:
+      format:
+        unit: '€'
+        format: '%n%u'
+
+  active_record:
+    error:
+      header_message: ["Konnte das {{object_name}} Objekt nicht speichern: 1 Fehler.", "Konnte das {{object_name}} Objekt nicht speichern: {{count}} Fehler."]
+      message: "Bitte überprüfen Sie die folgenden Felder:"
+    error_messages:
+      inclusion: "ist kein gültiger Wert"
+      exclusion: "ist nicht verfügbar"
+      invalid: "ist nicht gültig"
+      confirmation: "stimmt nicht mit der Bestätigung überein"
+      accepted: "muss akzeptiert werden"
+      empty: "muss ausgefüllt werden"
+      blank: "muss ausgefüllt werden"
+      too_long: "ist zu lang (nicht mehr als {{count}} Zeichen)"
+      too_short: "ist zu kurz (nicht weniger als {{count}} Zeichen)"
+      wrong_length: "hat die falsche Länge (muss genau {{count}} Zeichen haben)"
+      taken: "ist bereits vergeben"
+      not_a_number: "ist keine Zahl"
+      greater_than: "muss größer als {{count}} sein"
+      greater_than_or_equal_to: "muss größer oder gleich {{count}} sein"
+      equal_to: "muss genau {{count}} sein"
+      less_than: "muss kleiner als {{count}} sein"
+      less_than_or_equal_to: "muss kleiner oder gleich {{count}} sein"
+      odd: "muss ungerade sein"
+      even: "muss gerade sein"
