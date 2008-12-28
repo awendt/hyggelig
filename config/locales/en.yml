@@ -1,5 +1,147 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+about:
+  language: English
+  author: Stephan Soller
+  comment:  English language file. You can use this file as a template to build a new one.
+  website: http://www.arkanis-development.de/
+  email: stephan.soller@helionweb.de
+  date: 2007-01-29
 
-en:
-  hello: "Hello world"
+app:
+  slogan: Simple event planning for you and your friends
+  add_event: Add your event
+  about:
+    what_is_hyggelig: ':site_name is free software maintained by %s.'
+    questions_or_bugs: If you have questions or found any bugs, please post them to the :mlist.
+    mlist: mailing list
+  instructions:
+    fill_in: You fill in the form and get a page created for your event
+    mail_url: Mail that page's custom address to your guests
+    guests_rsvp: Your guests can confirm or decline on that page
+  event:
+    name_label: What's the occasion?
+    time_label: When does it start?
+    time_label_hint: ':other_service may help you find a date together'
+    location_label: Where does it happen?
+    submit_label: Create event page
+    will_expire: 'Please note: This event will last until :date.'
+    guest_list: Guest list
+    when: When?
+    where: Where?
+  response:
+    name: Your name
+    reply: Your reply
+    confirm: I will attend
+    decline: I will NOT attend
+    submit_label: Post response
+    coming: ':name is coming'
+    not_coming: ':name is not coming'
+    rsvp: RSVP here
+    confirm_or_decline: Please select your response
+    no_responses_yet: Nobody responded yet.
+    hosting_an_event: Hosting an event, too?
+    create_your_own: Create your own event page!
+  flash:
+    give_url: 'Give this address to your guests: %s'
+    event_not_found: 'Could not find an event page at the location :location.'
+    response_saved: 'Your response was saved successfully'
+
+models:
+  event:
+    name: Your event
+    attributes:
+      name: Name
+      date: Date and time
+      location: Location
+  response:
+    name: Your response
+    attributes:
+      name: Name
+      rsvp: RSVP
+
+active_record_messages:
+  inclusion: is not included in the list
+  exclusion: is reserved
+  invalid: is invalid
+  confirmation: doesn't match confirmation
+  accepted: must be accepted
+  empty: can't be empty
+  blank: can't be blank
+  too_long: is too long (maximum is %d characters)
+  too_short: is too short (minimum is %d characters)
+  wrong_length: is the wrong length (should be %d characters)
+  taken: has already been taken
+  not_a_number: is not a number
+  greater_than: must be greater than %d
+  greater_than_or_equal_to: must be greater than or equal to %d
+  equal_to: must be equal to %d
+  less_than: must be less than %d
+  less_than_or_equal_to: must be less than or equal to %d
+  odd: must be odd
+  even: must be even
+
+dates:
+  monthnames: [January, February, March, April, May, June, July, August, September, October, November, December]
+  daynames: [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
+  abbr_monthnames: [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+  abbr_daynames: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
+  date_formats:
+    attributes: '%m/%d/%y'
+    short: '%e %b'
+    long: '%B %e, %Y'
+    expiration: '%B %e'
+  time_formats:
+    attributes: '%m/%d/%y %H:%M'
+    short: '%d %b %H:%M'
+    long: '%B %d, %Y %H:%M'
+    expiration: '%B %e'
+  strftime_overwrites:
+    c: '%a %b %e %H:%M:%S %Y'
+    x: '%m/%d/%y'
+    X: '%H:%M:%S'
+
+numbers:
+  separator: '.'
+  delimiter: ','
+  precision: 3
+
+arrays:
+  to_sentence:
+    connector: and
+    skip_last_comma: false
+
+countries:
+  Germany: Germany
+
+helpers:
+  error_messages_for:
+    heading:
+      1: '1 error prohibited this %2$s from being saved:'
+      n: '%d errors prohibited this %s from being saved:'
+    description: 'There were problems with the following fields:'
+  number_to_currency:
+    precision: 2
+    unit: '$'
+    order: [unit, main, separator, fraction]
+  number_to_phone:
+    area_code: false
+    delimiter: '-'
+    extension: 
+    country_code: 
+  date_select:
+    order: [:year, :month, :day]
+  distance_of_time_in_words:
+    less than 5 seconds: less than 5 seconds
+    less than 10 seconds: less than 10 seconds
+    less than 20 seconds: less than 20 seconds
+    less than a minute: less than a minute
+    1 minute: 1 minute
+    half a minute: half a minute
+    n minutes: %i minutes
+    about 1 hour: about 1 hour
+    about n hours: about %i hours
+    1 day: 1 day
+    n days: %i days
+    about 1 month: about 1 month
+    n months: %i months
+    about 1 year: about 1 year
+    over n years: over %i years
