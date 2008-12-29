@@ -37,19 +37,6 @@ de:
     event_not_found: 'Konnte keine Seite unter der Adresse {{location}} finden.'
     response_saved: 'Deine Antwort wurde erfolgreich gespeichert'
 
-  models:
-    event:
-      name: Dein Ereignis
-      attributes:
-        name: Name
-        date: Datum und Uhrzeit
-        location: Ort
-    response:
-      name: Deine Antwort
-      attributes:
-        name: Name
-        rsvp: Antwort
-
   date:
     formats:
       default: "%d.%m.%Y"
@@ -123,6 +110,17 @@ de:
         format: '%n%u'
 
   activerecord:
+    models:
+      event: Dein Ereignis
+      response: Deine Antwort
+    attributes:
+      event:
+        name: Name
+        date: Datum und Uhrzeit
+        location: Ort
+      response:
+        name: Name
+        rsvp: Antwort
     error:
       header_message: ["Konnte das {{object_name}} Objekt nicht speichern: 1 Fehler.", "Konnte das {{object_name}} Objekt nicht speichern: {{count}} Fehler."]
       message: "Bitte überprüfen Sie die folgenden Felder:"

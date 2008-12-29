@@ -37,19 +37,6 @@ en:
     event_not_found: 'Could not find an event page at the location {{location}}.'
     response_saved: 'Your response was saved successfully'
 
-  models:
-    event:
-      name: Your event
-      attributes:
-        name: Name
-        date: Date and time
-        location: Location
-    response:
-      name: Your response
-      attributes:
-        name: Name
-        rsvp: RSVP
-
   date:
     formats:
       default: "%Y-%m-%d"
@@ -128,6 +115,17 @@ en:
         format: '%u %n'
 
   activerecord:
+    models:
+      event: Your event
+      response: Your response
+    attributes:
+      event:
+        name: Name
+        date: Date and time
+        location: Location
+      response:
+        name: Name
+        rsvp: RSVP
     error:
       header_message: ["Couldn't save this {{object_name}}: 1 error", "Couldn't save this {{object_name}}: {{count}} errors."]
       message: "Please check the following fields:"
