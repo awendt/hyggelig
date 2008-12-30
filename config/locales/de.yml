@@ -121,10 +121,12 @@ de:
       response:
         name: Name
         rsvp: Antwort
-    error:
-      header_message: ["Konnte das {{object_name}} Objekt nicht speichern: 1 Fehler.", "Konnte das {{object_name}} Objekt nicht speichern: {{count}} Fehler."]
-      message: "Bitte überprüfen Sie die folgenden Felder:"
     errors:
+      template:
+        header:
+          one: '{{model}} konnte wegen eines Fehlers nicht gespeichert werden.'
+          other: '{{model}} konnte wegen {{count}} Fehlern nicht gespeichert werden.'
+        body: 'Bitte überprüfen Sie die folgenden Felder:'
       messages:
         inclusion: "ist kein gültiger Wert"
         exclusion: "ist nicht verfügbar"
