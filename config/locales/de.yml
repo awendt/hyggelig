@@ -33,8 +33,8 @@ de:
     hosting_an_event: Auch Leute eingeladen?
     create_your_own: Leg deine eigene Seite an!
   flash:
-    give_url: 'Schick deinen Gästen diese Adresse: %s'
-    event_not_found: 'Konnte keine Seite unter der Adresse {{location}} finden.'
+    give_url: 'Schick deinen Gästen die Adresse dieser Seite, {{item}}'
+    event_not_found: 'Konnte keine Seite unter der Adresse {{item}} finden.'
     response_saved: 'Deine Antwort wurde erfolgreich gespeichert'
 
   date:
@@ -133,8 +133,8 @@ de:
         invalid: "ist nicht gültig"
         confirmation: "stimmt nicht mit der Bestätigung überein"
         accepted: "muss akzeptiert werden"
-        empty: "muss ausgefüllt werden"
-        blank: "muss ausgefüllt werden"
+        empty: "darf nicht leer sein"
+        blank: "darf nicht leer sein"
         too_long: "ist zu lang (nicht mehr als {{count}} Zeichen)"
         too_short: "ist zu kurz (nicht weniger als {{count}} Zeichen)"
         wrong_length: "hat die falsche Länge (muss genau {{count}} Zeichen haben)"

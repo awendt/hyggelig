@@ -10,7 +10,7 @@
 
 <% form_tag :action => 'new' do -%>
 
-<%= short_error_message_for 'event' %>
+<%= error_messages_header_for 'event' %>
 
 <% I18n.with_options :scope => [:event] do |locale| -%>
 <dl>

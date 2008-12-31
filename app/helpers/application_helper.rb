@@ -15,13 +15,13 @@ module ApplicationHelper
 
   def message_for_item(message, item = nil)
     if item.is_a?(Array)
-      message % link_to(*item)
+      I18n.t(message, :item => link_to(*item))
     else
-      message % item
+      I18n.t(message, :item => item)
     end
   end
 
-  def short_error_message_for(*params)
+  def error_messages_header_for(*params)
     options = params.extract_options!.symbolize_keys
 
     if object = options.delete(:object)
@@ -40,6 +40,29 @@ module ApplicationHelper
         header_message = locale.t :header, :count => count, :model => object_name
 
         content_tag(:div, header_message, :id => 'errors')
+      end
+    else
+      ''
+    end
+  end
+
+  def error_messages_body_for(*params)
+    options = params.extract_options!.symbolize_keys
+
+    if object = options.delete(:object)
+      objects = [object].flatten
+    else
+      objects = params.collect {|object_name| instance_variable_get("@#{object_name}") }.compact
+    end
+
+    count  = objects.inject(0) {|sum, object| sum + object.errors.count }
+    unless count.zero?
+      options[:object_name] ||= params.first
+
+      I18n.with_options :locale => options[:locale], :scope => [:activerecord, :errors, :template] do |locale|
+        error_messages = objects.sum {|object| object.errors.full_messages.map {|msg| content_tag(:li, msg) } }.join
+
+        content_tag(:div, content_tag(:ul, error_messages), :id => 'errors')
       end
     else
       ''
