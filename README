@@ -17,3 +17,8 @@ With hyggelig.org, you remain in control:
 * feel free to contribute -- the project is accepting patches
 
 The source code can be found on http://www.github.com/awendt/hyggelig
+
+NOTE DEVELOPERS: Support for SQLite is effectively broken with migration 20081227221600.
+Developing on MySQL is now recommended, though you can still use SQLite for development:
+Change migration 20080619163349 to create the responses table with an ID,
+delete migration 20081227221600 and run 'rake RAILS_ENV=development db:migration:reset'.
