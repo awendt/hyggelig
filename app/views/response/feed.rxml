@@ -3,7 +3,7 @@ xml.rss(:version=>"2.0"){
   xml.channel{
     xml.title(@event.name)
     xml.link(@event.permalink)
-    xml.language('en-us')
+    xml.language(I18n.locale.to_s)
       for guest in @guests
         xml.item do
           xml.title(l(:response, guest.rsvp ? :coming : :not_coming, :name => guest.name))
