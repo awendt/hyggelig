@@ -3,6 +3,8 @@
 
 class ApplicationController < ActionController::Base
 
+  extend ActiveSupport::Memoizable
+
   include ExceptionNotifiable
   
   before_filter :set_locale
@@ -38,7 +40,8 @@ private
   end
 
   def available_locales
-    @available_locales ||= Dir["config/locales/*.yml"].map { |file| File.basename(file, ".yml") }.map(&:to_sym)
+    Dir["config/locales/*.yml"].map { |file| File.basename(file, ".yml") }.map(&:to_sym)
   end
+  memoize :available_locales
 
 end
