@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Response do
 
   before do
-    @attributes = { :name => "John Doe", :rsvp => true, :event_id => 1 } 
+    @attributes = { :name => "John Doe", :rsvp => true, :event_id => 1 }
   end
 
   it "should be valid" do
@@ -24,6 +24,11 @@ describe Response do
 
   it "should force uniqueness of guest names for one event" do
     Response.create!(@attributes)
+    Response.new(@attributes).should have(1).error_on(:name)
+  end
+
+  it "should force uniqueness of guest names for one event, regardless of case" do
+    Response.create!(@attributes.merge(:name => @attributes[:name].capitalize))
     Response.new(@attributes).should have(1).error_on(:name)
   end
 

@@ -3,7 +3,7 @@ class Response < ActiveRecord::Base
   validates_presence_of :name, :event_id
   validates_associated :event
   validates_inclusion_of :rsvp, :in => [true, false], :message => "^#{I18n.t(:'response.confirm_or_decline')}"
-  validates_uniqueness_of :name, :scope => [:event_id]
+  validates_uniqueness_of :name, :scope => [:event_id], :case_sensitive => false
 
   belongs_to :event
   
