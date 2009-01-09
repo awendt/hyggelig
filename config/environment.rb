@@ -57,8 +57,8 @@ Rails::Initializer.run do |config|
   # Make sure the secret is at least 30 characters and all random, 
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
-    :session_key => '_hyggelig_session',
-    :secret      => '46fd21e5a121efaf5fdcfebd97a2aa57089fc2ebf8cb475a17dad068af2f32bff6c646de8e5673c8f56f804d458babc32b28453aa726fbbca15c0210447c73cb'
+    :session_key => '_hyggelig_org_session',
+    :secret      => "#{File.read('config/session_key_secret')}"
   }
 
   # Use the database for sessions instead of the cookie-based default,
