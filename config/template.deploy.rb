@@ -32,7 +32,13 @@ namespace :deploy do
     run "ln -nsf #{shared_path}/config/database.yml #{release_path}/config/database.yml"
   end
 
+  desc "Symlink session_key_secret config file from shared directory to current release dir"
+  task :symlink_session_key_secret do
+    run "ln -nsf #{shared_path}/config/session_key_secret #{release_path}/config/session_key_secret"
+  end
+
   after 'deploy:update_code', 'deploy:symlink_database_yml'
+  after 'deploy:update_code', 'deploy:symlink_session_key_secret'
 end
 
 namespace :stats do

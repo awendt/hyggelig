@@ -8,6 +8,7 @@ doc/plugins
 vendor/plugins/**/test/*.log
 config/deploy.rb
 config/database.yml
+config/session_key_secret
 .DS_Store
 script/spec
 script/autospec
