@@ -25,8 +25,8 @@ de:
     confirm: Ich bin dabei
     decline: Ich kann leider nicht
     submit_label: Antwort abschicken
-    coming: '{{name}} kommt'
-    not_coming: '{{name}} kommt nicht'
+    accepted: 'zugesagt: {{name}}'
+    declined: 'abgesagt: {{name}}'
     rsvp: Hier antworten
     confirm_or_decline: Bitte wähle deine Antwort aus
     no_responses_yet: Noch hat niemand geantwortet.

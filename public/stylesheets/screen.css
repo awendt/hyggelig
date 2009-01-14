@@ -218,3 +218,7 @@ a img {
   background-color: rgb(255, 158, 158);
   border-bottom:1px solid rgb(170,0,0);
 }
+
+.textonly {
+  display:none;
+}

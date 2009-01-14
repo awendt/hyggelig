@@ -25,8 +25,8 @@ en:
     confirm: I will attend
     decline: I will NOT attend
     submit_label: Post response
-    coming: '{{name}} is coming'
-    not_coming: '{{name}} is not coming'
+    accepted: 'accepted: {{name}}'
+    declined: 'declined: {{name}}'
     rsvp: RSVP here
     confirm_or_decline: Please select your response
     no_responses_yet: Nobody responded yet.
