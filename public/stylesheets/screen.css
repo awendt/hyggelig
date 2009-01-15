@@ -111,7 +111,7 @@ form dd {
   background-color:#ff5;
 }
 
-li.confirmed {
+li.accepted {
   background-color: rgb(204, 255, 153);
   border-top:1px solid rgb(102, 153, 0);
 }

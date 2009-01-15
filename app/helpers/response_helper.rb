@@ -1,22 +1,19 @@
 module ResponseHelper
 
-  def accepted_tag(name)
-    without_name = I18n.t(:'response.accepted', :name => '')
-    I18n.t(:'response.accepted', :name => name).sub(without_name, content_tag(:span, without_name, :class => 'textonly'))
+  # surrounds all but name with a span:
+  # e.g. locale is "accepted: {{name}}"
+  # "<span>accepted: </span>John Doe"
+  def surround_all_but_name(name, i18n_key)
+    without_name = I18n.t(:"response.#{i18n_key}", :name => '')
+    I18n.t(:"response.#{i18n_key}", :name => name).sub(without_name, content_tag(:span, without_name, :class => 'textonly'))
   end
 
-  def declined_tag(name)
-    without_name = I18n.t(:'response.declined', :name => '')
-    I18n.t(:'response.declined', :name => name).sub(without_name, content_tag(:span, without_name, :class => 'textonly'))
-  end
-
+  # renders <li> for a guest,
+  # with its class corresponding to her response
   def list_item_for(guest)
     if guest.is_a?(Response)
-      if guest.attending?
-        content_tag(:li, accepted_tag(h(guest.name)), :class => 'confirmed')
-      else
-        content_tag(:li, declined_tag(h(guest.name)), :class => 'declined')
-      end
+      accepted_declined = guest.attending? ? 'accepted' : 'declined'
+      content_tag(:li, surround_all_but_name(h(guest.name), accepted_declined), :class => accepted_declined)
     else
       ""
     end
