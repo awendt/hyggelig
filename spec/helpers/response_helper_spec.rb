@@ -21,7 +21,7 @@ describe ResponseHelper do
 
     it "should return a list item" do
       markup = helper.list_item_for(mock_model(Response, :attending? => true, :name => "John Doe"))
-      markup.should have_tag("li", :text => "foo John Doe")
+      markup.should have_tag("li", :text => /John Doe/)
     end
 
   end
