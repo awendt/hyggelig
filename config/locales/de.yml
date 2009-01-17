@@ -21,6 +21,7 @@ de:
     where: Wo?
   response:
     name: Dein Name
+    name_hint: Falls angebracht, trage weitere Infos ein
     reply: Deine Antwort
     confirm: Ich bin dabei
     decline: Ich kann leider nicht

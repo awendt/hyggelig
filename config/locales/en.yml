@@ -21,6 +21,7 @@ en:
     where: Where?
   response:
     name: Your name
+    name_hint: Add more info as you see fit
     reply: Your reply
     confirm: I will attend
     decline: I will NOT attend

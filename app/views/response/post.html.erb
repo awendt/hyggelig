@@ -20,7 +20,7 @@
 <%= error_messages_body_for 'response' %>
 
 <div class="tip">
-<%= label :response, :name, I18n.t(:'response.name') %>
+<%= label_with_hint :response, :name, I18n.t(:'response.name'), I18n.t(:'response.name_hint') %>
 <%= text_field :response, :name, :size => 20 %>
 </div>
 
