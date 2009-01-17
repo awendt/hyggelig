@@ -17,8 +17,8 @@
 <dt><%= label :event, :name, locale.t(:'name_label') %></dt>
 <dd><%= text_field :event, :name %><%= error_message_on :event, :name %></dd>
 
-<dt><%= label :event, :date, "#{locale.t(:'time_label')}#{tag(:br)}#{content_tag(:span, locale.t(:'time_label_hint',
-  :other_service => link_to("Snapdecide", "http://www.snapdecide.com")), :class => 'hint')}" %></dt>
+<dt><%= label_with_hint :event, :date, locale.t(:'time_label'), locale.t(:'time_label_hint',
+  :other_service => link_to("Snapdecide", "http://www.snapdecide.com")) %></dt>
 <dd><%= text_field :event, :date %><%= error_message_on :event, :date %></dd>
 
 <dt><%= label :event, :location, locale.t(:'location_label') %></dt>

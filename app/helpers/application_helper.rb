@@ -69,4 +69,8 @@ module ApplicationHelper
     end
   end
 
+  def label_with_hint(object_name, method, text = nil, hint = nil, options = {})
+    label object_name, method, "#{text}#{tag(:br)}#{content_tag(:span, hint, :class => 'hint')}", options
+  end
+
 end
