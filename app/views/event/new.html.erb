@@ -6,6 +6,7 @@
   <li><%= I18n.t(:'instructions.fill_in') %></li>
   <li><%= I18n.t(:'instructions.mail_url') %></li>
   <li><%= I18n.t(:'instructions.guests_rsvp') %></li>
+  <li><%= I18n.t(:'instructions.follow_responses') %></li>
 </ol>
 
 <% form_tag :action => 'new' do -%>
@@ -14,14 +15,18 @@
 
 <% I18n.with_options :scope => [:event] do |locale| -%>
 <dl>
-<dt><%= label :event, :name, locale.t(:'name_label') %></dt>
+<dt><%= label_with_hint :event, :name, locale.t(:name_label),
+          locale.t(:name_label_hint, :ex1 => "#{content_tag(:q, locale.t(:name_ex1))}",
+            :ex2 => "#{content_tag(:q, locale.t(:name_ex2))}") %></dt>
 <dd><%= text_field :event, :name %><%= error_message_on :event, :name %></dd>
 
 <dt><%= label_with_hint :event, :date, locale.t(:'time_label'), locale.t(:'time_label_hint',
   :other_service => link_to("Snapdecide", "http://www.snapdecide.com")) %></dt>
 <dd><%= text_field :event, :date %><%= error_message_on :event, :date %></dd>
 
-<dt><%= label :event, :location, locale.t(:'location_label') %></dt>
+<dt><%= label_with_hint :event, :location, locale.t(:'location_label'),
+          locale.t(:location_label_hint, :ex1 => "#{content_tag(:q, locale.t(:location_ex1))}",
+            :ex2 => "#{content_tag(:q, locale.t(:location_ex2))}") %></dt>
 <dd><%= text_field :event, :location %><%= error_message_on :event, :location %></dd>
 
 <dt class="note"><%= locale.t(:'will_expire', :date => content_tag(:strong, "#{I18n.l(60.days.from_now.to_date, :format => :expiration)}")) %></dt>

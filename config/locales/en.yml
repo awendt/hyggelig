@@ -6,14 +6,21 @@ en:
     questions_or_bugs: If you have questions or found any bugs, please post them to the {{mlist}}.
     mlist: mailing list
   instructions:
-    fill_in: You fill in the form and get a page created for your event
+    fill_in: Fill in the form below and get a page created for your event
     mail_url: Mail that page's custom address to your guests
     guests_rsvp: Your guests can confirm or decline on that page
+    follow_responses: Follow your guests' responses (there's also an RSS feed)
   event:
-    name_label: What's the occasion?
+    name_label: What's the occasion or event name?
+    name_label_hint: 'e.g. {{ex1}} or {{ex2}}. Be creative!'
+    name_ex1: Babyshower for Alice
+    name_ex2: Track meeting
     time_label: When does it start?
-    time_label_hint: '{{other_service}} may help you find a date together'
+    time_label_hint: '{{other_service}} may help you find a date together.'
     location_label: Where does it happen?
+    location_label_hint: e.g. {{ex1}} or {{ex2}}
+    location_ex1: Bob's place
+    location_ex2: 105 Wisteria Lane
     submit_label: Create event page
     will_expire: 'Please note: This event will last until {{date}}.'
     guest_list: Guest list
