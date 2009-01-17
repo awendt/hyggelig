@@ -17,7 +17,7 @@ describe ResponseHelper do
 
   end
 
-  describe "list_item_for" do
+  describe "listing a guest" do
 
     it "should return a list item" do
       markup = helper.list_item_for(mock_model(Response, :attending? => true, :name => "John Doe"))
