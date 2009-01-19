@@ -1,0 +1,22 @@
+I18n-with-scope
+===============
+
+This is a very simple plugin that adds a with_scope method to Rails' I18n module.
+
+
+Example
+=======
+
+Instead of
+
+I18n.with_options :scope => [:activerecord, :errors] do |locale|
+  locale.t(:invalid)
+end
+
+you can use
+
+I18n.with_scope [:activerecord, :errors] do |locale|
+  locale.t(:invalid)
+end
+
+Copyright (c) 2009 André Wendt, released under the MIT license

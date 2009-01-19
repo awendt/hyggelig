@@ -2,18 +2,20 @@
 
 <div class="container">
 
+<% I18n.with_scope(:instructions) do |inst| -%>
 <ol id="instructions">
-  <li><%= I18n.t(:'instructions.fill_in') %></li>
-  <li><%= I18n.t(:'instructions.mail_url') %></li>
-  <li><%= I18n.t(:'instructions.guests_rsvp') %></li>
-  <li><%= I18n.t(:'instructions.follow_responses') %></li>
+  <li><%= inst.t(:fill_in) %></li>
+  <li><%= inst.t(:mail_url) %></li>
+  <li><%= inst.t(:guests_rsvp) %></li>
+  <li><%= inst.t(:follow_responses) %></li>
 </ol>
+<% end -%>
 
 <% form_tag :action => 'new' do -%>
 
 <%= error_messages_header_for 'event' %>
 
-<% I18n.with_options :scope => [:event] do |locale| -%>
+<% I18n.with_scope :event do |locale| -%>
 <dl>
 <dt><%= label_with_hint :event, :name, locale.t(:name_label),
           locale.t(:name_label_hint, :ex1 => "#{content_tag(:q, locale.t(:name_ex1))}",
