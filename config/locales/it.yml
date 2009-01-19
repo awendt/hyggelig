@@ -1,0 +1,162 @@
+it:
+  slogan: Un pianificatore di eventi per te e i tuoi amici
+  add_event: Aggiungi il tuo evento
+  about:
+    what_is_hyggelig: '{{site_name}} &egrave; software libero mantenuto da {{name}}.'
+    questions_or_bugs: Se hai delle domande o trovi bug, per favore riportali alla {{mlist}}.
+    mlist: mailing list
+  instructions:
+    fill_in: Compila il form che trovi sotto e avrai una pagina creata per il tuo evento
+    mail_url: Invia un'email con l'indirizzo di quella pagina ai tuoi invitati
+    guests_rsvp: I tuoi invitati possono confermare o declinare l'invito su quella pagina
+    follow_responses: Segui le risposte dei tuoi invitati (c'&egrave; anche un feed RSS)
+  event:
+    name_label: Qual &egrave; il nome dell'ocasione/evento?
+    name_label_hint: 'ad es. {{ex1}} oppure {{ex2}}. Sii creativo!'
+    name_ex1: Festa di laurea
+    name_ex2: Riunione con amici
+    time_label: Quando ha inizio?
+    time_label_hint: '{{other_service}} pu&ograve; aiutare a trovare una data insieme.'
+    location_label: Dove ha luogo?
+    location_label_hint: ad es. {{ex1}} oppure {{ex2}}
+    location_ex1: Da Giovanna
+    location_ex2: Via Nazionale 16
+    submit_label: Crea la pagina dell'evento
+    will_expire: 'Attenzione: Questo evento durer&agrave; fino al {{date}}.'
+    guest_list: Lista degli invitati
+    when: Quando?
+    where: Dove?
+  response:
+    name: Il tuo nome
+    name_hint: Aggiungi pi&ugrave; informazioni, se necessario
+    reply: La tua risposta
+    confirm: Io ci sar&ograve;
+    decline: Io NON ci sar&ograve;
+    submit_label: Aggiungi la risposta
+    accepted: 'ha accettato: {{name}}'
+    declined: 'ha rifiutato: {{name}}'
+    rsvp: RSVP qui
+    confirm_or_decline: Prego, scegli la tua risposta
+    no_responses_yet: Nessuno ha accetato finora.
+    hosting_an_event: Organizzi un evento?
+    create_your_own: Crea la tua pagina per l'evento!
+  flash:
+    give_url: "Dai l'indirizzo di questa pagina ai tuoi invitati: {{item}}"
+    event_not_found: 'Non &egrave; stato possibile trovare una pagina per l''evento in {{item}}.'
+    response_saved: 'La tua risposta &egrave; stata salvata correttamente'
+
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      short: "%e %b"
+      long: "%B %e, %Y"
+      only_day: "%e"
+      expiration: "%B %e"
+
+    day_names: [Domenica, Luned&igrave;, Marted&igrave;, Mercoled&igrave;, Gioved&igrave;, Venerd&igrave;, Sabato]
+    abbr_day_names: [Dom, Lun, Mar, Mer, Gio, Ven, Sab]
+    month_names: [~, Gennaio, Febbraio, Marzo, Aprile, Maggio, Giugno, Luglio, Agosto, Settembre, Ottobre, Novembre, Dicembre]
+    abbr_month_names: [~, Gen, Feb, Mar, Apr, Mag, Giu, Lug, Ago, Set, Ott, Nov, Dic]
+    order: [ {{year}}, {{month}}, {{day}} ]
+
+  time:
+    formats:
+      default: "%a %b %d %H:%M:%S %Z %Y"
+      time: "%H:%M"
+      short: "%d %b %H:%M"
+      long: "%B %d, %Y %H:%M"
+      only_second: "%S"
+      expiration: "%B %e"
+
+      datetime:
+        formats:
+          default: "%Y-%m-%dT%H:%M:%S%Z"
+
+    am: 'am'
+    pm: 'pm'
+
+  datetime:
+    distance_in_words:
+      half_a_minute: 'Meno di un minuto'
+      less_than_x_seconds:
+        zero: 'Meno di un secondo'
+        one: '1 secondo'
+        other: '{{count}} secondi'
+      x_seconds:
+        one: '1 secondo'
+        other: '{{count}} secondi'
+      less_than_x_minutes:
+        zero: 'meno di un minuto'
+        one: '1 minuto'
+        other: '{{count}} minuti'
+      x_minutes:
+        one: '1 minuto'
+        other: '{{count}} minuti'
+      about_x_hours:
+        one: 'circa un''ora'
+        other: '{{count}} ore'
+      x_days:
+        one: '1 giorno'
+        other: '{{count}} giorni'
+      about_x_months:
+        one: 'circa un mese'
+        other: '{{count}} mesi'
+      x_months:
+        one: '1 mese'
+        other: '{{count}} mesi'
+      about_x_years:
+        one: 'circa un anno'
+        other: '{{count}} anni'
+      over_x_years:
+        one: 'oltre un anno'
+        other: '{{count}} anni'
+
+  number:
+    format:
+      precision: 3
+      separator: '.'
+      delimiter: ','
+    currency:
+      format:
+        unit: '$'
+        precision: 2
+        format: '%u %n'
+
+  activerecord:
+    models:
+      event: Il tuo evento
+      response: La tua risposta
+    attributes:
+      event:
+        name: Nome
+        date: Data e ora
+        location: Luogo
+      response:
+        name: Nome
+        rsvp: RSVP
+    errors:
+      template:
+        header:
+          one: '1 errore non ha permesso di salvare {{model}}.'
+          other: '{{count}} errori non hanno permesso di salvare {{model}}.'
+        body: 'Ci sono stati problemi coi seguenti campi:'
+      messages:
+        inclusion: "non &egrave; incluso nella lista"
+        exclusion: "non &egrave; disponibile"
+        invalid: "non &egrave; valido"
+        confirmation: "non corrisponde alla sua conferma"
+        accepted: "deve essere accettato"
+        empty: "non pu&ograve; essere vuoto"
+        blank: "non pu&ograve; essere vuoto"
+        too_long: "&egrave; molto lungo (non pi&ugrave; di {{count}} caratteri)"
+        too_short: "&egrave; molto corto (non meno di {{count}} caratteri)"
+        wrong_length: "non &egrave; della lunghezza giusta (deve essere di {{count}} caratteri)"
+        taken: "non &egrave; disponibile"
+        not_a_number: "non &egrave; un numero"
+        greater_than: "deve essere maggiore di {{count}}"
+        greater_than_or_equal_to: "deve essere maggiore di o uguale a {{count}}"
+        equal_to: "deve essere uguale a {{count}}"
+        less_than: "deve essere meno di {{count}}"
+        less_than_or_equal_to: "deve essere meno di o uguale a {{count}}"
+        odd: "deve essere dispari"
+        even: "deve essere pari"
