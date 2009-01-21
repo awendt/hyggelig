@@ -15,3 +15,9 @@ config.action_controller.perform_caching             = false
 
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
+
+# If you need cookies to be shared between subdomains,
+# you need to put the following line into /etc/hosts
+# 127.0.0.1       hyggelig.local it.hyggelig.local de.hyggelig.local en.hyggelig.local
+# and un-comment the following line:
+# config.action_controller.session.merge!(:session_domain => '.hyggelig.local')

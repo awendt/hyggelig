@@ -9,9 +9,8 @@ describe ApplicationHelper do
       helper.label_with_hint(:foo, :bar, :text, :hint)
     end
 
-    it "should" do
+    it "should contain the hint within another element" do
       markup = helper.label_with_hint(:foo, :bar, 'text', 'hint')
-      markup.should =~ /hint/
       markup.should have_tag('span[class=hint]', :text => 'hint')
     end
 

@@ -17,6 +17,7 @@
 <div class="footer band">
 <%= I18n.t(:'about.what_is_hyggelig', :site_name => SITE_NAME, :name => link_to('André', 'http://github.com/awendt/hyggelig')) %><br />
 <%= I18n.t(:'about.questions_or_bugs', :mlist => link_to(I18n.t(:'about.mlist'), 'http://mail.hyggelig.org/mailman/listinfo/hyggelig-friends_hyggelig.org', :'xml:lang' => 'en')) %><br />
+<%= "Also available in: #{links_for_other_locales}" %>
 </div>
 
 </body>
