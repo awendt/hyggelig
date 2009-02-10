@@ -1,5 +1,11 @@
 # SQLite version 3.x
 #   gem install sqlite3-ruby (not necessary on OS X Leopard)
+
+# NOTE DEVELOPERS: Support for SQLite is effectively broken with migration 20081227221600.
+# Developing on MySQL is now recommended, though you can still use SQLite for development:
+# Change migration 20080619163349 to create the responses table with an ID,
+# delete migration 20081227221600 and run 'rake RAILS_ENV=development db:migration:reset'.
+
 development:
   adapter: mysql
   database: hyggelig_dev
