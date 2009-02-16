@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<%= I18n.locale %>">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta name="Description" content="<%= I18n.t(:slogan) %>. <%= I18n.t(:'about.what_is_hyggelig', :site_name => SITE_NAME, :name => 'André') %>" />
   <title><%= event_title %></title>
   <%= stylesheet_link_tag 'screen' %>
   <%= auto_discovery_link_tag :rss, :controller => 'response', :action => 'feed', :id => @event.permalink if @event && @event.valid? %>
