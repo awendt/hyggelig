@@ -85,4 +85,16 @@ module ApplicationHelper
   end
   memoize :links_for_other_locales
 
+  def page_title
+    if controller.action_name == "new"
+      "#{SITE_NAME} | #{I18n.t(:slogan)}"
+    elsif @event
+      "#{@event.name}, #{@event.date} | #{SITE_NAME}"
+    elsif @title
+      @title
+    else
+      SITE_NAME
+    end
+  end
+
 end
