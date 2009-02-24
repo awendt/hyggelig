@@ -22,7 +22,11 @@ class ResponseController < ApplicationController
 
   def feed
     @event = Event.find_by_permalink(params[:id])
-    @guests = @event.guests_by_reverse_chron
+    if @event
+      @guests = @event.guests_by_reverse_chron
+    else
+      render :file => "#{RAILS_ROOT}/public/404.html", :status => 404
+    end
   end
 
 end

@@ -25,6 +25,13 @@ describe ResponseController, "processing GET requests" do
     get :feed
   end
 
+  it 'should flash and redirect to event if no event is found by permalink' do
+    Event.should_receive(:find_by_permalink).with("foo").and_return(nil)
+    get :feed, :id => "foo"
+    response.should be_missing
+    response.should render_template("#{RAILS_ROOT}/public/404.html")
+  end
+
 end
 
 describe ResponseController, "processing POST requests" do
