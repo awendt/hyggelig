@@ -29,7 +29,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # See how all your routes lay out with "rake routes"
   map.home '/', :controller => 'event', :action => 'new'
-  map.static '/:page', :controller => 'static_pages', :action => 'show', :page => StaticPagesController::PAGES
+  map.static '/:action', :controller => 'static_pages', :action => StaticPagesController::PAGES
   map.event '/:id', :controller => 'response', :action => 'post'
   map.feed '/feed/:id', :controller => 'response', :action => 'feed'
 

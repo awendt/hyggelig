@@ -84,7 +84,7 @@ input {
   font-size:1.0em;
 }
 
-dl, #instructions {
+form dl, #instructions {
   width:27em;
   margin:auto;
 }
@@ -107,7 +107,7 @@ form dd {
   font-size:1.0em;
 }
 
-.location, .date {
+.location, .date, #benefits strong {
   background-color:#ff5;
 }
 
@@ -221,4 +221,77 @@ a img {
 
 .textonly {
   display:none;
+}
+
+#benefits {
+	width:80%;
+}
+
+#benefits dt {
+	border-bottom:1px solid #333;
+	margin-bottom:10px;
+	font-size:1.1em;
+}
+
+#benefits dd {
+	text-indent: -15px;
+}
+#benefits dd:before {
+	content: "\00BB \0020";
+}
+
+.tour {
+	width:80%;
+}
+
+.tour ol#steps li {
+	float:left;
+	width:240px;
+	padding-right:10px;
+}
+
+.tour a.screenshot {
+	border:1px solid #000;
+	display:block;
+	width:200px;
+	height:220px;
+}
+
+ol#steps + h2 {
+	clear:both;
+	padding-top:30px;
+}
+
+#welcome, #create-now a {
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border:3px solid #fff;
+  background-color:#6AAD68;
+}
+
+#welcome {
+  width:30%;
+  float:left;
+  margin-top:100px;
+  padding:10px;
+}
+
+.twocol {
+	padding:0 40px;
+}
+
+#get-started {
+	margin-right:5%;
+}
+
+#create-now {
+	text-align:right;
+}
+
+#create-now a {
+	padding:10px;
+}
+
+#create-now a:visited, #create-now a:link {
+	color:#333;
 }

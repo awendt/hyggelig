@@ -5,8 +5,8 @@ class StaticPagesController < ApplicationController
 
   PAGES = /tour/
 
-  def show
-    render :action => params[:page]
+  def tour
+    @title = "How to use hyggelig.org"
   end
 
 end
