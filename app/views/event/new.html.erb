@@ -1,6 +1,14 @@
-<h1><%= I18n.t(:add_event) %></h1>
+<div class="twocol">
 
-<div class="container">
+<div id="welcome">
+hyggelig.org brings <strong>simple event planning</strong> to you and your friends.
+It works <strong>without registration</strong> or login,
+and anything you submit expires automatically.<br />
+<a href="/tour">Learn more</a> or <a href="http://blog.hyggelig.org/">read the blog</a>.
+</div>
+
+<div class="container" id="get-started">
+<h1><%= I18n.t(:add_event) %></h1>
 
 <% I18n.with_scope(:instructions) do |inst| -%>
 <ol id="instructions">
@@ -38,5 +46,7 @@
 <% end -%>
 
 <% end -%>
+
+</div>
 
 </div>
