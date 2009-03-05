@@ -7,7 +7,9 @@ class ResponseController < ApplicationController
     @response = Response.new(params[:response])
     @response.event = @event
 
-    if !@event
+    if @event
+      @guests = @event.guests_by_reverse_chron
+    else
       flash[:error] = :'flash.event_not_found'
       flash[:error_item] = "<q>#{params[:id]}</q>"
       redirect_to :controller => 'event', :action => 'new'

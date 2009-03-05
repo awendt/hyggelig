@@ -41,9 +41,7 @@
 
 <% if @event.has_responses? -%>
 <ul id="guest_list">
-  <% @event.guests_by_reverse_chron.each do |guest| -%>
-    <%= list_item_for(guest) %>
-  <% end -%>
+<%= render :partial => "guest", :collection => @guests %>
 </ul>
 <% else -%>
 <p><%= I18n.t(:'response.no_responses_yet') %></p>

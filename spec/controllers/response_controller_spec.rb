@@ -10,7 +10,7 @@ describe ResponseController, "processing GET requests" do
   end
 
   it "should render the 'post' template if event is found" do
-    Event.should_receive(:find_by_permalink).with("bar").and_return(mock_model(Event))
+    Event.should_receive(:find_by_permalink).with("bar").and_return(mock_model(Event, :guests_by_reverse_chron => [mock_model(Response)]))
     get :post, :id => "bar"
     flash[:notice].should be_nil
     response.should render_template('post')
@@ -71,6 +71,7 @@ describe ResponseController, "processing POST requests" do
     before :each do
       Event.should_receive(:find_by_permalink).with("bar").and_return(@event)
       @event.should_receive(:valid?).and_return(true)
+      @event.stub!(:guests_by_reverse_chron).and_return([mock_model(Response)])
     end
 
     it "should save the response" do
@@ -90,6 +91,7 @@ describe ResponseController, "processing POST requests" do
     before :each do
       Event.should_receive(:find_by_permalink).with("bar").and_return(@event)
       @event.should_receive(:valid?).and_return(true)
+      @event.stub!(:guests_by_reverse_chron).and_return([mock_model(Response)])
     end
 
     it "should not save the response" do
