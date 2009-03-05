@@ -266,8 +266,8 @@ ol#steps + h2 {
 #welcome, #create-now a {
   -moz-border-radius:10px;
   -webkit-border-radius:10px;
-  border:3px solid #fff;
-  background-color:#6AAD68;
+  border:2px solid #c00;
+  background-color:#E3F1F6;
 }
 
 #welcome {
