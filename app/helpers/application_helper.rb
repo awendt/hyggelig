@@ -1,8 +1,6 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
 
-  extend ActiveSupport::Memoizable
-
   FLASH_NOTICE_KEYS = [:error, :notice, :warning]
 
   def flash_messages # see http://rubypond.com/articles/2008/07/11/useful-flash-messages-in-rails/
@@ -74,16 +72,6 @@ module ApplicationHelper
   def label_with_hint(object_name, method, text = nil, hint = nil, options = {})
     label object_name, method, "#{text}#{tag(:br)}#{content_tag(:span, hint, :class => 'hint')}", options
   end
-
-  def links_for_other_locales
-    links = []
-    other_locales = available_locales - [I18n.locale]
-    other_locales.each do |locale|
-      links << link_to(I18n.t(:language, :locale => locale), :subdomain => locale)
-    end
-    links.join(' &#8212; ')
-  end
-  memoize :links_for_other_locales
 
   def page_title
     if controller.action_name == "new"

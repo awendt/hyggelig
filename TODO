@@ -1,8 +1,4 @@
 * make custom-err-msg and I18n work
-* determine concept of static pages
-* documentation: video, tutorial, screenshots, tour -- use cases?, examples
-  (birthdays, sports club meetings, gaming nights, caming+outdoor trips, moving)
 * explain why app won't work without cookies
 * make sure RSS link for guest list behaves the same as "alternate" link
 * explain why events are expiring on a specific date
-* explain where the name comes from?
