@@ -36,5 +36,6 @@ private
     Dir["config/locales/*.yml"].map { |file| File.basename(file, ".yml").to_sym }
   end
   memoize :available_locales
+  helper_method :available_locales
 
 end
