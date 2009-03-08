@@ -6,7 +6,7 @@ class StaticPagesController < ApplicationController
   PAGES = /tour/
 
   def tour
-    @title = "How to use hyggelig.org"
+    @title = "How to use #{SITE_NAME}"
   end
 
 end
