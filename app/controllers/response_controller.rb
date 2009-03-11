@@ -18,6 +18,7 @@ class ResponseController < ApplicationController
     return unless request.post?
 
     if @response.save
+      @guests.unshift(@response)
       flash[:notice] = :'flash.response_saved'
     end
   end
