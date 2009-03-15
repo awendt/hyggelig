@@ -6,7 +6,7 @@ describe ResponseController, "processing GET requests" do
     Event.should_receive(:find_by_permalink).with("foo").and_return(nil)
     get :post, :id => "foo"
     flash[:error].should_not be_nil
-    response.should redirect_to(:controller => "event", :action => "new")
+    response.should redirect_to(create_path)
   end
 
   it "should render the 'post' template if event is found" do
@@ -61,7 +61,7 @@ describe ResponseController, "processing POST requests" do
     it "should flash and redirect" do
       post :post, :id => "foo", :response => @options
       flash[:error].should_not be_nil
-      response.should redirect_to(home_path)
+      response.should redirect_to(create_path)
     end
 
   end

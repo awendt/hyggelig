@@ -12,7 +12,7 @@ class ResponseController < ApplicationController
     else
       flash[:error] = :'flash.event_not_found'
       flash[:error_item] = "<q>#{params[:id]}</q>"
-      redirect_to :controller => 'event', :action => 'new'
+      redirect_to create_path
     end
 
     return unless request.post?
