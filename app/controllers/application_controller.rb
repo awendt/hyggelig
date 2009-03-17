@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
 private
 
   def set_locale
-    lang_intersection = prefered_langs & available_locales
+    lang_intersection = prefered_langs & I18n.available_locales
     if lang_intersection.empty?
       I18n.locale = :en
     else
@@ -31,11 +31,5 @@ private
   def prefered_langs
     params[:locale].to_a.map(&:to_sym) + client_accepted_languages
   end
-
-  def available_locales
-    Dir["config/locales/*.yml"].map { |file| File.basename(file, ".yml").to_sym }
-  end
-  memoize :available_locales
-  helper_method :available_locales
 
 end

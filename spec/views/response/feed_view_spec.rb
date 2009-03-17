@@ -6,7 +6,7 @@ describe "viewing an event's RSS feed" do
     assigns[:event] = mock_model(Event, :name => '', :date => '', :permalink => "",
       :location => '', :guests_by_reverse_chron => [])
     assigns[:guests] = []
-    I18n.should_receive(:locale).and_return(:foo)
+    I18n.should_receive(:locale).any_number_of_times.and_return(:foo)
   end
 
   it "should set the feed language according to the locale" do

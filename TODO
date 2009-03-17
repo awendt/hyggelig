@@ -4,4 +4,3 @@
 * explain why events are expiring on a specific date
 * Rails 2.3 upgrade:
 ** default_scope for responses
-** available_locales => I18n.available_locales

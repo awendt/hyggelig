@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe ApplicationController, "before filter to set the locale" do
 
   before do
-    controller.should_receive(:available_locales).and_return([:de, :en])
+    I18n.should_receive(:available_locales).and_return([:de, :en])
     controller.should_receive(:params).and_return(:locale => nil)
   end
 
