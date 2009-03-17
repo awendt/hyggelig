@@ -10,19 +10,19 @@ describe ResponseController, "processing GET requests" do
   end
 
   it "should render the 'post' template if event is found" do
-    Event.should_receive(:find_by_permalink).with("bar").and_return(mock_model(Event, :guests_by_reverse_chron => [mock_model(Response)]))
+    Event.should_receive(:find_by_permalink).with("bar").and_return(mock_model(Event, :responses => [mock_model(Response)]))
     get :post, :id => "bar"
     flash[:notice].should be_nil
     response.should render_template('post')
   end
 
-  it "should output an RSS feed ordered in reverse chronology (most recent first)" do
+  it "should output an RSS feed" do
     alice = mock_model(Response, :created_at => 5.minutes.ago, :name => "Alice")
     bob   = mock_model(Response, :created_at => 10.minutes.ago, :name => "Bob")
     event = mock_model(Event, :responses => [bob, alice])
     Event.should_receive(:find_by_permalink).and_return(event)
-    event.should_receive(:guests_by_reverse_chron)
     get :feed
+    response.should render_template('feed')
   end
 
   it 'should flash and redirect to event if no event is found by permalink' do
@@ -71,7 +71,7 @@ describe ResponseController, "processing POST requests" do
     before :each do
       Event.should_receive(:find_by_permalink).with("bar").and_return(@event)
       @event.should_receive(:valid?).and_return(true)
-      @event.stub!(:guests_by_reverse_chron).and_return([mock_model(Response)])
+      @event.stub!(:responses).and_return([mock_model(Response)])
     end
 
     it "should save the response" do
@@ -91,7 +91,7 @@ describe ResponseController, "processing POST requests" do
     before :each do
       Event.should_receive(:find_by_permalink).with("bar").and_return(@event)
       @event.should_receive(:valid?).and_return(true)
-      @event.stub!(:guests_by_reverse_chron).and_return([mock_model(Response)])
+      @event.stub!(:responses).and_return([mock_model(Response)])
     end
 
     it "should not save the response" do

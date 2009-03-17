@@ -15,8 +15,4 @@ class Event < ActiveRecord::Base
     !self.responses.blank?
   end
 
-  def guests_by_reverse_chron
-    responses.sort_by(&:created_at).reverse
-  end
-
 end

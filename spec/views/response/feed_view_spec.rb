@@ -4,7 +4,7 @@ describe "viewing an event's RSS feed" do
 
   before do
     assigns[:event] = mock_model(Event, :name => '', :date => '', :permalink => "",
-      :location => '', :guests_by_reverse_chron => [])
+      :location => '', :responses => [])
     assigns[:guests] = []
     I18n.should_receive(:locale).any_number_of_times.and_return(:foo)
   end

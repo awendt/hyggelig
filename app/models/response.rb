@@ -6,7 +6,9 @@ class Response < ActiveRecord::Base
   validates_uniqueness_of :name, :scope => [:event_id], :case_sensitive => false
 
   belongs_to :event
-  
+
+  default_scope :order => 'created_at DESC'
+
   def attending?
     rsvp == true
   end

@@ -7,9 +7,7 @@ class ResponseController < ApplicationController
     @response = Response.new(params[:response])
     @response.event = @event
 
-    if @event
-      @guests = @event.guests_by_reverse_chron
-    else
+    unless @event
       flash[:error] = :'flash.event_not_found'
       flash[:error_item] = "<q>#{params[:id]}</q>"
       redirect_to create_path
@@ -18,16 +16,13 @@ class ResponseController < ApplicationController
     return unless request.post?
 
     if @response.save
-      @guests.unshift(@response)
       flash[:notice] = :'flash.response_saved'
     end
   end
 
   def feed
     @event = Event.find_by_permalink(params[:id])
-    if @event
-      @guests = @event.guests_by_reverse_chron
-    else
+    unless @event
       render :file => "#{RAILS_ROOT}/public/404.html", :status => 404
     end
   end

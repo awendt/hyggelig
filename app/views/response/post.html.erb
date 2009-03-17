@@ -41,7 +41,7 @@
 
 <% if @event.has_responses? -%>
 <ul id="guest_list">
-<%= render :partial => "guest", :collection => @guests %>
+<%= render :partial => "guest", :collection => @event.responses %>
 </ul>
 <% else -%>
 <p><%= I18n.t(:'response.no_responses_yet') %></p>

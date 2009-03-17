@@ -81,14 +81,3 @@ describe Event, "has_responses?" do
   end
 
 end
-
-describe Event, "guests_by_reverse_chron method" do
-
-  it "should return chronologically ordered responses" do
-    alice = mock_model(Response, :created_at => 10.minutes.ago, :name => "Alice")
-    bob   = mock_model(Response, :created_at => 5.minutes.ago, :name => "Bob")
-    @event = Event.new
-    @event.should_receive(:responses).and_return([alice, bob])
-    @event.guests_by_reverse_chron.should == [bob, alice]
-  end
-end
