@@ -3,8 +3,6 @@
 
 class ApplicationController < ActionController::Base
 
-  extend ActiveSupport::Memoizable
-
   include ExceptionNotifiable
 
   before_filter :set_locale
