@@ -16,6 +16,8 @@ en:
     name_label_hint: 'e.g. {{ex1}} or {{ex2}}. Be creative!'
     name_ex1: Babyshower for Alice
     name_ex2: Track meeting
+    name_url_preview: 'Expected address: {{url}}'
+    url_preview_empty: 'Preview the expected address for your event page here'
     time_label: When does it start?
     time_label_hint: '{{other_service}} may help you find a date together.'
     location_label: Where does it happen?

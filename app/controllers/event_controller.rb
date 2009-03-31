@@ -15,4 +15,9 @@ class EventController < ApplicationController
     end
   end
 
+  def preview_url
+    render(:nothing => true) and return unless request.xhr?
+    render(:partial => 'url_preview')
+  end
+
 end

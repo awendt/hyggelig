@@ -16,6 +16,8 @@ de:
     name_label_hint: 'z.B. {{ex1}} oder {{ex2}}. Sei kreativ!'
     name_ex1: Jans Abschiedsfeier
     name_ex2: Fußballturnier
+    name_url_preview: 'Voraussichtliche Adresse: {{url}}'
+    url_preview_empty: 'Hier kannst du die voraussichtliche Adresse deiner Seite sehen'
     time_label: Wann geht's los?
     time_label_hint: '{{other_service}} kann dir helfen, einen Termin gemeinsam zu finden.'
     location_label: Wo findet's statt?

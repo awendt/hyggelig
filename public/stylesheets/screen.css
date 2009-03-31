@@ -107,7 +107,7 @@ form dd {
   font-size:1.0em;
 }
 
-.location, .date, #benefits strong, #welcome strong {
+.location, .date, #benefits strong, #welcome strong, .hint strong {
   background-color:#ff5;
   padding:0 1px;
 }

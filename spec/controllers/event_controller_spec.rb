@@ -2,9 +2,8 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe EventController, "processing GET requests" do
 
-  it "should render event/new on /" do
+  it "should render event/new without flash" do
     get :new
-    response.should render_template('new')
     flash[:notice].should be_nil
   end
 end
@@ -39,6 +38,28 @@ describe EventController, "creating a new event" do
     Event.should_receive(:new).with(@options.stringify_keys).and_return(@event)
     @event.stub!(:save)
     post :new, :event => @options
+  end
+
+end
+
+describe EventController, 'calculating the permalink for preview' do
+
+  it 'should render nothing on GET requests' do
+    get :preview_url
+    response.content_length.should == 1
+    response.should be_success
+  end
+
+  it 'should render nothing on POST requests' do
+    post :preview_url
+    response.content_length.should == 1
+    response.should be_success
+  end
+
+  it 'should render something on XHR requests' do
+    xhr :post, :preview_url
+    response.should render_template('_url_preview')
+    response.should be_success
   end
 
 end

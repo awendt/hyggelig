@@ -72,7 +72,10 @@ module ApplicationHelper
   end
 
   def label_with_hint(object_name, method, text = nil, hint = nil, options = {})
-    label object_name, method, "#{text}#{tag(:br)}#{content_tag(:span, hint, :class => 'hint')}", options
+    text_with_hint = "#{text}"
+    text_with_hint += tag(:br)
+    text_with_hint += content_tag(:span, hint, :class => 'hint', :id => :"#{object_name}_#{method}_hint")
+    label object_name, method, text_with_hint, options
   end
 
   def links_for_other_locales
