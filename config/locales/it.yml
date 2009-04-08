@@ -16,6 +16,8 @@ it:
     name_label_hint: 'ad es. {{ex1}} oppure {{ex2}}. Sii creativo!'
     name_ex1: Festa di laurea
     name_ex2: Riunione con amici
+    name_url_preview: 'Link atteso: {{url}}'
+    url_preview_empty: 'Vedi in anteprima il link atteso della pagina dell''evento qui'
     time_label: Quando ha inizio?
     time_label_hint: '{{other_service}} pu&ograve; aiutare a trovare una data insieme.'
     location_label: Dove ha luogo?
