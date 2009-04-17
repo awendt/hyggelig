@@ -2,6 +2,7 @@ set :application, "hyggelig.org"
 set :repository,  "git://github.com/awendt/hyggelig.git"
 set :branch, "master"
 set :deploy_via, :remote_cache
+set :rails_gem_version, '2.3.2'
 ssh_options[:compression] = false
 
 set :scm, "git"
@@ -37,8 +38,14 @@ namespace :deploy do
     run "ln -nsf #{shared_path}/config/session_key_secret #{release_path}/config/session_key_secret"
   end
 
+  desc "Symlink frozen rails to current release dir"
+  task :symlink_frozen_rails do
+    run "ln -nsf #{shared_path}/rails-#{rails_gem_version} #{release_path}/vendor/rails"
+  end
+
   after 'deploy:update_code', 'deploy:symlink_database_yml'
   after 'deploy:update_code', 'deploy:symlink_session_key_secret'
+  after 'deploy:update_code', 'deploy:symlink_frozen_rails'
 end
 
 namespace :stats do
