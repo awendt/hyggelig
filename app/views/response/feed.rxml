@@ -2,12 +2,12 @@ xml.instruct! :xml, :version=>"1.0"
 xml.rss(:version=>"2.0"){
   xml.channel{
     xml.title(h(@event.name))
-    xml.link(@event.permalink)
+    xml.link(url_for(event_url(@event.permalink)))
     xml.language(I18n.locale.to_s)
       for guest in @event.responses
         xml.item do
           xml.title(I18n.t(guest.rsvp ? :'response.accepted' : :'response.declined', :name => h(guest.name)))
-          xml.pubDate(guest.created_at.strftime("%a, %d %b %Y %H:%M:%S %z"))
+          xml.pubDate(guest.created_at.to_s(:rfc822))
           xml.link(url_for(event_url(@event.permalink)))
         end
       end
