@@ -22,7 +22,7 @@ private
     else
       I18n.locale = lang_intersection.first
     end
-    RoutingFilter::Locale.default_locale = client_accepted_languages.first || :en
+    I18n.default_locale = client_accepted_languages.first || :en
     true
   end
 

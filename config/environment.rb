@@ -76,4 +76,5 @@ Rails::Initializer.run do |config|
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
 end
 
+RoutingFilter::Locale.include_default_locale = false
 ExceptionNotifier.exception_recipients = [["awendt", "hyggelig.org"].join("@")] # Trying to avoid spam
