@@ -81,3 +81,21 @@ describe Event, "has_responses?" do
   end
 
 end
+
+describe Event, 'write-protecting expires_on' do
+
+  it 'should set a default value on creation' do
+    event = Event.new(:name => 'test', :date => 'test', :location => 'test', :expires_on => 1.day.ago)
+    event.save
+    event.expires_on.should be_future
+  end
+
+  it 'should disallow setting the value afterwards' do
+    event = Event.create!(:name => 'test', :date => 'test', :location => 'test')
+    event.expires_on = 1.year.ago
+    event.save
+    event.reload # this is necessary so the object is in sync with DB
+    event.expires_on.should be_future
+  end
+
+end
