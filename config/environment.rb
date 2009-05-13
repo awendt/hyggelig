@@ -60,6 +60,7 @@ Rails::Initializer.run do |config|
     :session_key => '_hyggelig_org_session',
     :secret      => "#{File.read(RAILS_ROOT + '/config/session_key_secret')}"
   }
+  config.action_controller.allow_forgery_protection = false
 
   # Use the database for sessions instead of the cookie-based default,
   # which shouldn't be used to store highly confidential information
