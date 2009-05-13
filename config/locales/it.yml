@@ -52,9 +52,9 @@ it:
     formats:
       default: "%Y-%m-%d"
       short: "%e %b"
-      long: "%B %e, %Y"
+      long: "%e %B %Y"
       only_day: "%e"
-      expiration: "%B %e"
+      expiration: "%e %B"
 
     day_names: [Domenica, Luned&igrave;, Marted&igrave;, Mercoled&igrave;, Gioved&igrave;, Venerd&igrave;, Sabato]
     abbr_day_names: [Dom, Lun, Mar, Mer, Gio, Ven, Sab]

@@ -27,6 +27,7 @@ en:
     submit_label: Create event page
     will_expire: 'Please note: This event will last until {{date}}.'
     guest_list: Guest list
+    expires_on: This page is auto-deleted on {{date}}
     when: When?
     where: Where?
   response:

@@ -27,6 +27,7 @@ de:
     submit_label: Seite anlegen
     will_expire: 'Achtung: Dieses Ereignis verfällt am {{date}}.'
     guest_list: Gästeliste
+    expires_on: Diese Seite wird am {{date}} automatisch gelöscht
     when: Wann?
     where: Wo?
   response:

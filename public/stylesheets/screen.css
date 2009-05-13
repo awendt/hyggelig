@@ -296,3 +296,9 @@ ol#steps + h2 {
 #create-now a:visited, #create-now a:link {
 	color:#333;
 }
+
+.expiration {
+	text-align:center;
+	margin-top:-10px;
+	font-size:0.8em;
+}

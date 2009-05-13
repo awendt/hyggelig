@@ -5,8 +5,8 @@ describe "viewing an event and its responses" do
   before do
     @guest = mock_model(Response, :name => '<iframe src=""></iframe>', :attending? => true)
     @event = mock_model(Event, :name => '<script></script>', :date => '<b>date</b>', :permalink => "script-script",
-      :location => '<iframe src=""></iframe>', :has_responses? => true, :valid? => true, 
-      :responses => [@guest])
+      :location => '<iframe src=""></iframe>', :has_responses? => true, :valid? => true,
+      :responses => [@guest], :expires_on => 1.day.from_now)
     assigns[:event] = @event
   end
 

@@ -4,6 +4,10 @@
 
 <h1 class="event_name"><%= h(@event.name) %></h1>
 
+<div class="expiration">
+  <%= I18n.t(:'event.expires_on', :date => content_tag(:strong, "#{I18n.l(@event.expires_on, :format => :expiration)}")) %>
+</div>
+
 <div class="container">
 
 <div id="details">
