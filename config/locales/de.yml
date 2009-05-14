@@ -1,7 +1,7 @@
 de:
   language: Deutsch
   slogan: Treffen mit Freunden einfach planen
-  add_event: Neues Ereignis anlegen
+  add_event: Neue Ereignisseite anlegen
   about:
     what_is_hyggelig: '{{site_name}} ist freie Software, die von {{name}} betreut wird.'
     questions_or_bugs: Falls du Fehler gefunden oder Fragen hast, wende dich damit bitte an die {{mlist}}.
@@ -25,7 +25,7 @@ de:
     location_ex1: bei Katy
     location_ex2: Lindenstr. 12
     submit_label: Seite anlegen
-    will_expire: 'Achtung: Dieses Ereignis verfällt am {{date}}.'
+    will_expire: 'Achtung: Heute angelegte Seiten verfallen am {{date}}.'
     guest_list: Gästeliste
     expires_on: Diese Seite wird am {{date}} automatisch gelöscht
     when: Wann?

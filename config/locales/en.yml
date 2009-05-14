@@ -1,7 +1,7 @@
 en:
   language: English
   slogan: Simple event planning for you and your friends
-  add_event: Add your event
+  add_event: Create an event page
   about:
     what_is_hyggelig: '{{site_name}} is free software maintained by {{name}}.'
     questions_or_bugs: If you have questions or found any bugs, please post them to the {{mlist}}.
@@ -25,7 +25,7 @@ en:
     location_ex1: Bob's place
     location_ex2: 105 Wisteria Lane
     submit_label: Create event page
-    will_expire: 'Please note: This event will last until {{date}}.'
+    will_expire: 'Note: Event pages created today will last until {{date}}.'
     guest_list: Guest list
     expires_on: This page is auto-deleted on {{date}}
     when: When?
