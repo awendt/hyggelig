@@ -1,7 +1,7 @@
 it:
   language: Italiano
   slogan: Un pianificatore di eventi per te e i tuoi amici
-  add_event: Aggiungi il tuo evento
+  add_event: Crea una pagina per l'evento
   about:
     what_is_hyggelig: '{{site_name}} &egrave; software libero mantenuto da {{name}}.'
     questions_or_bugs: Se hai delle domande o trovi bug, per favore riportali alla {{mlist}}.
@@ -25,8 +25,9 @@ it:
     location_ex1: Da Giovanna
     location_ex2: Via Nazionale 16
     submit_label: Crea la pagina dell'evento
-    will_expire: 'Attenzione: Questo evento durer&agrave; fino al {{date}}.'
+    will_expire: 'Attenzione: Le pagine create oggi dureranno fino al {{date}}.'
     guest_list: Lista degli invitati
+    expires_on: Questa pagina verrà cancellata automaticamente il giorno {{date}}
     when: Quando?
     where: Dove?
   response:
