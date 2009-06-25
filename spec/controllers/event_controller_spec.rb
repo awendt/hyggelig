@@ -1,5 +1,29 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
+describe EventController, 'generating routes' do
+
+  it 'should work for the homepage' do
+    route_for(:controller => 'event', :action => 'new').should == '/'
+  end
+
+  it 'should work correctly for viewing events' do
+    route_for(:controller => 'event', :action => 'view', :permalink => 'my-party').should == '/my-party'
+  end
+
+end
+
+describe EventController, 'recognizing routes' do
+
+  it 'should work for the homepage' do
+    params_from(:get, '/').should == {:controller => 'event', :action => 'new'}
+  end
+
+  it 'should work correctly for viewing events' do
+    params_from(:get, '/my-party').should == {:controller => 'event', :action => 'view', :permalink => 'my-party'}
+  end
+
+end
+
 describe EventController, "processing GET requests" do
 
   it "should render event/new without flash" do
@@ -60,6 +84,24 @@ describe EventController, 'calculating the permalink for preview' do
     xhr :post, :preview_url
     response.should render_template('_url_preview')
     response.should be_success
+  end
+
+end
+
+describe EventController, 'viewing an event and its reponses' do
+
+  it "should flash and redirect to event/new if no event is found by permalink" do
+    Event.should_receive(:find_by_permalink).with("foo").and_return(nil)
+    get :view, :permalink => "foo"
+    flash[:error].should_not be_nil
+    response.should redirect_to(create_path)
+  end
+
+  it "should render the 'view' template if event is found" do
+    Event.should_receive(:find_by_permalink).with("bar").and_return(mock_model(Event, :responses => [mock_model(Response)]))
+    get :view, :permalink => "bar"
+    flash[:notice].should be_nil
+    response.should render_template('view')
   end
 
 end

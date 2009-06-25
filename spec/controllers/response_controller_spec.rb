@@ -1,20 +1,30 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
+describe ResponseController, 'generating routes' do
+
+  it 'should work for feeds' do
+    route_for(:controller => 'response', :action => 'feed', :permalink => 'my-party').should == '/feed/my-party'
+  end
+
+  it 'should work correctly for permalinks' do
+    route_for(:controller => 'response', :action => 'post', :permalink => 'my-party').should == '/respond/my-party'
+  end
+
+end
+
+describe ResponseController, 'recognizing routes' do
+
+  it 'should work for feeds' do
+    params_from(:get, '/feed/my-party').should == {:controller => 'response', :action => 'feed', :permalink => 'my-party'}
+  end
+
+  it 'should work for posting responses' do
+    params_from(:post, '/respond/my-party').should == {:controller => 'response', :action => 'post', :permalink => 'my-party'}
+  end
+
+end
+
 describe ResponseController, "processing GET requests" do
-
-  it "should flash and redirect to event/new if no event is found by permalink" do
-    Event.should_receive(:find_by_permalink).with("foo").and_return(nil)
-    get :post, :id => "foo"
-    flash[:error].should_not be_nil
-    response.should redirect_to(create_path)
-  end
-
-  it "should render the 'post' template if event is found" do
-    Event.should_receive(:find_by_permalink).with("bar").and_return(mock_model(Event, :responses => [mock_model(Response)]))
-    get :post, :id => "bar"
-    flash[:notice].should be_nil
-    response.should render_template('post')
-  end
 
   it "should output an RSS feed" do
     alice = mock_model(Response, :created_at => 5.minutes.ago, :name => "Alice")
@@ -27,9 +37,14 @@ describe ResponseController, "processing GET requests" do
 
   it 'should flash and redirect to event if no event is found by permalink' do
     Event.should_receive(:find_by_permalink).with("foo").and_return(nil)
-    get :feed, :id => "foo"
+    get :feed, :permalink => "foo"
     response.should be_missing
     response.should render_template("#{RAILS_ROOT}/public/404.html")
+  end
+
+  it 'should redirect to event/view on #post' do
+    get :post, :permalink => 'foo'
+    response.should redirect_to('/foo')
   end
 
 end
@@ -55,11 +70,11 @@ describe ResponseController, "processing POST requests" do
     end
 
     it "should not save the response" do
-      lambda { post :post, :id => "foo", :response => @options }.should_not change(Response, :count)
+      lambda { post :post, :permalink => "foo", :response => @options }.should_not change(Response, :count)
     end
 
     it "should flash and redirect" do
-      post :post, :id => "foo", :response => @options
+      post :post, :permalink => "foo", :response => @options
       flash[:error].should_not be_nil
       response.should redirect_to(create_path)
     end
@@ -72,16 +87,17 @@ describe ResponseController, "processing POST requests" do
       Event.should_receive(:find_by_permalink).with("bar").and_return(@event)
       @event.should_receive(:valid?).and_return(true)
       @event.stub!(:responses).and_return([mock_model(Response)])
+      @event.stub!(:permalink).and_return("bar")
     end
 
     it "should save the response" do
-      lambda { post :post, :id => "bar", :response => @options }.should change(Response, :count).from(0).to(1)
+      lambda { post :post, :permalink => "bar", :response => @options }.should change(Response, :count).from(0).to(1)
     end
 
-    it "should not flash and render anew" do
-      post :post, :id => "bar", :response => @options
+    it "should flash and redirect to event page" do
+      post :post, :permalink => "bar", :response => @options
       flash[:notice].should_not be_nil
-      response.should render_template('post')
+      response.should redirect_to('/bar')
     end
 
   end
@@ -95,13 +111,13 @@ describe ResponseController, "processing POST requests" do
     end
 
     it "should not save the response" do
-      lambda { post :post, :id => "bar", :response => @options.merge(:rsvp => nil) }.should_not change(Response, :count)
+      lambda { post :post, :permalink => "bar", :response => @options.merge(:rsvp => nil) }.should_not change(Response, :count)
     end
 
-    it "should flash and render anew" do
-      post :post, :id => "bar", :response => @options.merge(:rsvp => nil)
+    it "should flash and render event page" do
+      post :post, :permalink => "bar", :response => @options.merge(:rsvp => nil)
       flash[:notice].should be_nil
-      response.should render_template('post')
+      response.should render_template('event/view')
     end
 
   end

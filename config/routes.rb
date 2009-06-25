@@ -32,8 +32,9 @@ ActionController::Routing::Routes.draw do |map|
 
   map.create '/', :controller => 'event', :action => 'new'
   map.static '/:action', :controller => 'static_pages', :action => StaticPagesController::PAGES
-  map.event '/:id', :controller => 'response', :action => 'post'
-  map.feed '/feed/:id', :controller => 'response', :action => 'feed'
+  map.event '/:permalink', :controller => 'event', :action => 'view'
+  map.feed '/feed/:permalink', :controller => 'response', :action => 'feed'
+  map.respond '/respond/:permalink', :controller => 'response', :action => 'post'
 
   # Install the default routes as the lowest priority.
   map.connect ':controller/:action/:id'

@@ -20,4 +20,14 @@ class EventController < ApplicationController
     render(:partial => 'url_preview')
   end
 
+  def view
+    @event = Event.find_by_permalink(params[:permalink])
+
+    unless @event
+      flash[:error] = :'flash.event_not_found'
+      flash[:error_item] = "<q>#{params[:permalink]}</q>"
+      redirect_to create_path
+    end
+
+  end
 end

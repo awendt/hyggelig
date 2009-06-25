@@ -11,7 +11,7 @@ describe "viewing an event and its responses" do
   end
 
   it "should escape HTML in event name, date and location" do
-    render '/response/post'
+    render '/event/view'
     response.should_not have_tag("script")
     response.should_not have_tag("b")
     response.should_not have_tag("iframe")
