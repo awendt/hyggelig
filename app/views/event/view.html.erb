@@ -19,21 +19,21 @@
 
 <h2><%= I18n.t(:'response.rsvp') %></h2>
 
-<% form_tag :controller => 'response', :action => 'post', :permalink => params[:permalink] do %>
+<% form_for @response, :url => response_url(:permalink => @event.permalink) do |f| %>
 
 <%= error_messages_body_for 'response' %>
 
 <div class="tip">
 <%= label_with_hint :response, :name, I18n.t(:'response.name'), I18n.t(:'response.name_hint') %>
-<%= text_field :response, :name, :size => 20 %>
+<%= f.text_field :name, :size => 20 %>
 </div>
 
 <div class="bubble">
-<p><%= radio_button :response, :rsvp, 1 %><%= label :response, :rsvp_1, I18n.t(:'response.confirm') %></p>
-<p><%= radio_button :response, :rsvp, 0 %><%= label :response, :rsvp_0, I18n.t(:'response.decline') %></p>
+<p><%= f.radio_button :rsvp, true %><%= f.label :rsvp_true, I18n.t(:'response.confirm') %></p>
+<p><%= f.radio_button :rsvp, false %><%= f.label :rsvp_false, I18n.t(:'response.decline') %></p>
 </div>
 
-<div><%= submit_tag I18n.t(:'response.submit_label') %></div>
+<div><%= f.submit I18n.t(:'response.submit_label') %></div>
 
 <% end -%>
 
