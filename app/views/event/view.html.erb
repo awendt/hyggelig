@@ -10,16 +10,15 @@
 
 <div class="container">
 
-<div id="details">
-<p><%= I18n.t(:'event.when') %> <span class="date"><%= h(@event.date) %></span></p>
-<p><%= I18n.t(:'event.where') %> <span class="location"><%= h(@event.location) %></span></p>
-</div>
+<div id="guests">
 
-<div class="rsvp">
+<h2><%= I18n.t(:'event.guest_list') %> <%= link_to(image_tag('feed.png'), feed_url(@event.permalink)) %></h2>
 
-<h2><%= I18n.t(:'response.rsvp') %></h2>
-
+<ul id="guest_list">
+<li>
 <% form_for @response, :url => response_url(:permalink => @event.permalink) do |f| %>
+
+<h3><%= I18n.t(:'response.rsvp') %></h3>
 
 <%= error_messages_body_for 'response' %>
 
@@ -36,21 +35,21 @@
 <div><%= f.submit I18n.t(:'response.submit_label') %></div>
 
 <% end -%>
-
-</div>
-
-<div class="guestlist">
-
-<h2><%= I18n.t(:'event.guest_list') %> <%= link_to(image_tag('feed.png'), feed_url(@event.permalink)) %></h2>
-
-<% if @event.has_responses? -%>
-<ul id="guest_list">
+</li>
 <%= render :partial => "shared/guest", :collection => @event.responses %>
 </ul>
-<% else -%>
+<% unless @event.has_responses? -%>
 <p><%= I18n.t(:'response.no_responses_yet') %></p>
 <% end -%>
 
+</div>
+
+<div id="details">
+
+<h2><%= I18n.t(:'event.summary') %></h2>
+
+<p><%= I18n.t(:'event.when') %> <span class="date"><%= h(@event.date) %></span></p>
+<p><%= I18n.t(:'event.where') %> <span class="location"><%= h(@event.location) %></span></p>
 </div>
 
 </div>

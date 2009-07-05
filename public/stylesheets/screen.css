@@ -128,8 +128,8 @@ ul#guest_list {
   line-height:1.3em;
 }
 
-#guest_list li {
-  padding:5px 20px;
+li.declined, li.accepted {
+   padding:5px 20px;
 }
 
 a img {
@@ -137,31 +137,18 @@ a img {
   margin-bottom:0.05em;
 }
 
-.rsvp label {
-  display:inline;
-}
-
-.rsvp, .guestlist {
-  padding:0 10px;
-  margin-bottom:20px;
-}
-
-.guestlist {
+#guests {
   width:45%;
   min-height:300px;
-  float:right;
-}
-
-.rsvp {
-  width:40%;
-  float:left;  
-  background-color:#E3F1F6;
-  border:1px solid #ccc;
-  margin-right:10px;
-  padding-bottom:10px;
+  float:left;
 }
 
 #details {
+  float:right;
+  width: 40%;
+}
+
+#details p {
   font-size:1.2em;
   line-height:1.3em
 }
@@ -301,4 +288,20 @@ ol#steps + h2 {
 	text-align:center;
 	margin-top:-10px;
 	font-size:0.8em;
+}
+
+#new_response {
+  background-color:#E3F1F6;
+/*  padding:10px;
+  margin-left:10px;*/
+  border:1px solid #ccc;
+  padding: 10px;
+}
+
+#new_response label {
+  display:inline;
+}
+
+#new_response h3 {
+  display:none;
 }
