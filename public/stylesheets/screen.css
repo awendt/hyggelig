@@ -154,7 +154,7 @@ a img {
 }
 
 .bubble {
-  background:white; 
+  background:white;
   padding:10px 10px;
   margin:0 0 10px 0;
   border:1px solid #ccc;
@@ -167,7 +167,7 @@ a img {
 }
 
 .tip {
-  margin:0 0 -2px 0; 
+  margin:0 0 -2px 0;
   position:relative;
   z-index:999;
   padding: 0 0 10px 0;
@@ -179,8 +179,8 @@ a img {
   background-color:#fff;
   text-align:center;
   padding:10px 100px;
-  margin-top:50px; 
-  border-bottom:1px solid #FFE8CD; 
+  margin-top:50px;
+  border-bottom:1px solid #FFE8CD;
   border-top:1px solid #FFE8CD;
   margin-bottom:10px;
 }
@@ -304,4 +304,16 @@ ol#steps + h2 {
 
 #new_response h3 {
   display:none;
+}
+
+label.overlabel-apply {
+  position:absolute;
+  top:7px;
+  left:10px;
+  z-index:1;
+  color:#666;
+}
+
+.fieldWithErrors label.overlabel-apply {
+  top:12px;
 }

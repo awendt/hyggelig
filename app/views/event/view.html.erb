@@ -23,7 +23,7 @@
 <%= error_messages_body_for 'response' %>
 
 <div class="tip">
-<%= label_with_hint :response, :name, I18n.t(:'response.name'), I18n.t(:'response.name_hint') %>
+<%= f.label :name, I18n.t(:'response.name'), :class => 'overlabel' %>
 <%= f.text_field :name, :size => 20 %>
 </div>
 
