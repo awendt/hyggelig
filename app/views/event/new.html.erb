@@ -1,5 +1,7 @@
 <div class="twocol">
 
+<div id="get-started">
+
 <div id="welcome">
 hyggelig.org brings <strong>simple event planning</strong> to you and your friends.
 It works <strong>without registration</strong> or login,
@@ -7,17 +9,18 @@ and anything you submit expires automatically.<br />
 <%= link_to 'Learn more', static_path(:tour) %> or <a href="http://blog.hyggelig.org/">read the blog</a>.
 </div>
 
-<div class="container" id="get-started">
-<h1><%= I18n.t(:add_event) %></h1>
-
-<% I18n.with_scope(:instructions) do |inst| -%>
 <ol id="instructions">
-  <li><%= inst.t(:fill_in) %></li>
-  <li><%= inst.t(:mail_url) %></li>
-  <li><%= inst.t(:guests_rsvp) %></li>
-  <li><%= inst.t(:follow_responses) %></li>
-</ol>
+<% I18n.with_scope(:instructions) do |inst| -%>
+  <li id="step1"><strong><%= inst.t(:create) %></strong><br/><span><%= inst.t(:fill_in) %></span></li>
+  <li id="step2"><strong><%= inst.t(:send) %></strong><br/><span><%= inst.t(:mail_url) %></span></li>
+  <li id="step3"><strong><%= inst.t(:follow) %></strong><br/><span><%= inst.t(:follow_responses) %></span></li>
 <% end -%>
+</ol>
+
+</div>
+
+<div class="container" id="create">
+<h1><%= I18n.t(:add_event) %></h1>
 
 <% form_tag :action => 'new' do -%>
 

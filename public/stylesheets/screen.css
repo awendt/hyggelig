@@ -171,7 +171,7 @@ a img {
   position:relative;
   z-index:999;
   padding: 0 0 10px 0;
-  background:url(/images/tip.gif) no-repeat 20px bottom;
+  background:url(/images/icons.png) no-repeat 20px bottom;
 }
 
 .footer {
@@ -257,18 +257,64 @@ ol#steps + h2 {
   background-color:#E3F1F6;
 }
 
-#welcome {
+#instructions {
+  margin-top:10px;
+  font-size:2em;
+  font-weight:bold;
+  width:100%;
+  color:#666;
+  font-style:italic;
+  list-style-position:inside;
+}
+
+#instructions li {
+  padding-left:90px;
+  padding-top:25px;
+  padding-bottom:10px;
+}
+
+#instructions span {
+  color:#000;
+  font-style:normal;
+  padding:0;
+  margin:-5px 0 10px 0;
+}
+
+#step1 {
+  background:url(/images/icons.png) no-repeat 5px 20px;
+}
+
+#step2 {
+  background:url(/images/icons.png) no-repeat 0 -85px;
+}
+
+#step3 {
+  background:url(/images/icons.png) no-repeat 2px -195px;
+  margin-bottom:10px;
+}
+
+#instructions li span {
+  font-size:0.5em;
+  font-weight:normal;
+  line-height:0.5em;
+}
+
+#get-started {
   width:30%;
   float:left;
-  margin-top:100px;
+}
+
+#welcome {
   padding:10px;
+  margin-top:50px;
+  margin-bottom:20px;
 }
 
 .twocol {
 	padding:0 40px;
 }
 
-#get-started {
+#create {
 	margin-right:5%;
 }
 

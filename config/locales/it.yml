@@ -7,9 +7,11 @@ it:
     questions_or_bugs: Se hai delle domande o trovi bug, per favore riportali alla {{mlist}}.
     mlist: mailing list
   instructions:
+    create: Create a page
     fill_in: Compila il form che trovi sotto e avrai una pagina creata per il tuo evento
+    send: Send the link
     mail_url: Invia un'email con l'indirizzo di quella pagina ai tuoi invitati
-    guests_rsvp: I tuoi invitati possono confermare o declinare l'invito su quella pagina
+    follow: Follow
     follow_responses: Segui le risposte dei tuoi invitati (c'&egrave; anche un feed RSS)
   event:
     name_label: Qual &egrave; il nome dell'ocasione/evento?
