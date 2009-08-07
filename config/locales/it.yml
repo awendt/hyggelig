@@ -7,11 +7,11 @@ it:
     questions_or_bugs: Se hai delle domande o trovi bug, per favore riportali alla {{mlist}}.
     mlist: mailing list
   instructions:
-    create: Create a page
+    create: Crea una pagina
     fill_in: Compila il form che trovi sotto e avrai una pagina creata per il tuo evento
-    send: Send the link
+    send: Invia il link
     mail_url: Invia un'email con l'indirizzo di quella pagina ai tuoi invitati
-    follow: Follow
+    follow: Segui le risposte
     follow_responses: Segui le risposte dei tuoi invitati (c'&egrave; anche un feed RSS)
   event:
     name_label: Qual &egrave; il nome dell'ocasione/evento?
@@ -29,6 +29,7 @@ it:
     submit_label: Crea la pagina dell'evento
     will_expire: 'Attenzione: Le pagine create oggi dureranno fino al {{date}}.'
     guest_list: Lista degli invitati
+    summary: Sommario
     expires_on: Questa pagina verrà cancellata automaticamente il giorno {{date}}
     when: Quando?
     where: Dove?
