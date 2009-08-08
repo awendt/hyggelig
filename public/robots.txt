@@ -8,3 +8,4 @@ User-Agent: Googlebot
 Disallow: /en/
 Disallow: /de/tour
 Disallow: /it/tour
+Disallow: /es/tour
