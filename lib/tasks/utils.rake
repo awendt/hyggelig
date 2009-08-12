@@ -14,6 +14,11 @@ namespace :stats do
     puts "Found #{Event.count} events with #{Response.count} responses"
   end
 
+  desc "Event stats in parsable format (for logs)"
+  task :log => :environment do
+    puts "#{Date.today.to_s(:iso)};#{Event.count};#{Response.count}"
+  end
+
 end
 
 namespace :secret do
