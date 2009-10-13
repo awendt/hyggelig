@@ -58,7 +58,7 @@ Rails::Initializer.run do |config|
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
     :session_key => '_hyggelig_org_session',
-    :secret      => "#{File.read(RAILS_ROOT + '/config/session_key_secret')}"
+    :secret      => ENV['SESSION_SECRET'] || "#{File.read(RAILS_ROOT + '/config/session_key_secret')}"
   }
   config.action_controller.allow_forgery_protection = false
 
