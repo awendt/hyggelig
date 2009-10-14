@@ -8,7 +8,7 @@
   <title><%= page_title %></title>
   <%= stylesheet_link_tag 'screen' %>
   <%= auto_discovery_link_tag :rss, :controller => 'response', :action => 'feed', :id => @event.permalink if @event && @event.valid? %>
-  <%= javascript_include_tag 'prototype', 'effects', 'overlabel', :cache => 'ajax' %>
+  <%= javascript_include_tag 'prototype', 'effects', 'overlabel' %>
 </head>
 <body>
 
