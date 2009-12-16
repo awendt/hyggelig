@@ -78,4 +78,3 @@ Rails::Initializer.run do |config|
 end
 
 RoutingFilter::Locale.include_default_locale = false
-ExceptionNotifier.exception_recipients = [["awendt", "hyggelig.org"].join("@")] # Trying to avoid spam

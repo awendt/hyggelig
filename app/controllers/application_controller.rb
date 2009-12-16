@@ -3,8 +3,6 @@
 
 class ApplicationController < ActionController::Base
 
-  include ExceptionNotifiable
-
   before_filter :set_locale
 
   helper :all # include all helpers, all the time
