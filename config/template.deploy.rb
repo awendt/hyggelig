@@ -47,12 +47,3 @@ namespace :deploy do
   after 'deploy:update_code', 'deploy:symlink_session_key_secret'
   after 'deploy:update_code', 'deploy:symlink_frozen_rails'
 end
-
-namespace :stats do
-
-  desc "Show event stats"
-  task :events, :roles => :app do
-    run "cd #{deploy_to}/#{current_dir}; rake stats:events RAILS_ENV=production"
-  end
-
-end
