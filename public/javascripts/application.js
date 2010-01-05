@@ -44,4 +44,8 @@ $(document).ready(function() {
       }
     });
   });
+  $("#create input[type=submit]").click(function() {
+    piwikTracker.trackGoal(2);
+    return true;
+  });
 });
