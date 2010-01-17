@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :responses
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -33,8 +35,8 @@ ActionController::Routing::Routes.draw do |map|
   map.create '/', :controller => 'event', :action => 'new'
   map.static '/:action', :controller => 'static_pages', :action => StaticPagesController::PAGES
   map.event '/:permalink', :controller => 'event', :action => 'view'
-  map.feed '/feed/:permalink', :controller => 'response', :action => 'feed'
-  map.response '/respond/:permalink', :controller => 'response', :action => 'post'
+  map.feed '/feed/:permalink', :controller => 'responses', :action => 'feed'
+  map.response '/respond/:permalink', :controller => 'responses', :action => 'create'
 
   # Install the default routes as the lowest priority.
   map.connect ':controller/:action/:id'
