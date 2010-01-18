@@ -30,6 +30,11 @@ jQuery.fn.overlabel = function() {
   });
 };
 
+jQuery.ajaxSetup({
+  beforeSend: function(xhr) {
+    xhr.setRequestHeader("Accept", "text/javascript")
+  }
+});
 
 $(document).ready(function() {
   $("label.overlabel").overlabel();
@@ -44,8 +49,14 @@ $(document).ready(function() {
       }
     });
   });
+
   $("#create input[type=submit]").click(function() {
     piwikTracker.trackGoal(2);
     return true;
+  });
+
+  $("#new_reply").submit(function() {
+    $.post($(this).attr("action"), $(this).serialize(), null, "script");
+    return false;
   });
 });

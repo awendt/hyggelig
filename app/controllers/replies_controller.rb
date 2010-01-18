@@ -52,9 +52,12 @@ class RepliesController < ApplicationController
 
     respond_to do |format|
       if @reply.save
-        flash[:notice] = 'reply was successfully created.'
-        format.html { redirect_to(event_url(@event.permalink)) }
+        format.html do
+          flash[:notice] = 'Reply was successfully created.'
+          redirect_to(event_url(@event.permalink))
+        end
         format.xml  { render :xml => @reply, :status => :created, :location => @reply }
+        format.js   # create.js.erb
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @reply.errors, :status => :unprocessable_entity }

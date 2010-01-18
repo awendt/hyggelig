@@ -36,7 +36,7 @@
 
 <% end -%>
 </li>
-<%= render :partial => "shared/guest", :collection => @event.replies %>
+<%= render :partial => "replies/reply", :collection => @event.replies, :as => :reply %>
 </ul>
 <% unless @event.has_replies? -%>
 <p><%= I18n.t(:'reply.no_replies_yet') %></p>

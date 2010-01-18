@@ -85,6 +85,7 @@ describe RepliesController do
       end
 
       it "renders JS template on Ajax request" do
+        Reply.stub(:new).and_return(mock_reply(:save => true, :event= => nil))
         post :create, :permalink => "foo", :reply => @options, :format => 'js'
         response.should render_template("create.js")
       end

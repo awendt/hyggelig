@@ -1,0 +1,4 @@
+var answer = $("<%= escape_javascript(render(:partial => @reply)) %>").hide();
+answer.insertAfter($("#guest_list li:first")).slideDown();
+$("#new_reply")[0].reset();
+$("#guest_list + p").remove();
