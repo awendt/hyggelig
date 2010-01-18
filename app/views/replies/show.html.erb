@@ -1,3 +1,12 @@
+<p>
+  <b>Name:</b>
+  <%=h @reply.name %>
+</p>
+
+<p>
+  <b>Rsvp:</b>
+  <%=h @reply.rsvp %>
+</p>
 
 <%= link_to 'Edit', edit_reply_path(@reply) %> |
 <%= link_to 'Back', replies_path %>

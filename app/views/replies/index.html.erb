@@ -2,10 +2,14 @@
 
 <table>
   <tr>
+    <th>Name</th>
+    <th>Rsvp</th>
   </tr>
 
 <% @replies.each do |reply| %>
   <tr>
+    <td><%=h reply.name %></td>
+    <td><%=h reply.rsvp %></td>
     <td><%= link_to 'Show', reply %></td>
     <td><%= link_to 'Edit', edit_reply_path(reply) %></td>
     <td><%= link_to 'Destroy', reply, :confirm => 'Are you sure?', :method => :delete %></td>
