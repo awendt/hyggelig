@@ -1,13 +1,14 @@
-require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
+require 'spec_helper'
 
 describe Event do
-
-  before do
-    @attributes = { :name => "Party", :date => "some time next week", :location => "my place"}
+  before(:each) do
+    @valid_attributes = {
+      :name => "Party", :date => "some time next week", :location => "my place"
+    }
   end
 
-  it "should be valid" do
-    Event.new(@attributes).should be_valid
+  it "should create a new instance given valid attributes" do
+    Event.create!(@valid_attributes)
   end
 
   it "should force presence of name and a minimum on its length" do
@@ -23,12 +24,12 @@ describe Event do
   end
 
   it "should force a minimum length on name" do
-    Event.new(@attributes.merge(:name => 'Pa')).should have(1).error_on(:name)
+    Event.new(@valid_attributes.merge(:name => 'Pa')).should have(1).error_on(:name)
   end
 
   it "should not force uniqueness of name (permalink changes accordingly)" do
-    Event.create!(@attributes)
-    new_event = Event.new(@attributes)
+    Event.create!(@valid_attributes)
+    new_event = Event.new(@valid_attributes)
     new_event.should be_valid
   end
 
@@ -53,7 +54,7 @@ describe Event do
 
   it "should create a permalink along with the event" do
     Event.find_by_permalink("party").should be_nil
-    Event.create!(@attributes)
+    Event.create!(@valid_attributes)
     Event.find_by_permalink("party").should_not be_nil
   end
 
