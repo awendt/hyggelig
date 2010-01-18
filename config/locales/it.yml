@@ -12,7 +12,7 @@ it:
     send: Invia il link
     mail_url: Invia un'email con l'indirizzo di quella pagina ai tuoi invitati
     follow: Segui le risposte
-    follow_responses: Segui le risposte dei tuoi invitati (c'&egrave; anche un feed RSS)
+    follow_replies: Segui le risposte dei tuoi invitati (c'&egrave; anche un feed RSS)
   event:
     name_label: Qual &egrave; il nome dell'ocasione/evento?
     name_label_hint: 'ad es. {{ex1}} oppure {{ex2}}. Sii creativo!'
@@ -33,7 +33,7 @@ it:
     expires_on: Questa pagina verrà cancellata automaticamente il giorno {{date}}
     when: Quando?
     where: Dove?
-  response:
+  reply:
     name: Il tuo nome
     name_hint: Aggiungi pi&ugrave; informazioni, se necessario
     reply: La tua risposta
@@ -44,13 +44,13 @@ it:
     declined: 'ha rifiutato: {{name}}'
     rsvp: RSVP qui
     confirm_or_decline: Prego, scegli la tua risposta
-    no_responses_yet: Nessuno ha accetato finora.
+    no_replies_yet: Nessuno ha accetato finora.
     hosting_an_event: Organizzi un evento?
     create_your_own: Crea la tua pagina per l'evento!
   flash:
     give_url: "Dai l'indirizzo di questa pagina ai tuoi invitati: {{item}}"
     event_not_found: 'Non &egrave; stato possibile trovare una pagina per l''evento in {{item}}.'
-    response_saved: 'La tua risposta &egrave; stata salvata correttamente'
+    reply_saved: 'La tua risposta &egrave; stata salvata correttamente'
 
   date:
     formats:
@@ -132,13 +132,13 @@ it:
   activerecord:
     models:
       event: Il tuo evento
-      response: La tua risposta
+      reply: La tua risposta
     attributes:
       event:
         name: Nome
         date: Data e ora
         location: Luogo
-      response:
+      reply:
         name: Nome
         rsvp: RSVP
     errors:

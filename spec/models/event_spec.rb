@@ -36,7 +36,7 @@ describe Event do
     e1 = Event.new(:name => "neW", :date => "date", :location => "loc")
     e2 = Event.new(:name => "Event", :date => "date", :location => "loc")
     e3 = Event.new(:name => "Feed", :date => "date", :location => "loc")
-    e4 = Event.new(:name => "resPonse", :date => "date", :location => "loc")
+    e4 = Event.new(:name => "rePlies", :date => "date", :location => "loc")
     e5 = Event.new(:name => "FAQ", :date => "date", :location => "loc")
     e6 = Event.new(:name => "Demo", :date => "date", :location => "loc")
     e7 = Event.new(:name => "HELP", :date => "date", :location => "loc")
@@ -59,25 +59,25 @@ describe Event do
 
 end
 
-describe Event, "has_responses?" do
+describe Event, "has_replies?" do
 
   before do
     @event = Event.new
   end
 
-  it "should return TRUE if event has responses" do
-    @event.should_receive(:responses).and_return([mock("RSVP")])
-    @event.has_responses?.should be_true
+  it "should return TRUE if event has replies" do
+    @event.should_receive(:replies).and_return([mock("RSVP")])
+    @event.has_replies?.should be_true
   end
 
   it "should return FALSE if event has no reponses" do
-    @event.should_receive(:responses).and_return([])
-    @event.has_responses?.should be_false
+    @event.should_receive(:replies).and_return([])
+    @event.has_replies?.should be_false
   end
 
-  it "should return FALSE if responses returns nil" do
-    @event.should_receive(:responses).and_return(nil)
-    @event.has_responses?.should be_false
+  it "should return FALSE if replies returns nil" do
+    @event.should_receive(:replies).and_return(nil)
+    @event.has_replies?.should be_false
   end
 
 end

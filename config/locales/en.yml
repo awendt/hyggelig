@@ -12,7 +12,7 @@ en:
     send: Send the link
     mail_url: Mail that page's custom address to your guests.
     follow: Follow
-    follow_responses: Follow your guests' responses (there's also an RSS feed).
+    follow_replies: Follow your guests' replies (there's also an RSS feed).
   event:
     name_label: What's the occasion or event name?
     name_label_hint: 'e.g. {{ex1}} or {{ex2}}. Be creative!'
@@ -33,24 +33,24 @@ en:
     expires_on: This page is auto-deleted on {{date}}
     when: When?
     where: Where?
-  response:
+  reply:
     name: Your name
     name_hint: Add more info as you see fit
     reply: Your reply
     confirm: I will attend
     decline: I will NOT attend
-    submit_label: Post response
+    submit_label: Post reply
     accepted: 'accepted: {{name}}'
     declined: 'declined: {{name}}'
     rsvp: RSVP here
-    confirm_or_decline: Please select your response
-    no_responses_yet: Nobody responded yet.
+    confirm_or_decline: Please select your reply
+    no_replies_yet: Nobody responded yet.
     hosting_an_event: Hosting an event, too?
     create_your_own: Create your own event page!
   flash:
     give_url: "Give this page's address to your guests: {{item}}"
     event_not_found: 'Could not find an event page at the location {{item}}.'
-    response_saved: 'Your response was saved successfully'
+    reply_saved: 'Your reply was saved successfully'
 
   date:
     formats:
@@ -132,13 +132,13 @@ en:
   activerecord:
     models:
       event: Your event
-      response: Your response
+      reply: Your reply
     attributes:
       event:
         name: Name
         date: Date and time
         location: Location
-      response:
+      reply:
         name: Name
         rsvp: RSVP
     errors:

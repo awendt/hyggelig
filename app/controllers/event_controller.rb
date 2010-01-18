@@ -22,7 +22,7 @@ class EventController < ApplicationController
 
   def view
     @event = Event.find_by_permalink(params[:permalink])
-    @response = Response.new(params[:response])
+    @reply = Reply.new(params[:reply])
 
     unless @event
       flash[:error] = :'flash.event_not_found'

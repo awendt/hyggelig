@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe "Responses" do
+describe "Replies" do
 end

@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
 
-  RESERVED_NAMES = %w(new event feed response faq faqs demo help tour).freeze
+  RESERVED_NAMES = %w(new event feed replies faq faqs demo help tour).freeze
   TIME_TO_LIVE = 60.days
   attr_readonly :expires_on
 
@@ -12,12 +12,12 @@ class Event < ActiveRecord::Base
   validates_length_of :name, :minimum => 3
 
   has_permalink :name, :permalink
-  has_many :responses, :dependent => :delete_all
+  has_many :replies, :dependent => :delete_all
 
   named_scope :expired, :conditions => ["expires_on < ?", Date.today]
 
-  def has_responses?
-    !self.responses.blank?
+  def has_replies?
+    !self.replies.blank?
   end
 
   def before_create

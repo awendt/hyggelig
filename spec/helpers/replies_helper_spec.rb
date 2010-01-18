@@ -1,6 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
+require 'spec_helper'
 
-describe ResponseHelper do
+describe RepliesHelper do
 
   before do
     I18n.should_receive(:t).with(anything, :name => "").and_return("foo")
@@ -20,7 +20,7 @@ describe ResponseHelper do
   describe "listing a guest" do
 
     it "should return a list item" do
-      markup = helper.list_item_for(mock_model(Response, :attending? => true, :name => "John Doe"))
+      markup = helper.list_item_for(mock_model(Reply, :attending? => true, :name => "John Doe"))
       markup.should have_tag("li", :text => /John Doe/)
     end
 

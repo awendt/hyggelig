@@ -12,7 +12,7 @@ de:
     send: Link senden
     mail_url: Schick deinen Gästen die Adresse der angelegten Seite.
     follow: Zusehen
-    follow_responses: Behalte den Überblick über Zu- und Absagen, auch per RSS.
+    follow_replies: Behalte den Überblick über Zu- und Absagen, auch per RSS.
   event:
     name_label: Was ist der Anlass? Wie heißt dein Ereignis?
     name_label_hint: 'z.B. {{ex1}} oder {{ex2}}. Sei kreativ!'
@@ -33,7 +33,7 @@ de:
     expires_on: Diese Seite wird am {{date}} automatisch gelöscht
     when: Wann?
     where: Wo?
-  response:
+  reply:
     name: Dein Name
     name_hint: Falls angebracht, trage weitere Infos ein
     reply: Deine Antwort
@@ -44,13 +44,13 @@ de:
     declined: 'abgesagt: {{name}}'
     rsvp: Hier antworten
     confirm_or_decline: Bitte wähle deine Antwort aus
-    no_responses_yet: Noch hat niemand geantwortet.
+    no_replies_yet: Noch hat niemand geantwortet.
     hosting_an_event: Auch Leute eingeladen?
     create_your_own: Leg deine eigene Seite an!
   flash:
     give_url: 'Schick deinen Gästen die Adresse dieser Seite, {{item}}'
     event_not_found: 'Konnte keine Seite unter der Adresse {{item}} finden.'
-    response_saved: 'Deine Antwort wurde erfolgreich gespeichert'
+    reply_saved: 'Deine Antwort wurde erfolgreich gespeichert'
 
   date:
     formats:
@@ -127,13 +127,13 @@ de:
   activerecord:
     models:
       event: Dein Ereignis
-      response: Deine Antwort
+      reply: Deine Antwort
     attributes:
       event:
         name: Name
         date: Datum und Uhrzeit
         location: Ort
-      response:
+      reply:
         name: Name
         rsvp: Antwort
     errors:

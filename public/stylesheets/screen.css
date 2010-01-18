@@ -336,7 +336,7 @@ ol#steps + h2 {
 	font-size:0.8em;
 }
 
-#new_response {
+#new_reply {
   background-color:#E3F1F6;
 /*  padding:10px;
   margin-left:10px;*/
@@ -344,11 +344,11 @@ ol#steps + h2 {
   padding: 10px;
 }
 
-#new_response label {
+#new_reply label {
   display:inline;
 }
 
-#new_response h3 {
+#new_reply h3 {
   display:none;
 }
 

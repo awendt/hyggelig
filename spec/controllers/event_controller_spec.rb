@@ -42,7 +42,7 @@ describe EventController, "creating a new event" do
     lambda { post :new, :event => @options }.should change(Event, :count).from(0).to(1)
   end
 
-  it "should redirect to response/post with a notice on successful save" do
+  it "should redirect to reply/post with a notice on successful save" do
     post :new, :event => @options
     flash[:notice_item].first.should =~ /my-party/
     response.should redirect_to(event_path("my-party"))
@@ -98,7 +98,7 @@ describe EventController, 'viewing an event and its reponses' do
   end
 
   it "should render the 'view' template if event is found" do
-    Event.should_receive(:find_by_permalink).with("bar").and_return(mock_model(Event, :responses => [mock_model(Response)]))
+    Event.should_receive(:find_by_permalink).with("bar").and_return(mock_model(Event, :replies => [mock_model(Reply)]))
     get :view, :permalink => "bar"
     flash[:notice].should be_nil
     response.should render_template('view')

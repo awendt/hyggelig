@@ -1,14 +1,14 @@
 require File.dirname(__FILE__) + '/../../spec_helper'
 
-describe "viewing an event and its responses" do
+describe "viewing an event and its replies" do
 
   before do
-    @resp = mock_model(Response, :name => '<iframe src=""></iframe>', :attending? => true, :rsvp => true)
+    @reply = mock_model(Reply, :name => '<iframe src=""></iframe>', :attending? => true, :rsvp => true)
     @event = mock_model(Event, :name => '<script></script>', :date => '<b>date</b>', :permalink => "script-script",
-      :location => '<iframe src=""></iframe>', :has_responses? => true, :valid? => true,
-      :responses => [@resp], :expires_on => 1.day.from_now)
+      :location => '<iframe src=""></iframe>', :has_replies? => true, :valid? => true,
+      :replies => [@resp], :expires_on => 1.day.from_now)
     assigns[:event] = @event
-    assigns[:response] = @resp
+    assigns[:reply] = @reply
   end
 
   it "should escape HTML in event name, date and location" do
