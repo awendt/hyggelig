@@ -24,4 +24,12 @@ class Event < ActiveRecord::Base
     write_attribute(:expires_on, TIME_TO_LIVE.from_now.to_date)
   end
 
+  def to_xml
+    super(:except => [:id])
+  end
+
+  def to_json
+    super(:except => [:id])
+  end
+
 end

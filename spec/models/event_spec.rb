@@ -58,6 +58,16 @@ describe Event do
     Event.find_by_permalink("party").should_not be_nil
   end
 
+  describe "advertising for webservice" do
+
+    it 'excludes the ID for XML representation' do
+      Event.create!(@valid_attributes).to_xml.should_not =~ /<id/
+    end
+
+    it 'excludes the ID for JSON representation' do
+      Event.create!(@valid_attributes).to_json.should_not =~ %r("id":)
+    end
+  end
 end
 
 describe Event, "has_replies?" do
