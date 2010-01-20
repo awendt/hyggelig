@@ -54,7 +54,7 @@ class RepliesController < ApplicationController
       if @reply.save
         format.html do
           flash[:notice] = 'Reply was successfully created.'
-          redirect_to(event_url(@event.permalink))
+          redirect_to(permalink_url(@event.permalink))
         end
         format.xml  { render :xml => @reply, :status => :created, :location => @reply }
         format.js   # create.js.erb

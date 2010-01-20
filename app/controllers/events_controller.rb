@@ -13,11 +13,19 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.xml
   def show
-    @event = Event.find(params[:id])
+    @event = Event.find_by_permalink(params[:permalink])
+    @reply = Reply.new(params[:reply])
+
+    unless @event
+      flash[:error] = :'flash.event_not_found'
+      flash[:error_item] = "<q>#{params[:permalink]}</q>"
+      redirect_to create_path and return
+    end
 
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @event }
+      format.rss  { render :action => 'feed.rxml' }
     end
   end
 
@@ -44,8 +52,14 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        flash[:notice] = 'Event was successfully created.'
-        format.html { redirect_to(@event) }
+        # put in a linebreak
+        flash[:notice] = :'flash.give_url'
+        # build a URL for current event (redirect below prevents using url_for)
+        url = permalink_url(@event.permalink)
+        # use that URL to link to the current page
+        flash[:notice_item] = ["#{url}", "#{url}"]
+
+        format.html { redirect_to(permalink_path(@event.permalink)) }
         format.xml  { render :xml => @event, :status => :created, :location => @event }
       else
         format.html { render :action => "new" }
@@ -62,7 +76,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       if @event.update_attributes(params[:event])
         flash[:notice] = 'Event was successfully updated.'
-        format.html { redirect_to(@event) }
+        format.html { redirect_to(permalink_path(@event)) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -82,4 +96,10 @@ class EventsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def preview_url
+    render(:nothing => true) and return unless request.xhr?
+    render(:partial => 'url_preview')
+  end
+
 end

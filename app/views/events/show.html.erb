@@ -1,18 +1,56 @@
-<p>
-  <b>Name:</b>
-  <%=h @event.name %>
-</p>
+<% if flash.empty? -%>
+<p id="create_your_own"><%= I18n.t(:'reply.hosting_an_event') %> &#8212; <%= link_to(I18n.t(:'reply.create_your_own'), create_url) %></p>
+<% end -%>
 
-<p>
-  <b>Date:</b>
-  <%=h @event.date %>
-</p>
+<h1 class="event_name"><%= h(@event.name) %></h1>
 
-<p>
-  <b>Location:</b>
-  <%=h @event.location %>
-</p>
+<div class="expiration">
+  <%= I18n.t(:'event.expires_on', :date => content_tag(:strong, "#{I18n.l(@event.expires_on, :format => :expiration)}")) %>
+</div>
 
+<div class="container">
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<div id="guests">
+
+<h2><%= I18n.t(:'event.guest_list') %> <%= link_to(image_tag('feed.png'), feed_url(@event)) %></h2>
+
+<ul id="guest_list">
+<li>
+<% form_for @reply, :url => reply_path(@event.permalink) do |f| %>
+
+<h3><%= I18n.t(:'reply.rsvp') %></h3>
+
+<%= error_messages_body_for 'reply' %>
+
+<div class="tip">
+<%= f.label :name, I18n.t(:'reply.name'), :class => 'overlabel' %>
+<%= f.text_field :name, :size => 20 %>
+</div>
+
+<div class="bubble">
+<p><%= f.radio_button :rsvp, true %><%= f.label :rsvp_true, I18n.t(:'reply.confirm') %></p>
+<p><%= f.radio_button :rsvp, false %><%= f.label :rsvp_false, I18n.t(:'reply.decline') %></p>
+</div>
+
+<div><%= f.submit I18n.t(:'reply.submit_label') %></div>
+
+<% end -%>
+</li>
+
+<%= render :partial => "replies/reply", :collection => @event.replies, :as => :reply %>
+</ul>
+<% unless @event.has_replies? -%>
+<p><%= I18n.t(:'reply.no_replies_yet') %></p>
+<% end -%>
+
+</div>
+
+<div id="details">
+
+<h2><%= I18n.t(:'event.summary') %></h2>
+
+<p><%= I18n.t(:'event.when') %> <span class="date"><%= h(@event.date) %></span></p>
+<p><%= I18n.t(:'event.where') %> <span class="location"><%= h(@event.location) %></span></p>
+</div>
+
+</div>

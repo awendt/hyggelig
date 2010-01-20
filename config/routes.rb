@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.filter 'locale'
+
   map.resources :events
   map.resources :replies
 
@@ -31,12 +33,11 @@ ActionController::Routing::Routes.draw do |map|
   # map.root :controller => "welcome"
 
   # See how all your routes lay out with "rake routes"
-  map.filter 'locale'
 
-  map.create '/', :controller => 'event', :action => 'new'
+  map.create '/', :controller => 'events', :action => 'new'
   map.static '/:action', :controller => 'static_pages', :action => StaticPagesController::PAGES
-  map.event '/:permalink', :controller => 'event', :action => 'view'
-  map.feed '/feed/:permalink', :controller => 'replies', :action => 'feed'
+  map.permalink '/:permalink', :controller => 'events', :action => 'show'
+  map.feed '/feed/:permalink', :controller => 'events', :action => 'show', :format => 'rss'
   map.reply '/reply/:permalink', :controller => 'replies', :action => 'create'
 
   # Install the default routes as the lowest priority.

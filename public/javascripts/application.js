@@ -40,7 +40,7 @@ $(document).ready(function() {
   $("label.overlabel").overlabel();
   $("#event_name").change(function() {
     $.ajax({
-      url: '/event/preview_url',
+      url: '/events/preview_url',
       async: true,
       type: 'POST',
       data: {event_name: $("#event_name").val()},

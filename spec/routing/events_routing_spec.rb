@@ -19,15 +19,19 @@ describe EventsController do
     end
 
     it "recognizes and generates #create" do
-      { :post => "/events" }.should route_to(:controller => "events", :action => "create") 
+      { :post => "/events" }.should route_to(:controller => "events", :action => "create")
     end
 
     it "recognizes and generates #update" do
-      { :put => "/events/1" }.should route_to(:controller => "events", :action => "update", :id => "1") 
+      { :put => "/events/1" }.should route_to(:controller => "events", :action => "update", :id => "1")
     end
 
     it "recognizes and generates #destroy" do
-      { :delete => "/events/1" }.should route_to(:controller => "events", :action => "destroy", :id => "1") 
+      { :delete => "/events/1" }.should route_to(:controller => "events", :action => "destroy", :id => "1")
+    end
+
+    it "recognizes and generates feed URLs" do
+      { :get => "/feed/my-party" }.should route_to(:controller => "events", :action => "show", :permalink => "my-party", :format => "rss")
     end
   end
 end

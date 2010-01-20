@@ -60,7 +60,7 @@ describe RepliesController do
 
     describe "with valid params" do
       before do
-        @mock_event = mock(Event, :permalink => 'foo')
+        @mock_event = mock(Event, :permalink => 'foo', :to_param => 'foo')
         Event.should_receive(:find_by_permalink).with("foo").and_return(@mock_event)
       end
 
@@ -169,10 +169,6 @@ describe RepliesController do
       delete :destroy, :id => "1"
       response.should redirect_to(replies_url)
     end
-  end
-
-  it 'routes feeds' do
-    { :get => "/feed/my-party" }.should route_to(:controller => 'replies', :action => 'feed', :permalink => 'my-party')
   end
 
 end
