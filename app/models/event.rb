@@ -6,7 +6,7 @@ class Event < ActiveRecord::Base
 
   validates_presence_of :name, :date, :location
   validates_each :name do |record, attr, value|
-    record.errors.add attr, I18n.t(:'active_record_messages.exclusion') \
+    record.errors.add attr, I18n.t(:'activerecord.errors.messages.exclusion') \
       if value && RESERVED_NAMES.include?(value.downcase)
   end
   validates_length_of :name, :minimum => 3
