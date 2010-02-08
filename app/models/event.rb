@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
 
-  RESERVED_NAMES = %w(new event feed replies faq faqs demo help tour).freeze
+  RESERVED_NAMES = %w(events feed replies faq faqs demo help tour).freeze
   TIME_TO_LIVE = 60.days
   attr_readonly :expires_on
 
