@@ -19,7 +19,7 @@ class EventsController < ApplicationController
     unless @event
       flash[:error] = :'flash.event_not_found'
       flash[:error_item] = "<q>#{params[:permalink]}</q>"
-      redirect_to create_path and return
+      redirect_to root_path and return
     end
 
     respond_to do |format|

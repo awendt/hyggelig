@@ -1,5 +1,5 @@
 <% if flash.empty? -%>
-<p id="create_your_own"><%= I18n.t(:'reply.hosting_an_event') %> &#8212; <%= link_to(I18n.t(:'reply.create_your_own'), create_url) %></p>
+<p id="create_your_own"><%= I18n.t(:'reply.hosting_an_event') %> &#8212; <%= link_to(I18n.t(:'reply.create_your_own'), root_url) %></p>
 <% end -%>
 
 <h1 class="event_name"><%= h(@event.name) %></h1>

@@ -25,7 +25,7 @@ describe EventsController do
       Event.should_receive(:find_by_permalink).with("foo").and_return(nil)
       get :show, :permalink => "foo"
       flash[:error].should_not be_nil
-      response.should redirect_to(create_path)
+      response.should redirect_to(root_path)
     end
 
     it "renders the 'show.html' template if event is found" do

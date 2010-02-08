@@ -34,7 +34,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # See how all your routes lay out with "rake routes"
 
-  map.create '/', :controller => 'events', :action => 'new'
+  map.root :controller => 'events', :action => 'new'
   map.static '/:action', :controller => 'static_pages', :action => StaticPagesController::PAGES
   map.permalink '/:permalink', :controller => 'events', :action => 'show'
   map.feed '/feed/:permalink', :controller => 'events', :action => 'show', :format => 'rss'

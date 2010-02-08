@@ -54,7 +54,7 @@ describe RepliesController do
       it "flashes and redirects" do
         post :create, :permalink => "foo", :reply => {}
         flash[:error].should_not be_nil
-        response.should redirect_to(create_url)
+        response.should redirect_to(root_url)
       end
     end
 
