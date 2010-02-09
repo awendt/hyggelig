@@ -28,4 +28,13 @@ private
     params[:locale].to_a.map(&:to_sym) + client_accepted_languages
   end
 
+  def prevent_modifications
+    respond_to do |format|
+      format.html do
+        redirect_to(root_path)
+      end
+      format.xml { render :xml => {:errors => {:error => "This action is not allowed"}}, :status => :forbidden }
+    end
+  end
+
 end

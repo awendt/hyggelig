@@ -1,4 +1,6 @@
 class RepliesController < ApplicationController
+  before_filter :prevent_modifications, :only => [:index, :edit, :update, :destroy]
+
   # GET /replies
   # GET /replies.xml
   def index

@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_filter :prevent_modifications, :only => [:index, :edit, :update, :destroy]
+
   # GET /events
   # GET /events.xml
   def index

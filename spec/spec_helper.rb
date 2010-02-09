@@ -52,3 +52,12 @@ Spec::Runner.configure do |config|
   #
   # For more information take a look at Spec::Runner::Configuration and Spec::Runner
 end
+
+def it_should_prevent_modifications
+  {'index' => :get, 'edit' => :get, 'update' => :put, 'destroy' => :delete}.each_pair do |action, verb|
+    it "#{action} should redirect to EventsController#create with error" do
+      send(verb, action)
+      response.should redirect_to(root_path)
+    end
+  end
+end
