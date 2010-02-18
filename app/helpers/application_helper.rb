@@ -100,4 +100,26 @@ module ApplicationHelper
     end
   end
 
+  def rails_env
+    RAILS_ENV
+  end
+
+  def piwik_tracker_code
+    if rails_env == "production"
+      <<-EOS
+      <script type="text/javascript">
+      var pkBaseURL = (("https:" == document.location.protocol) ? "https://p.wendtswelt.de/" : "http://p.wendtswelt.de/");
+      document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+      </script><script type="text/javascript">
+      try {
+      var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
+      piwikTracker.trackPageView();
+      piwikTracker.enableLinkTracking();
+      } catch( err ) {}
+      </script><noscript><p><img src="http://p.wendtswelt.de/piwik.php?idsite=1" style="border:0" alt=""/></p></noscript>
+      EOS
+    else
+      ""
+    end
+  end
 end

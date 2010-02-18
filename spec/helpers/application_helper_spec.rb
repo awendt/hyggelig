@@ -16,4 +16,22 @@ describe ApplicationHelper do
 
   end
 
+  describe 'piwik tracker code' do
+
+    it 'renders the code in production' do
+      helper.should_receive(:rails_env).and_return('production')
+      helper.piwik_tracker_code.should have_tag('script')
+    end
+
+    it 'does not render the code in tests' do
+      helper.should_receive(:rails_env).and_return('test')
+      helper.piwik_tracker_code.should == ''
+    end
+
+    it 'does not render the code in development' do
+      helper.should_receive(:rails_env).and_return('development')
+      helper.piwik_tracker_code.should == ''
+    end
+
+  end
 end
