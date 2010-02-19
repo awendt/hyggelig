@@ -12,7 +12,7 @@
 
 <div id="guests">
 
-<h2><%= I18n.t(:'event.guest_list') %> <%= link_to(image_tag('feed.png'), feed_url(@event)) %></h2>
+<h2><%= I18n.t(:'event.guest_list') %> <%= link_to(image_tag('feed.png'), feed_url(@event.permalink)) %></h2>
 
 <ul id="guest_list">
 <li>
