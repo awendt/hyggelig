@@ -20,6 +20,11 @@ describe "/events/show.html.erb" do
     response.should have_text(/value\ for\ location/)
   end
 
+  it "renders an auto discovery tag for the RSS feed" do
+    render :layout => 'application'
+    response.body.should have_tag("link[rel=alternate][href=http://test.host/feed/asdf]")
+  end
+
   it "should set the feed language according to the locale" do
     @event.should_receive(:permalink).and_return("permalink")
     I18n.should_receive(:locale).any_number_of_times.and_return(:foo)

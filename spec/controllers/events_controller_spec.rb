@@ -38,7 +38,7 @@ describe EventsController do
       response.should render_template('show.html')
     end
 
-    it "renders the 'show.html' template if event is found" do
+    it "renders the 'feed.rxml' template for :rss format if event is found" do
       Event.should_receive(:find_by_permalink).with("bar").and_return(mock_event(:replies => [mock_model(Reply)]))
       get :show, :permalink => "bar", :format => 'rss'
       flash[:notice].should be_nil
