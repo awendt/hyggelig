@@ -363,3 +363,12 @@ label.overlabel-apply {
 .fieldWithErrors label.overlabel-apply {
   top:12px;
 }
+
+.share.facebook {
+  background:transparent url('http://facebook.com/images/connect_favicon.png') no-repeat 1px 3px;
+  padding-left:20px;
+}
+.share.twitter {
+  background:transparent url('http://twitter-badges.s3.amazonaws.com/t_mini-b.png') no-repeat;
+  padding-left:20px;
+}

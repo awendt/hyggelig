@@ -51,6 +51,11 @@
 
 <p><%= I18n.t(:'event.when') %> <span class="date"><%= h(@event.date) %></span></p>
 <p><%= I18n.t(:'event.where') %> <span class="location"><%= h(@event.location) %></span></p>
+
+<ul id="share" style="list-style-type:none; padding:0 0 0 10px;">
+  <li><%= link_to_facebook_share %></li>
+  <li><%= link_to_twitter_share %></li>
+</ul>
 </div>
 
 </div>
