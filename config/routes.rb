@@ -36,8 +36,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.root :controller => 'events', :action => 'new'
   map.static '/:action', :controller => 'static_pages', :action => StaticPagesController::PAGES
-  map.permalink '/:permalink', :controller => 'events', :action => 'show'
   map.feed '/feed/:permalink', :controller => 'events', :action => 'show', :format => 'rss'
+  map.permalink '/:permalink', :controller => 'events', :action => 'show'
   map.reply '/reply/:permalink', :controller => 'replies', :action => 'create'
 
   # Install the default routes as the lowest priority.
