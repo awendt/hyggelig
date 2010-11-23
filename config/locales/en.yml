@@ -15,17 +15,13 @@ en:
     follow_replies: Follow your guests' replies (there's also an RSS feed).
   event:
     name_label: What's the occasion or event name?
-    name_label_hint: 'e.g. {{ex1}} or {{ex2}}. Be creative!'
-    name_ex1: Babyshower for Alice
-    name_ex2: Track meeting
+    name_label_hint: 'e.g. “Babyshower for Alice” or “Track meeting”. Be creative!'
     name_url_preview: 'Expected address: {{url}}'
     url_preview_empty: 'Preview the expected address for your event page here'
     time_label: When does it start?
     time_label_hint: '{{other_service}} may help you find a date together.'
     location_label: Where does it happen?
-    location_label_hint: e.g. {{ex1}} or {{ex2}}
-    location_ex1: Bob's place
-    location_ex2: 105 Wisteria Lane
+    location_label_hint: e.g. “Bob's place” or “105 Wisteria Lane”
     submit_label: Create event page
     will_expire: 'Note: Event pages created today will last until {{date}}.'
     guest_list: Guest list

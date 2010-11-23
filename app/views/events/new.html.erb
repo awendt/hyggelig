@@ -10,11 +10,9 @@ and anything you submit expires automatically.<br />
 </div>
 
 <ol id="instructions">
-<% I18n.with_scope(:instructions) do |inst| -%>
-  <li id="step1"><strong><%= inst.t(:create) %></strong><br/><span><%= inst.t(:fill_in) %></span></li>
-  <li id="step2"><strong><%= inst.t(:send) %></strong><br/><span><%= inst.t(:mail_url) %></span></li>
-  <li id="step3"><strong><%= inst.t(:follow) %></strong><br/><span><%= inst.t(:follow_replies) %></span></li>
-<% end -%>
+  <li id="step1"><strong><%= t(:'instructions.create') %></strong><br/><span><%= t(:'instructions.fill_in') %></span></li>
+  <li id="step2"><strong><%= t(:'instructions.send') %></strong><br/><span><%= t(:'instructions.mail_url') %></span></li>
+  <li id="step3"><strong><%= t(:'instructions.follow') %></strong><br/><span><%= t(:'instructions.follow_replies') %></span></li>
 </ol>
 
 </div>
@@ -22,31 +20,25 @@ and anything you submit expires automatically.<br />
 <div class="container" id="create">
 <h1><%= I18n.t(:add_event) %></h1>
 
-<% form_for(@event) do |f| %>
+<%= form_for(@event) do |f| %>
 
 <%= error_messages_header_for 'event' %>
 
-<% I18n.with_scope :event do |locale| -%>
 <dl>
-<dt><%= label_with_hint :event, :name, locale.t(:name_label),
-          locale.t(:name_label_hint, :ex1 => "#{content_tag(:q, locale.t(:name_ex1))}",
-            :ex2 => "#{content_tag(:q, locale.t(:name_ex2))}") %></dt>
+<dt><%= label_with_hint :event, :name, t(:'event.name_label'), t(:'event.name_label_hint') %></dt>
 <dd><%= f.text_field :name %><%= error_message_on :event, :name %></dd>
 
-<dt><%= label_with_hint :event, :date, locale.t(:'time_label'), locale.t(:'time_label_hint',
+<dt><%= label_with_hint :event, :date, t(:'event.time_label'), t(:'event.time_label_hint',
   :other_service => link_to("Snapdecide", "http://www.snapdecide.com")) %></dt>
 <dd><%= f.text_field :date %><%= error_message_on :event, :date %></dd>
 
-<dt><%= label_with_hint :event, :location, locale.t(:'location_label'),
-          locale.t(:location_label_hint, :ex1 => "#{content_tag(:q, locale.t(:location_ex1))}",
-            :ex2 => "#{content_tag(:q, locale.t(:location_ex2))}") %></dt>
+<dt><%= label_with_hint :event, :location, t(:'event.location_label'), t(:'event.location_label_hint') %></dt>
 <dd><%= f.text_field :location %><%= error_message_on :event, :location %></dd>
 
-<dt class="note"><%= locale.t(:'will_expire', :date => content_tag(:strong, "#{I18n.l(Event::TIME_TO_LIVE.from_now.to_date, :format => :expiration)}")) %></dt>
+<dt class="note"><%= t(:'event.will_expire', :date => content_tag(:strong, "#{I18n.l(Event::TIME_TO_LIVE.from_now.to_date, :format => :expiration)}")) %></dt>
 
-<dt><%= submit_tag locale.t(:'submit_label') %></dt>
+<dt><%= submit_tag t(:'event.submit_label') %></dt>
 </dl>
-<% end -%>
 
 <% end -%>
 

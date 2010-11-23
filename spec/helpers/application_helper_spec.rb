@@ -6,7 +6,7 @@ describe ApplicationHelper do
 
     it "should call the label helper" do
       helper.should_receive(:label)
-      helper.label_with_hint(:foo, :bar, :text, :hint)
+      helper.label_with_hint(:foo, :bar, 'text', 'hint')
     end
 
     it "should contain the hint within another element" do
