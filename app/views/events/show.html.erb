@@ -53,8 +53,8 @@
 <p><%= I18n.t(:'event.where') %> <span class="location"><%= h(@event.location) %></span></p>
 
 <ul id="share" style="list-style-type:none; padding:0 0 0 10px;">
-  <li><%= link_to_facebook_share %></li>
-  <li><%= link_to_twitter_share %></li>
+  <li><%= link_to_facebook_share_for(@event) %></li>
+  <li><%= link_to_twitter_share_for(@event) %></li>
 </ul>
 </div>
 

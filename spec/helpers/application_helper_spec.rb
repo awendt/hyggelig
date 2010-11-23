@@ -11,7 +11,7 @@ describe ApplicationHelper do
 
     it "should contain the hint within another element" do
       markup = helper.label_with_hint(:foo, :bar, 'text', 'hint')
-      markup.should have_tag('span[class=hint]', :text => 'hint')
+      markup.should have_selector('span[class=hint]', :content => 'hint')
     end
 
   end
@@ -20,7 +20,7 @@ describe ApplicationHelper do
 
     it 'renders the code in production' do
       helper.should_receive(:rails_env).and_return('production')
-      helper.piwik_tracker_code.should have_tag('script')
+      helper.piwik_tracker_code.should have_selector('script')
     end
 
     it 'does not render the code in tests' do

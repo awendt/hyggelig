@@ -11,7 +11,7 @@ describe RepliesHelper do
 
     it "should surround everything but the name with a tag" do
       markup = helper.surround_all_but_name("John Doe", :bar)
-      markup.should have_tag("span[class=textonly]", :text => "foo")
+      markup.should have_selector("span[class=textonly]", :content => "foo")
       markup.should =~ /John Doe/
     end
 
@@ -21,7 +21,7 @@ describe RepliesHelper do
 
     it "should return a list item" do
       markup = helper.list_item_for(mock_model(Reply, :attending? => true, :name => "John Doe"))
-      markup.should have_tag("li", :text => /John Doe/)
+      markup.should have_selector("li", :content => "John Doe")
     end
 
   end
