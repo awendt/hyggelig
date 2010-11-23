@@ -14,13 +14,15 @@ class Event < ActiveRecord::Base
   has_permalink :name, :permalink
   has_many :replies, :dependent => :delete_all
 
-  named_scope :expired, :conditions => ["expires_on < ?", Date.today]
+  scope :expired, where("expires_on < ?", Date.today)
+
+  before_create :set_ttl
 
   def has_replies?
     !self.replies.blank?
   end
 
-  def before_create
+  def set_ttl
     write_attribute(:expires_on, TIME_TO_LIVE.from_now.to_date)
   end
 

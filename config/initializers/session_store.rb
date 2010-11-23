@@ -1,6 +1,6 @@
 # Be sure to restart your server when you modify this file.
 
-HyggeligOrg::Application.config.session_store :cookie_store, :key => '_hyggelig.org_session'
+HyggeligOrg::Application.config.session_store :cookie_store, :key => '_hyggelig_org_session'
 
 # ActionController::Base.session = {
 #   :key         => '_hyggelig_org_session',

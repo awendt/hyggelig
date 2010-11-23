@@ -101,7 +101,7 @@ module ApplicationHelper
   end
 
   def rails_env
-    ENV['RAILS_ENV']
+    Rails.env
   end
 
   def piwik_tracker_code

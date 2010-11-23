@@ -68,9 +68,12 @@ HyggeligOrg::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => "events#new"
 
+  #   map.static '/:action', :controller => 'static_pages', :action => StaticPagesController::PAGES
   #   map.feed '/feed/:permalink', :controller => 'events', :action => 'show', :format => 'rss'
   #   map.permalink '/:permalink', :controller => 'events', :action => 'show'
   #   map.reply '/reply/:permalink', :controller => 'replies', :action => 'create'
+  match '/:action' => 'static_pages', :as => :static,
+      :constraints => {:action => StaticPagesController::PAGES}
   match 'feed/:permalink' => 'events#show', :as => :feed, :defaults => { :format => 'rss' }
   match ':permalink' => 'events#show', :as => :permalink
   match 'reply/:permalink' => 'replies#create', :as => :reply
