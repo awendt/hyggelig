@@ -1,46 +1,83 @@
-ActionController::Routing::Routes.draw do |map|
-  map.filter 'locale'
+# ActionController::Routing::Routes.draw do |map|
+#   map.filter 'locale'
+# 
+#   map.resources :events
+#   map.resources :replies
+# 
+#   map.root :controller => 'events', :action => 'new'
+#   map.static '/:action', :controller => 'static_pages', :action => StaticPagesController::PAGES
+#   map.feed '/feed/:permalink', :controller => 'events', :action => 'show', :format => 'rss'
+#   map.permalink '/:permalink', :controller => 'events', :action => 'show'
+#   map.reply '/reply/:permalink', :controller => 'replies', :action => 'create'
+# 
+#   map.connect ':controller/:action/:id'
+#   map.connect ':controller/:action/:id.:format'
+# end
 
-  map.resources :events
-  map.resources :replies
 
-  # The priority is based upon order of creation: first created -> highest priority.
+HyggeligOrg::Application.routes.draw do
+  # The priority is based upon order of creation:
+  # first created -> highest priority.
 
   # Sample of regular route:
-  #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
+  #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
-  #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
+  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   map.resources :products
+  resources :events
+  resources :replies
 
   # Sample resource route with options:
-  #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }
-
-  # Sample resource route with sub-resources:
-  #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller
-
-  # Sample resource route within a namespace:
-  #   map.namespace :admin do |admin|
-  #     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
-  #     admin.resources :products
+  #   resources :products do
+  #     member do
+  #       get 'short'
+  #       post 'toggle'
+  #     end
+  #
+  #     collection do
+  #       get 'sold'
+  #     end
   #   end
 
-  # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  # map.root :controller => "welcome"
+  # Sample resource route with sub-resources:
+  #   resources :products do
+  #     resources :comments, :sales
+  #     resource :seller
+  #   end
+
+  # Sample resource route with more complex sub-resources
+  #   resources :products do
+  #     resources :comments
+  #     resources :sales do
+  #       get 'recent', :on => :collection
+  #     end
+  #   end
+
+  # Sample resource route within a namespace:
+  #   namespace :admin do
+  #     # Directs /admin/products/* to Admin::ProductsController
+  #     # (app/controllers/admin/products_controller.rb)
+  #     resources :products
+  #   end
+
+  # You can have the root of your site routed with "root"
+  # just remember to delete public/index.html.
+  root :to => "events#new"
+
+  #   map.feed '/feed/:permalink', :controller => 'events', :action => 'show', :format => 'rss'
+  #   map.permalink '/:permalink', :controller => 'events', :action => 'show'
+  #   map.reply '/reply/:permalink', :controller => 'replies', :action => 'create'
+  match 'feed/:permalink' => 'events#show', :as => :feed, :defaults => { :format => 'rss' }
+  match ':permalink' => 'events#show', :as => :permalink
+  match 'reply/:permalink' => 'replies#create', :as => :reply
 
   # See how all your routes lay out with "rake routes"
 
-  map.root :controller => 'events', :action => 'new'
-  map.static '/:action', :controller => 'static_pages', :action => StaticPagesController::PAGES
-  map.feed '/feed/:permalink', :controller => 'events', :action => 'show', :format => 'rss'
-  map.permalink '/:permalink', :controller => 'events', :action => 'show'
-  map.reply '/reply/:permalink', :controller => 'replies', :action => 'create'
-
-  # Install the default routes as the lowest priority.
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
+  # This is a legacy wild controller route that's not recommended for RESTful applications.
+  # Note: This route will make all actions in every controller accessible via GET requests.
+  match ':controller(/:action(/:id(.:format)))'
 end
