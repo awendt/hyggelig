@@ -10,13 +10,13 @@ module EventsHelper
 
   def link_to_facebook_share_for(event)
     link_to("Share on Facebook",
-      "http://www.facebook.com/sharer.php?u=#{CGI.escape(permalink_url(event.permalink))}&t=#{CGI.escape(page_title)}",
+      "http://www.facebook.com/sharer.php?u=#{CGI.escape(permalink_url(:permalink => event.permalink))}&t=#{CGI.escape(page_title)}",
       :class => 'share facebook')
   end
 
   def link_to_twitter_share_for(event)
     link_to("Share on Twitter",
-      "http://twitter.com/home?status=#{CGI.escape(permalink_url(event.permalink))}",
+      "http://twitter.com/home?status=#{CGI.escape(permalink_url(:permalink => event.permalink))}",
       :class => 'share twitter')
   end
 
