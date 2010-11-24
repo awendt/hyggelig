@@ -5,7 +5,7 @@ module RepliesHelper
   # "<span>accepted: </span>John Doe"
   def surround_all_but_name(name, i18n_key)
     without_name = I18n.t(:"reply.#{i18n_key}", :name => '')
-    I18n.t(:"reply.#{i18n_key}", :name => name).sub(without_name, content_tag(:span, without_name, :class => 'textonly'))
+    I18n.t(:"reply.#{i18n_key}", :name => name).sub(without_name, content_tag(:span, without_name, :class => 'textonly')).html_safe
   end
 
   # renders <li> for a guest,

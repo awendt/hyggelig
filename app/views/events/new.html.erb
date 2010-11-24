@@ -35,7 +35,7 @@ and anything you submit expires automatically.<br />
 <dt><%= label_with_hint :event, :location, t(:'event.location_label'), t(:'event.location_label_hint') %></dt>
 <dd><%= f.text_field :location %><%= error_message_on :event, :location %></dd>
 
-<dt class="note"><%= t(:'event.will_expire', :date => content_tag(:strong, "#{I18n.l(Event::TIME_TO_LIVE.from_now.to_date, :format => :expiration)}")) %></dt>
+<dt class="note"><%= t(:'event.will_expire', :date => content_tag(:strong, "#{I18n.l(Event::TIME_TO_LIVE.from_now.to_date, :format => :expiration)}")).html_safe %></dt>
 
 <dt><%= submit_tag t(:'event.submit_label') %></dt>
 </dl>

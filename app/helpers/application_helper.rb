@@ -12,7 +12,7 @@ module ApplicationHelper
         message_for_item(flash[type], flash["#{type}_item".to_sym])
       end
     end
-    formatted_messages.join
+    formatted_messages.join.html_safe
   end
 
   def message_for_item(message, item = nil)

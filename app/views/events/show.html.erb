@@ -2,10 +2,10 @@
 <p id="create_your_own"><%= I18n.t(:'reply.hosting_an_event') %> &#8212; <%= link_to(I18n.t(:'reply.create_your_own'), root_url) %></p>
 <% end -%>
 
-<h1 class="event_name"><%= h(@event.name) %></h1>
+<h1 class="event_name"><%= @event.name %></h1>
 
 <div class="expiration">
-  <%= I18n.t(:'event.expires_on', :date => content_tag(:strong, "#{I18n.l(@event.expires_on, :format => :expiration)}")) %>
+  <%= t(:'event.expires_on', :date => content_tag(:strong, "#{I18n.l(@event.expires_on, :format => :expiration)}")).html_safe %>
 </div>
 
 <div class="container">
@@ -49,8 +49,8 @@
 
 <h2><%= I18n.t(:'event.summary') %></h2>
 
-<p><%= I18n.t(:'event.when') %> <span class="date"><%= h(@event.date) %></span></p>
-<p><%= I18n.t(:'event.where') %> <span class="location"><%= h(@event.location) %></span></p>
+<p><%= I18n.t(:'event.when') %> <span class="date"><%= @event.date %></span></p>
+<p><%= I18n.t(:'event.where') %> <span class="location"><%= @event.location %></span></p>
 
 <ul id="share" style="list-style-type:none; padding:0 0 0 10px;">
   <li><%= link_to_facebook_share_for(@event) %></li>
