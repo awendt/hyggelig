@@ -16,7 +16,7 @@
 
 <ul id="guest_list">
 <li>
-<% form_for @reply, :url => reply_path(@event.permalink) do |f| %>
+<% form_for @reply, :url => reply_path(@event.permalink, :locale => params[:locale]) do |f| %>
 
 <h3><%= I18n.t(:'reply.rsvp') %></h3>
 
