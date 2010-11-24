@@ -81,7 +81,7 @@ module ApplicationHelper
     links = []
     other_locales = I18n.available_locales - [I18n.locale]
     other_locales.each do |locale|
-      links << link_to(I18n.t(:language, :locale => locale), :locale => locale)
+      links << link_to(I18n.t(:language, :locale => locale), root_url(:locale => locale))
     end
     links.join(' &#8212; ')
   end

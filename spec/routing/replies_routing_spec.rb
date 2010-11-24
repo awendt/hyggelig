@@ -2,6 +2,11 @@ require 'spec_helper'
 
 describe RepliesController do
   describe "routing" do
+    it "recognizes locales" do
+      { :get => "/en/replies" }.should route_to(:controller => "replies", :action => "index",
+          :locale => 'en')
+    end
+
     it "recognizes and generates #index" do
       { :get => "/replies" }.should route_to(:controller => "replies", :action => "index")
     end

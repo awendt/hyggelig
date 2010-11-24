@@ -2,6 +2,22 @@ require 'spec_helper'
 
 describe EventsController do
   describe "routing" do
+    describe "root" do
+      it "works without locale" do
+        { :get => "/" }.should route_to(:controller => "events", :action => "new")
+      end
+
+      it "works with locale" do
+        { :get => "/de" }.should route_to(:controller => "events", :action => "new",
+            :locale => 'de')
+      end
+    end
+
+    it "recognizes locales" do
+      { :get => "/en/events" }.should route_to(:controller => "events", :action => "index",
+          :locale => 'en')
+    end
+
     it "recognizes and generates #index" do
       { :get => "/events" }.should route_to(:controller => "events", :action => "index")
     end
