@@ -63,35 +63,37 @@ describe RepliesController do
     end
 
     describe "with valid params" do
+      let(:params) { {:permalink => 'foo', :locale => ''} }
+      let(:mock_event) { mock(Event, :permalink => 'foo', :to_param => 'foo') }
+
       before do
-        @mock_event = mock(Event, :permalink => 'foo', :to_param => 'foo')
-        Event.should_receive(:find_by_permalink).with("foo").and_return(@mock_event)
+        Event.should_receive(:find_by_permalink).with("foo").and_return(mock_event)
       end
 
       it "assigns a newly created reply as @reply" do
         Reply.stub(:new).with({'these' => 'params'}).and_return(mock_reply(
           :save => true, :event= => nil
         ))
-        post :create, :permalink => "foo", :reply => {:these => 'params'}
+        post :create, params.merge(:reply => {:these => 'params'})
         assigns[:reply].should equal(mock_reply)
       end
 
       it "resolves the permalink param to an event and associates it with the reply" do
         Reply.stub(:new).with({'these' => 'params'}).and_return(mock_reply(:save => true))
-        mock_reply.should_receive(:event=).with(@mock_event)
-        post :create, :permalink => "foo", :reply => {:these => 'params'}
+        mock_reply.should_receive(:event=).with(mock_event)
+        post :create, params.merge(:reply => {:these => 'params'})
       end
 
       it "redirects to event page" do
         Reply.stub(:new).and_return(mock_reply(:save => true, :event= => nil))
-        post :create, :permalink => "foo", :reply => {}
-        response.should redirect_to("/foo")
+        post :create, params.merge(:reply => {})
+        response.should redirect_to(permalink_path(:permalink => 'foo'))
       end
 
       it "renders JS template on Ajax request" do
         Reply.stub(:new).and_return(mock_reply(:save => true, :event= => nil))
-        post :create, :permalink => "foo", :reply => @options, :format => 'js'
-        response.should render_template("create.js")
+        post :create, params.merge(:reply => @options, :format => 'js')
+        response.should render_template("replies/create")
       end
     end
 

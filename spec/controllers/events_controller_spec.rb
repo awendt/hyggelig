@@ -35,14 +35,14 @@ describe EventsController do
       Event.should_receive(:find_by_permalink).with("bar").and_return(mock_event(:replies => [mock_model(Reply)]))
       get :show, :permalink => "bar"
       flash[:notice].should be_nil
-      response.should render_template('show.html')
+      response.should render_template('events/show')
     end
 
     it "renders the 'feed.rxml' template for :rss format if event is found" do
       Event.should_receive(:find_by_permalink).with("bar").and_return(mock_event(:replies => [mock_model(Reply)]))
       get :show, :permalink => "bar", :format => 'rss'
       flash[:notice].should be_nil
-      response.should render_template('feed.rxml')
+      response.should render_template('events/feed')
     end
   end
 
@@ -70,36 +70,38 @@ describe EventsController do
 
   describe "POST create" do
 
+    let(:event_attrs) { { :name => "My Party", :date => "now", :location => "here" } }
+    let(:params) { {:locale => '', :event => {:these => 'params'}} }
+
     describe "with valid params" do
       it "assigns a newly created event as @event" do
         Event.stub(:new).with({'these' => 'params'}).and_return(mock_event(:save => true, :permalink => 'foo'))
-        post :create, :event => {:these => 'params'}
+        post :create, params
         assigns[:event].should equal(mock_event)
       end
 
       it "redirects to the created event" do
         Event.stub(:new).and_return(mock_event(:save => true, :permalink => 'asdf'))
-        post :create, :event => {}
-        response.should redirect_to("/asdf")
+        post :create, params.merge(:event => {})
+        response.should redirect_to(permalink_path(:permalink => 'asdf'))
       end
 
       it "saves the event" do
-        event_attrs = { :name => "My Party", :date => "now", :location => "here" }
-        lambda { post :create, :event => event_attrs }.should change(Event, :count).from(0).to(1)
+        lambda { post :create, params.merge(:event => event_attrs) }.should \
+            change(Event, :count).from(0).to(1)
       end
 
       it "redirects to events/show with a notice on successful save" do
-        event_attrs = { :name => "My Party", :date => "now", :location => "here" }
-        post :create, :event => event_attrs
+        post :create, params.merge(:event => event_attrs)
         flash[:notice_item].first.should =~ /my-party/
-        response.should redirect_to("/my-party")
+        response.should redirect_to(permalink_path(:permalink => 'my-party'))
       end
     end
 
     describe "with invalid params" do
       it "assigns a newly created but unsaved event as @event" do
         Event.stub(:new).with({'these' => 'params'}).and_return(mock_event(:save => false))
-        post :create, :event => {:these => 'params'}
+        post :create, params
         assigns[:event].should equal(mock_event)
       end
 
@@ -183,13 +185,13 @@ describe EventsController do
 
     it 'renders nothing on GET requests' do
       get :preview_url
-      response.content_length.should == 1
+      response.should_not render_template('_url_preview')
       response.should be_success
     end
 
     it 'renders nothing on POST requests' do
       post :preview_url
-      response.content_length.should == 1
+      response.should_not render_template('_url_preview')
       response.should be_success
     end
 
