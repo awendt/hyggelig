@@ -23,6 +23,11 @@ describe ApplicationHelper do
       helper.piwik_tracker_code.should have_selector('script')
     end
 
+    it 'renders html_safe text' do
+      helper.should_receive(:rails_env).and_return('production')
+      helper.piwik_tracker_code.should be_html_safe
+    end
+
     it 'does not render the code in tests' do
       helper.should_receive(:rails_env).and_return('test')
       helper.piwik_tracker_code.should == ''

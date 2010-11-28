@@ -105,7 +105,7 @@ module ApplicationHelper
 
   def piwik_tracker_code
     if rails_env == "production"
-      <<-EOS
+      tracker_code = <<-EOS
       <script type="text/javascript">
       var pkBaseURL = (("https:" == document.location.protocol) ? "https://p.wendtswelt.de/" : "http://p.wendtswelt.de/");
       document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
@@ -117,6 +117,7 @@ module ApplicationHelper
       } catch( err ) {}
       </script><noscript><p><img src="http://p.wendtswelt.de/piwik.php?idsite=1" style="border:0" alt=""/></p></noscript>
       EOS
+      tracker_code.html_safe
     else
       ""
     end
