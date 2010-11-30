@@ -15,3 +15,10 @@ Feature: Hosting an event
     And I press "Create event page"
 
     Then I should see "Guest list"
+
+  Scenario: Host can switch to her favorite locale
+    Given I am on the homepage
+    Then I should see "Create an event page" within "h1"
+
+    When I follow "Deutsch"
+    Then I should see "Neue Ereignisseite anlegen" within "h1"
