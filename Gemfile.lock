@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/orangewise/webrat.git
+  revision: 1f6e1e1b3da79af627b80ba8662c55b2b687f4c5
+  specs:
+    webrat (0.7.2)
+      nokogiri (>= 1.2.0)
+      rack (>= 1.0)
+      rack-test (>= 0.5.3)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -53,7 +62,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     mysql (2.8.1)
-    nokogiri (1.4.2)
+    nokogiri (1.4.4)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -89,10 +98,6 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
-    webrat (0.7.1)
-      nokogiri (>= 1.2.0)
-      rack (>= 1.0)
-      rack-test (>= 0.5.3)
 
 PLATFORMS
   ruby
@@ -103,4 +108,4 @@ DEPENDENCIES
   mysql
   rails (= 3.0.3)
   rspec-rails (= 2.1.0)
-  webrat
+  webrat (>= 0.7.2.beta.6)!
