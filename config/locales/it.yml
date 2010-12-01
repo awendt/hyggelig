@@ -3,8 +3,8 @@ it:
   slogan: Un pianificatore di eventi per te e i tuoi amici
   add_event: Crea una pagina per l'evento
   about:
-    what_is_hyggelig: '{{site_name}} &egrave; software libero mantenuto da {{name}}.'
-    questions_or_bugs: Se hai delle domande o trovi bug, per favore riportali alla {{mlist}}.
+    what_is_hyggelig: '%{site_name} &egrave; software libero mantenuto da %{name}.'
+    questions_or_bugs: Se hai delle domande o trovi bug, per favore riportali alla %{mlist}.
     mlist: mailing list
   instructions:
     create: Crea una pagina
@@ -16,17 +16,17 @@ it:
   event:
     name_label: Qual &egrave; il nome dell'ocasione/evento?
     name_label_hint: 'ad es. «Festa di laurea» oppure «Riunione con amici». Sii creativo!'
-    name_url_preview: 'Link atteso: {{url}}'
+    name_url_preview: 'Link atteso: %{url}'
     url_preview_empty: 'Vedi in anteprima il link atteso della pagina dell''evento qui'
     time_label: Quando ha inizio?
-    time_label_hint: '{{other_service}} pu&ograve; aiutare a trovare una data insieme.'
+    time_label_hint: '%{other_service} pu&ograve; aiutare a trovare una data insieme.'
     location_label: Dove ha luogo?
     location_label_hint: ad es. «Da Giovanna» oppure «Via Nazionale 16»
     submit_label: Crea la pagina dell'evento
-    will_expire: 'Attenzione: Le pagine create oggi dureranno fino al {{date}}.'
+    will_expire: 'Attenzione: Le pagine create oggi dureranno fino al %{date}.'
     guest_list: Lista degli invitati
     summary: Sommario
-    expires_on: Questa pagina verrà cancellata automaticamente il giorno {{date}}
+    expires_on: Questa pagina verrà cancellata automaticamente il giorno %{date}
     when: Quando?
     where: Dove?
   reply:
@@ -36,16 +36,16 @@ it:
     confirm: Io ci sar&ograve;
     decline: Io NON ci sar&ograve;
     submit_label: Aggiungi la risposta
-    accepted: 'ha accettato: {{name}}'
-    declined: 'ha rifiutato: {{name}}'
+    accepted: 'ha accettato: %{name}'
+    declined: 'ha rifiutato: %{name}'
     rsvp: RSVP qui
     confirm_or_decline: Prego, scegli la tua risposta
     no_replies_yet: Nessuno ha accetato finora.
     hosting_an_event: Organizzi un evento?
     create_your_own: Crea la tua pagina per l'evento!
   flash:
-    give_url: "Dai l'indirizzo di questa pagina ai tuoi invitati: {{item}}"
-    event_not_found: 'Non &egrave; stato possibile trovare una pagina per l''evento in {{item}}.'
+    give_url: "Dai l'indirizzo di questa pagina ai tuoi invitati: %{item}"
+    event_not_found: 'Non &egrave; stato possibile trovare una pagina per l''evento in %{item}.'
     reply_saved: 'La tua risposta &egrave; stata salvata correttamente'
 
   date:
@@ -60,7 +60,7 @@ it:
     abbr_day_names: [Dom, Lun, Mar, Mer, Gio, Ven, Sab]
     month_names: [~, Gennaio, Febbraio, Marzo, Aprile, Maggio, Giugno, Luglio, Agosto, Settembre, Ottobre, Novembre, Dicembre]
     abbr_month_names: [~, Gen, Feb, Mar, Apr, Mag, Giu, Lug, Ago, Set, Ott, Nov, Dic]
-    order: [ {{year}}, {{month}}, {{day}} ]
+    order: [ %{year}, %{month}, %{day} ]
 
   time:
     formats:
@@ -84,35 +84,35 @@ it:
       less_than_x_seconds:
         zero: 'Meno di un secondo'
         one: '1 secondo'
-        other: '{{count}} secondi'
+        other: '%{count} secondi'
       x_seconds:
         one: '1 secondo'
-        other: '{{count}} secondi'
+        other: '%{count} secondi'
       less_than_x_minutes:
         zero: 'meno di un minuto'
         one: '1 minuto'
-        other: '{{count}} minuti'
+        other: '%{count} minuti'
       x_minutes:
         one: '1 minuto'
-        other: '{{count}} minuti'
+        other: '%{count} minuti'
       about_x_hours:
         one: 'circa un''ora'
-        other: '{{count}} ore'
+        other: '%{count} ore'
       x_days:
         one: '1 giorno'
-        other: '{{count}} giorni'
+        other: '%{count} giorni'
       about_x_months:
         one: 'circa un mese'
-        other: '{{count}} mesi'
+        other: '%{count} mesi'
       x_months:
         one: '1 mese'
-        other: '{{count}} mesi'
+        other: '%{count} mesi'
       about_x_years:
         one: 'circa un anno'
-        other: '{{count}} anni'
+        other: '%{count} anni'
       over_x_years:
         one: 'oltre un anno'
-        other: '{{count}} anni'
+        other: '%{count} anni'
 
   number:
     format:
@@ -140,8 +140,8 @@ it:
     errors:
       template:
         header:
-          one: '1 errore non ha permesso di salvare {{model}}.'
-          other: '{{count}} errori non hanno permesso di salvare {{model}}.'
+          one: '1 errore non ha permesso di salvare %{model}.'
+          other: '%{count} errori non hanno permesso di salvare %{model}.'
         body: 'Ci sono stati problemi coi seguenti campi:'
       messages:
         inclusion: "non &egrave; incluso nella lista"
@@ -151,15 +151,15 @@ it:
         accepted: "deve essere accettato"
         empty: "non pu&ograve; essere vuoto"
         blank: "non pu&ograve; essere vuoto"
-        too_long: "&egrave; molto lungo (non pi&ugrave; di {{count}} caratteri)"
-        too_short: "&egrave; molto corto (non meno di {{count}} caratteri)"
-        wrong_length: "non &egrave; della lunghezza giusta (deve essere di {{count}} caratteri)"
+        too_long: "&egrave; molto lungo (non pi&ugrave; di %{count} caratteri)"
+        too_short: "&egrave; molto corto (non meno di %{count} caratteri)"
+        wrong_length: "non &egrave; della lunghezza giusta (deve essere di %{count} caratteri)"
         taken: "non &egrave; disponibile"
         not_a_number: "non &egrave; un numero"
-        greater_than: "deve essere maggiore di {{count}}"
-        greater_than_or_equal_to: "deve essere maggiore di o uguale a {{count}}"
-        equal_to: "deve essere uguale a {{count}}"
-        less_than: "deve essere meno di {{count}}"
-        less_than_or_equal_to: "deve essere meno di o uguale a {{count}}"
+        greater_than: "deve essere maggiore di %{count}"
+        greater_than_or_equal_to: "deve essere maggiore di o uguale a %{count}"
+        equal_to: "deve essere uguale a %{count}"
+        less_than: "deve essere meno di %{count}"
+        less_than_or_equal_to: "deve essere meno di o uguale a %{count}"
         odd: "deve essere dispari"
         even: "deve essere pari"

@@ -3,8 +3,8 @@ en:
   slogan: Simple event planning for you and your friends
   add_event: Create an event page
   about:
-    what_is_hyggelig: '{{site_name}} is free software maintained by {{name}}.'
-    questions_or_bugs: If you have questions or found any bugs, please post them to the {{mlist}}.
+    what_is_hyggelig: '%{site_name} is free software maintained by %{name}.'
+    questions_or_bugs: If you have questions or found any bugs, please post them to the %{mlist}.
     mlist: mailing list
   instructions:
     create: Create a page
@@ -16,17 +16,17 @@ en:
   event:
     name_label: What's the occasion or event name?
     name_label_hint: 'e.g. “Babyshower for Alice” or “Track meeting”. Be creative!'
-    name_url_preview: 'Expected address: {{url}}'
+    name_url_preview: 'Expected address: %{url}'
     url_preview_empty: 'Preview the expected address for your event page here'
     time_label: When does it start?
-    time_label_hint: '{{other_service}} may help you find a date together.'
+    time_label_hint: '%{other_service} may help you find a date together.'
     location_label: Where does it happen?
     location_label_hint: e.g. “Bob's place” or “105 Wisteria Lane”
     submit_label: Create event page
-    will_expire: 'Note: Event pages created today will last until {{date}}.'
+    will_expire: 'Note: Event pages created today will last until %{date}.'
     guest_list: Guest list
     summary: Summary
-    expires_on: This page is auto-deleted on {{date}}
+    expires_on: This page is auto-deleted on %{date}
     when: When?
     where: Where?
   reply:
@@ -36,16 +36,16 @@ en:
     confirm: I will attend
     decline: I will NOT attend
     submit_label: Post reply
-    accepted: 'accepted: {{name}}'
-    declined: 'declined: {{name}}'
+    accepted: 'accepted: %{name}'
+    declined: 'declined: %{name}'
     rsvp: RSVP here
     confirm_or_decline: Please select your reply
     no_replies_yet: Nobody responded yet.
     hosting_an_event: Hosting an event, too?
     create_your_own: Create your own event page!
   flash:
-    give_url: "Give this page's address to your guests: {{item}}"
-    event_not_found: 'Could not find an event page at the location {{item}}.'
+    give_url: "Give this page's address to your guests: %{item}"
+    event_not_found: 'Could not find an event page at the location %{item}.'
     reply_saved: 'Your reply was saved successfully'
 
   date:
@@ -60,7 +60,7 @@ en:
     abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
     month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
     abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
-    order: [ {{year}}, {{month}}, {{day}} ]
+    order: [ %{year}, %{month}, %{day} ]
 
   time:
     formats:
@@ -84,35 +84,35 @@ en:
       less_than_x_seconds:
         zero: 'less than 1 second'
         one: '1 second'
-        other: '{{count}} seconds'
+        other: '%{count} seconds'
       x_seconds:
         one: '1 second'
-        other: '{{count}} seconds'
+        other: '%{count} seconds'
       less_than_x_minutes:
         zero: 'less than a minute'
         one: '1 minute'
-        other: '{{count}} minutes'
+        other: '%{count} minutes'
       x_minutes:
         one: '1 minute'
-        other: '{{count}} minutes'
+        other: '%{count} minutes'
       about_x_hours:
         one: 'about 1 hour'
-        other: '{{count}} hours'
+        other: '%{count} hours'
       x_days:
         one: '1 day'
-        other: '{{count}} days'
+        other: '%{count} days'
       about_x_months:
         one: 'about 1 month'
-        other: '{{count}} months'
+        other: '%{count} months'
       x_months:
         one: '1 month'
-        other: '{{count}} months'
+        other: '%{count} months'
       about_x_years:
         one: 'about 1 year'
-        other: '{{count}} years'
+        other: '%{count} years'
       over_x_years:
         one: 'over 1 year'
-        other: '{{count}} years'
+        other: '%{count} years'
 
   number:
     format:
@@ -140,8 +140,8 @@ en:
     errors:
       template:
         header:
-          one: '1 error prohibited this {{model}} from being saved.'
-          other: '{{count}} errors prohibited this {{model}} from being saved.'
+          one: '1 error prohibited this %{model} from being saved.'
+          other: '%{count} errors prohibited this %{model} from being saved.'
         body: 'There were problems with the following fields:'
       messages:
         inclusion: "is not included in the list"
@@ -151,15 +151,15 @@ en:
         accepted: "must be accepted"
         empty: "can't be blank"
         blank: "can't be blank"
-        too_long: "is too long (no more than {{count}} characters)"
-        too_short: "is too short (no less than {{count}} characters)"
-        wrong_length: "is not the right length (must be {{count}} characters)"
+        too_long: "is too long (no more than %{count} characters)"
+        too_short: "is too short (no less than %{count} characters)"
+        wrong_length: "is not the right length (must be %{count} characters)"
         taken: "is not available"
         not_a_number: "is not a number"
-        greater_than: "must be greater than {{count}}"
-        greater_than_or_equal_to: "must be greater than or equal to {{count}}"
-        equal_to: "must be equal to {{count}}"
-        less_than: "must be less than {{count}}"
-        less_than_or_equal_to: "must be less than or equal to {{count}}"
+        greater_than: "must be greater than %{count}"
+        greater_than_or_equal_to: "must be greater than or equal to %{count}"
+        equal_to: "must be equal to %{count}"
+        less_than: "must be less than %{count}"
+        less_than_or_equal_to: "must be less than or equal to %{count}"
         odd: "must be odd"
         even: "must be even"

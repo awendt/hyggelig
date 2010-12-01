@@ -3,8 +3,8 @@ de:
   slogan: Treffen mit Freunden einfach planen
   add_event: Neue Ereignisseite anlegen
   about:
-    what_is_hyggelig: '{{site_name}} ist freie Software, die von {{name}} betreut wird.'
-    questions_or_bugs: Falls du Fehler gefunden oder Fragen hast, wende dich damit bitte an die {{mlist}}.
+    what_is_hyggelig: '%{site_name} ist freie Software, die von %{name} betreut wird.'
+    questions_or_bugs: Falls du Fehler gefunden oder Fragen hast, wende dich damit bitte an die %{mlist}.
     mlist: Mailingliste
   instructions:
     create: Seite erstellen
@@ -16,17 +16,17 @@ de:
   event:
     name_label: Was ist der Anlass? Wie heißt dein Ereignis?
     name_label_hint: 'z.B. „Jans Abschiedsfeier“ oder „Fußballturnier“. Sei kreativ!'
-    name_url_preview: 'Voraussichtliche Adresse: {{url}}'
+    name_url_preview: 'Voraussichtliche Adresse: %{url}'
     url_preview_empty: 'Hier kannst du die voraussichtliche Adresse deiner Seite sehen'
     time_label: Wann geht's los?
-    time_label_hint: '{{other_service}} kann dir helfen, einen Termin gemeinsam zu finden.'
+    time_label_hint: '%{other_service} kann dir helfen, einen Termin gemeinsam zu finden.'
     location_label: Wo findet's statt?
     location_label_hint: z.B. „bei Katy“ oder „Lindenstr. 12“
     submit_label: Seite anlegen
-    will_expire: 'Achtung: Heute angelegte Seiten verfallen am {{date}}.'
+    will_expire: 'Achtung: Heute angelegte Seiten verfallen am %{date}.'
     guest_list: Gästeliste
     summary: Übersicht
-    expires_on: Diese Seite wird am {{date}} automatisch gelöscht
+    expires_on: Diese Seite wird am %{date} automatisch gelöscht
     when: Wann?
     where: Wo?
   reply:
@@ -36,16 +36,16 @@ de:
     confirm: Ich bin dabei
     decline: Ich kann leider nicht
     submit_label: Antwort abschicken
-    accepted: 'zugesagt: {{name}}'
-    declined: 'abgesagt: {{name}}'
+    accepted: 'zugesagt: %{name}'
+    declined: 'abgesagt: %{name}'
     rsvp: Hier antworten
     confirm_or_decline: Bitte wähle deine Antwort aus
     no_replies_yet: Noch hat niemand geantwortet.
     hosting_an_event: Auch Leute eingeladen?
     create_your_own: Leg deine eigene Seite an!
   flash:
-    give_url: 'Schick deinen Gästen die Adresse dieser Seite, {{item}}'
-    event_not_found: 'Konnte keine Seite unter der Adresse {{item}} finden.'
+    give_url: 'Schick deinen Gästen die Adresse dieser Seite, %{item}'
+    event_not_found: 'Konnte keine Seite unter der Adresse %{item} finden.'
     reply_saved: 'Deine Antwort wurde erfolgreich gespeichert'
 
   date:
@@ -60,7 +60,7 @@ de:
     abbr_day_names: [So, Mo, Di, Mi, Do, Fr, Sa]
     month_names: [~, Januar, Februar, März, April, Mai, Juni, Juli, August, September, Oktober, November, Dezember]
     abbr_month_names: [~, Jan, Feb, Mär, Apr, Mai, Jun, Jul, Aug, Sep, Okt, Nov, Dez]
-    order: [ {{day}}, {{month}}, {{year}} ]
+    order: [ %{day}, %{month}, %{year} ]
 
   time:
     formats:
@@ -80,35 +80,35 @@ de:
       less_than_x_seconds:
         zero: 'weniger als 1 Sekunde'
         one: '1 Sekunde'
-        other: '{{count}} Sekunden'
+        other: '%{count} Sekunden'
       x_seconds:
         one: '1 Sekunde'
-        other: '{{count}} Sekunden'
+        other: '%{count} Sekunden'
       less_than_x_minutes:
         zero: 'weniger als 1 Minute'
         one: 'eine Minute'
-        other: '{{count}} Minuten'
+        other: '%{count} Minuten'
       x_minutes:
         one: '1 Minute'
-        other: '{{count}} Minuten'
+        other: '%{count} Minuten'
       about_x_hours:
         one: 'etwa 1 Stunde'
-        other: '{{count}} Stunden'
+        other: '%{count} Stunden'
       x_days:
         one: '1 Tag'
-        other: '{{count}} Tage'
+        other: '%{count} Tage'
       about_x_months:
         one: 'etwa 1 Monat'
-        other: '{{count}} Monate'
+        other: '%{count} Monate'
       x_months:
         one: '1 Monat'
-        other: '{{count}} Monate'
+        other: '%{count} Monate'
       about_x_years:
         one: 'etwa 1 Jahr'
-        other: '{{count}} Jahre'
+        other: '%{count} Jahre'
       over_x_years:
         one: 'mehr als 1 Jahr'
-        other: '{{count}} Jahre'
+        other: '%{count} Jahre'
 
   number:
     format:
@@ -135,8 +135,8 @@ de:
     errors:
       template:
         header:
-          one: '{{model}} konnte wegen eines Fehlers nicht gespeichert werden.'
-          other: '{{model}} konnte wegen {{count}} Fehlern nicht gespeichert werden.'
+          one: '%{model} konnte wegen eines Fehlers nicht gespeichert werden.'
+          other: '%{model} konnte wegen %{count} Fehlern nicht gespeichert werden.'
         body: 'Bitte überprüfen Sie die folgenden Felder:'
       messages:
         inclusion: "ist kein gültiger Wert"
@@ -146,15 +146,15 @@ de:
         accepted: "muss akzeptiert werden"
         empty: "darf nicht leer sein"
         blank: "darf nicht leer sein"
-        too_long: "ist zu lang (nicht mehr als {{count}} Zeichen)"
-        too_short: "ist zu kurz (nicht weniger als {{count}} Zeichen)"
-        wrong_length: "hat die falsche Länge (muss genau {{count}} Zeichen haben)"
+        too_long: "ist zu lang (nicht mehr als %{count} Zeichen)"
+        too_short: "ist zu kurz (nicht weniger als %{count} Zeichen)"
+        wrong_length: "hat die falsche Länge (muss genau %{count} Zeichen haben)"
         taken: "ist bereits vergeben"
         not_a_number: "ist keine Zahl"
-        greater_than: "muss größer als {{count}} sein"
-        greater_than_or_equal_to: "muss größer oder gleich {{count}} sein"
-        equal_to: "muss genau {{count}} sein"
-        less_than: "muss kleiner als {{count}} sein"
-        less_than_or_equal_to: "muss kleiner oder gleich {{count}} sein"
+        greater_than: "muss größer als %{count} sein"
+        greater_than_or_equal_to: "muss größer oder gleich %{count} sein"
+        equal_to: "muss genau %{count} sein"
+        less_than: "muss kleiner als %{count} sein"
+        less_than_or_equal_to: "muss kleiner oder gleich %{count} sein"
         odd: "muss ungerade sein"
         even: "muss gerade sein"
