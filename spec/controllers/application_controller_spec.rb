@@ -39,12 +39,12 @@ describe ApplicationController do
   describe "default URL options" do
     it "returns the locale if given" do
       controller.should_receive(:params).and_return(:locale => :en)
-      controller.send(:default_url_options).should == {:locale => :en}
+      controller.send(:default_url_options)[:locale].should == :en
     end
 
     it "returns an empty hash if no locale given" do
       controller.should_receive(:params).and_return({})
-      controller.send(:default_url_options).should == {}
+      controller.send(:default_url_options)[:locale].should be_nil
     end
   end
 
