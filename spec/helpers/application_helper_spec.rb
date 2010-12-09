@@ -39,4 +39,20 @@ describe ApplicationHelper do
     end
 
   end
+
+  describe "links to other locales" do
+    it 'renders links' do
+      links = helper.links_for_other_locales
+      links.should have_selector('a[href]', :content => 'Deutsch')
+      links.should have_selector('a[href]', :content => 'Italiano')
+    end
+
+    it 'does not put locale into URL for default locale' do
+      I18n.default_locale = :it
+      links = helper.links_for_other_locales
+      links.should have_selector("a[href='http://test.host/de']", :content => 'Deutsch')
+      links.should have_selector("a[href='http://test.host/']", :content => 'Italiano')
+    end
+  end
+
 end
