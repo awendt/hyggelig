@@ -4,7 +4,8 @@ module EventsHelper
     if name.blank?
       I18n.t(:'event.url_preview_empty')
     else
-      I18n.t(:'event.name_url_preview', :url => content_tag(:strong, permalink_url(PermalinkFu.escape(name))))
+      I18n.t(:'event.name_url_preview', :url => content_tag(:strong,
+          permalink_url(:permalink => PermalinkFu.escape(name)))).html_safe
     end
   end
 

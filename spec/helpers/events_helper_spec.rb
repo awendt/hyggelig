@@ -18,4 +18,7 @@ describe EventsHelper do
         have_selector("a[href*=twitter].share.twitter")
   end
 
+  it 'shows a URL preview' do
+    helper.url_preview_for('My Event Title').should be_html_safe
+  end
 end
