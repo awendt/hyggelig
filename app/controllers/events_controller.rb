@@ -59,7 +59,7 @@ class EventsController < ApplicationController
         # build a URL for current event (redirect below prevents using url_for)
         url = permalink_url(@event.permalink)
         # use that URL to link to the current page
-        flash[:notice_item] = ["#{url}", "#{url}"]
+        flash[:notice_item] = [url, url]
 
         format.html { redirect_to(permalink_path(@event.permalink)) }
         format.xml  { render :xml => @event, :status => :created, :location => @event }

@@ -33,3 +33,13 @@ Feature: Hosting an event
     And I press "Seite anlegen"
 
     Then I should see "Gästeliste"
+
+  Scenario: Link to event page is shown on event page
+    Given I am on the homepage
+
+    When I fill in "event_name" with "meeting"
+    And I fill in "event_location" with "my place"
+    And I fill in "event_date" with "tomorrow"
+    And I press "Create event page"
+
+    Then I should see "http://example.org/meeting" within "a"

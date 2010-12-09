@@ -1,7 +1,7 @@
 log/*.log
 db/*.sqlite3
 db/schema.rb
-tmp/**/*
+tmp/
 doc/api
 doc/app
 doc/plugins

@@ -17,7 +17,7 @@ module ApplicationHelper
 
   def message_for_item(message, item = nil)
     if item.is_a?(Array)
-      I18n.t(message, :item => link_to(*item))
+      I18n.t(message, :item => link_to(*item)).html_safe
     else
       I18n.t(message, :item => item)
     end
